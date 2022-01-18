@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/necro_phase_0002.ogg-7559494e3e01298f5efdede2580e5392.oggstr"
+
+[deps]
+
+source_file="res://assets/music/necro_phase_0002.ogg"
+dest_files=[ "res://.import/necro_phase_0002.ogg-7559494e3e01298f5efdede2580e5392.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/packed_scenes/levels/templates/level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/packed_scenes/huds/LevelHUD_NecroArena.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Necro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/shaders/rainbow.shader" type="Shader" id=4]
+[ext_resource path="res://src/PackedScenes/Levels/NecroArena/Level_NecroArena.cs" type="Script" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/music/necro_phase_0001.ogg" type="AudioStream" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/FALLING_SPEED = 1.0
+shader_param/STRIPES_FACTOR = 1.0
+
+[node name="Level_NecroArena" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource( 7 )
+
+[node name="NecroAnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+[node name="RainbowSprite" type="Sprite" parent="MainLayer/Main_TileMaps" index="0"]
+visible = false
+material = SubResource( 1 )
+position = Vector2( 208, 128 )
+scale = Vector2( 6.5, 4 )
+texture = ExtResource( 6 )
+
+[node name="TileMap_Main" parent="MainLayer/Main_TileMaps" index="1"]
+tile_data = PoolIntArray( 524287, 3, 393216, 458752, 3, 393217, 458753, 3, 393217, 458754, 3, 393217, 458755, 3, 393217, 458756, 3, 393217, 458757, 3, 393217, 458758, 3, 393217, 458759, 3, 393217, 458760, 3, 393217, 458761, 3, 393217, 458762, 3, 393217, 458763, 3, 393217, 458764, 3, 393217, 458765, 3, 393218, 589823, 3, 131074, 524288, 3, 65537, 524289, 3, 65537, 524290, 3, 65537, 524291, 3, 65537, 524292, 3, 65537, 524293, 3, 65537, 524294, 3, 65537, 524295, 3, 65537, 524296, 3, 65537, 524297, 3, 65537, 524298, 3, 65537, 524299, 3, 65537, 524300, 3, 65537, 524301, 3, 131073 )
+
+[node name="Necro" parent="MainLayer/Actors/Necros" index="0" instance=ExtResource( 3 )]
+position = Vector2( 192, -63 )
+IsShooting = false
+
+[node name="Bonez" parent="MainLayer" index="9"]
+position = Vector2( 56, 208 )
+
+[node name="MapBounds" parent="MainLayer" index="10"]
+anchor_right = 1.04
+anchor_bottom = 1.06667
+
+[node name="HUD" parent="." index="5" instance=ExtResource( 2 )]
+
+[editable path="PauseMenu"]

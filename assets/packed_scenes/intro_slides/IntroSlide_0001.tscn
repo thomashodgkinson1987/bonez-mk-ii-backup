@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/WayfarersToyBoxRegular-gxxER.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/atlases/atlas_256x256.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "PlaySlide"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Texture_0001:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Texture_0001:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 256, 256 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="IntroSlide_0001" type="Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/PlaySlide = SubResource( 1 )
+
+[node name="Texture_0001" type="TextureRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 400.0
+margin_bottom = 176.0
+texture = SubResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_0001" type="RichTextLabel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 8.0
+margin_top = 184.0
+margin_right = 384.0
+margin_bottom = 240.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]BONEZ, awoken from his eternal slumber, is met with the terrible sight of a crooked toothy grin and flickering green flames for eyes..[/center]"
+text = "BONEZ, awoken from his eternal slumber, is met with the terrible sight of a crooked toothy grin and flickering green flames for eyes.."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog_0002" type="RichTextLabel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 8.0
+margin_top = 184.0
+margin_right = 384.0
+margin_bottom = 240.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]A necromancer stands over his freshly exhumed grave, arcane powers [shake]crackling[/shake] about him.
+“I have a job for ye, bone man,” says the necromancer.[/center]"
+text = "A necromancer stands over his freshly exhumed grave, arcane powers crackling about him.
+“I have a job for ye, bone man,” says the necromancer."
+__meta__ = {
+"_edit_use_anchors_": false
+}

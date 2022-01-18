@@ -1,0 +1,182 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/atlases/atlas_32x32.png" type="Texture" id=1]
+[ext_resource path="res://assets/packed_scenes/menus/overworld_pause_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/packed_scenes/overworld_objects/OverworldLevelNode.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Scenes/Scene_Overworld.cs" type="Script" id=4]
+[ext_resource path="res://assets/music/overworld_0001.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/packed_scenes/Fader.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/packed_scenes/huds/OverworldHUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/resources/tilesets/tileset_0001.tres" type="TileSet" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 43, 361, 11, 11 )
+
+[node name="OverworldScene" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Music"
+
+[node name="TileMaps" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Water" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 4, 2424834, 1, 4, 2424834, 2, 4, 2424834, 3, 4, 2424834, 4, 4, 2424834, 5, 4, 2424834, 6, 4, 2424834, 7, 4, 2424834, 8, 4, 2424834, 9, 4, 2424834, 10, 4, 2424834, 11, 4, 2424834, 12, 4, 2424834, 13, 4, 2424834, 14, 4, 2424834, 15, 4, 2424834, 16, 4, 2424834, 65536, 4, 2424834, 65537, 4, 2424834, 65538, 4, 2424834, 65539, 4, 2424834, 65540, 4, 2424834, 65541, 4, 2424834, 65542, 4, 2424834, 65543, 4, 2424834, 65544, 4, 2424834, 65545, 4, 2424834, 65546, 4, 2424834, 65547, 4, 2424834, 65548, 4, 2424834, 65549, 4, 2424834, 65550, 4, 2424834, 65551, 4, 2424834, 65552, 4, 2424834, 131072, 4, 2424834, 131073, 4, 2424834, 131074, 4, 2424834, 131075, 4, 2424834, 131076, 4, 2424834, 131077, 4, 2424834, 131078, 4, 2424834, 131079, 4, 2424834, 131080, 4, 2424834, 131081, 4, 2424834, 131082, 4, 2424834, 131083, 4, 2424834, 131084, 4, 2424834, 131085, 4, 2424834, 131086, 4, 2424834, 131087, 4, 2424834, 131088, 4, 2424834, 196608, 4, 2424834, 196609, 4, 2424834, 196610, 4, 2424834, 196611, 4, 2424834, 196612, 4, 2424834, 196613, 4, 2424834, 196614, 4, 2424834, 196615, 4, 2424834, 196616, 4, 2424834, 196617, 4, 2424834, 196618, 4, 2424834, 196619, 4, 2424834, 196620, 4, 2424834, 196621, 4, 2424834, 196622, 4, 2424834, 196623, 4, 2424834, 196624, 4, 2424834, 262144, 4, 2424834, 262145, 4, 2424834, 262146, 4, 2424834, 262147, 4, 2424834, 262148, 4, 2424834, 262149, 4, 2424834, 262150, 4, 2424834, 262151, 4, 2424834, 262152, 4, 2424834, 262153, 4, 2424834, 262154, 4, 2424834, 262155, 4, 2424834, 262156, 4, 2424834, 262157, 4, 2424834, 262158, 4, 2424834, 262159, 4, 2424834, 262160, 4, 2424834, 327680, 4, 2424834, 327681, 4, 2424834, 327682, 4, 2424834, 327683, 4, 2424834, 327684, 4, 2424834, 327685, 4, 2424834, 327686, 4, 2424834, 327687, 4, 2424834, 327688, 4, 2424834, 327689, 4, 2424834, 327690, 4, 2424834, 327691, 4, 2424834, 327692, 4, 2424834, 327693, 4, 2424834, 327694, 4, 2424834, 327695, 4, 2424834, 327696, 4, 2424834, 393216, 4, 2424834, 393217, 4, 2424834, 393218, 4, 2424834, 393219, 4, 2424834, 393220, 4, 2424834, 393221, 4, 2424834, 393222, 4, 2424834, 393223, 4, 2424834, 393224, 4, 2424834, 393225, 4, 2424834, 393226, 4, 2424834, 393227, 4, 2424834, 393228, 4, 2424834, 393229, 4, 2424834, 393230, 4, 2424834, 393231, 4, 2424834, 393232, 4, 2424834, 458752, 4, 2424834, 458753, 4, 2424834, 458754, 4, 2424834, 458755, 4, 2424834, 458756, 4, 2424834, 458757, 4, 2424834, 458758, 4, 2424834, 458759, 4, 2424834, 458760, 4, 2424834, 458761, 4, 2424834, 458762, 4, 2424834, 458763, 4, 2424834, 458764, 4, 2424834, 458765, 4, 2424834, 458766, 4, 2424834, 458767, 4, 2424834, 458768, 4, 2424834 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Grass" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 4, 2359299, 1, 4, 2359299, 2, 4, 2359299, 3, 4, 2359299, 4, 4, 2359299, 5, 4, 2359299, 6, 4, 2359299, 7, 4, 2359299, 8, 4, 2359299, 9, 4, 2359299, 10, 4, 2359299, 11, 4, 2359299, 12, 4, 2359299, 13, 4, 2359299, 14, 4, 2359299, 15, 4, 2359299, 16, 4, 2359299, 65536, 4, 2359299, 65537, 4, 2359299, 65538, 4, 2359299, 65539, 4, 2359299, 65540, 4, 2359299, 65541, 4, 2359299, 65542, 4, 2359299, 65543, 4, 2359299, 65544, 4, 2359299, 65545, 4, 2359299, 65546, 4, 2359299, 65547, 4, 2359299, 65548, 4, 2359299, 65549, 4, 2359299, 65550, 4, 2359299, 65551, 4, 2359299, 65552, 4, 2359299, 131072, 4, 2359299, 131073, 4, 2359299, 131074, 4, 2359299, 131075, 4, 2359299, 131076, 4, 2359299, 131077, 4, 2359299, 131078, 4, 2359299, 131079, 4, 2359299, 131080, 4, 2359299, 131081, 4, 2359299, 131082, 4, 2359299, 131083, 4, 2359299, 131084, 4, 2359299, 131085, 4, 2359299, 131086, 4, 2359299, 131087, 4, 2359299, 131088, 4, 2359299, 196608, 4, 2359299, 196609, 4, 2359299, 196610, 4, 2359299, 196611, 4, 2359299, 196612, 4, 2359299, 196613, 4, 2359299, 196614, 4, 2359299, 196615, 4, 2359299, 196616, 4, 2359299, 196617, 4, 2359299, 196618, 4, 2359299, 196619, 4, 2359299, 196620, 4, 2359299, 196621, 4, 2359299, 196622, 4, 2359299, 196623, 4, 2359299, 196624, 4, 2359299, 262144, 4, 2359299, 262145, 4, 2359299, 262146, 4, 2359299, 262147, 4, 2359299, 262148, 4, 2359299, 262149, 4, 2359299, 262150, 4, 2359299, 262151, 4, 2359299, 262152, 4, 2359299, 262153, 4, 2359299, 262154, 4, 2359299, 262155, 4, 2359299, 262156, 4, 2359299, 262157, 4, 2359299, 262158, 4, 2359299, 262159, 4, 2359299, 262160, 4, 2359299, 327680, 4, 2359299, 327681, 4, 2359299, 327682, 4, 2359299, 327683, 4, 2424832, 327684, 4, 2424832, 327685, 4, 2424832, 327686, 4, 2424832, 327687, 4, 2424832, 327688, 4, 2424832, 327689, 4, 2424832, 327690, 4, 2424832, 327691, 4, 2424832, 327692, 4, 2424832, 327693, 4, 2424832, 327694, 4, 2424832, 327695, 4, 2424832, 327696, 4, 2424832, 393216, 4, 2359299, 393217, 4, 2359299, 393218, 4, 2424833, 458752, 4, 2424832, 458753, 4, 2424833 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Mountains" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 4, 2555904, 1, 4, 2490370, 2, 4, 2490370, 3, 4, 2490370, 4, 4, 2490370, 5, 4, 2490370, 6, 4, 2490370, 7, 4, 2490370, 8, 4, 2490370, 9, 4, 2490370, 10, 4, 2490370, 11, 4, 2490370, 12, 4, 2490370, 13, 4, 2490370, 14, 4, 2490370, 15, 4, 2490370, 16, 4, 2490371 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Forests" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65545, 4, 2686977, 65546, 4, 2686978, 65547, 4, 2686978, 65548, 4, 2686978, 65549, 4, 2686979, 131080, 4, 2686977, 131081, 4, 2752512, 131082, 4, 2752515, 131084, 4, 2752514, 131085, 4, 2752513, 196614, 4, 2686977, 196615, 4, 2686978, 196616, 4, 2752512, 196617, 4, 2752512, 196621, 4, 2752512, 196622, 4, 2686979, 262150, 4, 2621441, 262151, 4, 2621442, 262152, 4, 2621442, 262153, 4, 2752512, 262154, 4, 2818049, 262156, 4, 2818048, 262157, 4, 2752512, 262158, 4, 2621443, 327689, 4, 2621441, 327690, 4, 2621442, 327691, 4, 2621442, 327692, 4, 2621442, 327693, 4, 2621443 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Trees" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 4, 2621440, 65541, 4, 2621440, 65544, 4, 2621440, 65551, 4, 2621440, 131073, 4, 2818051, 131075, 4, 2621440, 131079, 4, 2818051, 131082, 4, 2883584, 131083, 4, 2883584, 131084, 4, 2621440, 131086, 4, 2883584, 131088, 4, 2621440, 196612, 4, 2818051, 196618, 4, 2883584, 262144, 4, 2883584, 262146, 4, 2818051, 262148, 4, 2621440, 262154, 4, 2818051, 262155, 4, 2818051, 262159, 4, 2621440, 393217, 0, 65542 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Sites" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196608, 4, 2490369, 196619, 4, 2490368, 196624, 4, 2949120 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Paths" type="TileMap" parent="TileMaps"]
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 196608, -1610612732, 2949123, 196609, -1610612732, 2949122, 196610, -1610612732, 2949122, 196611, -1610612732, 2949122, 196612, -1610612732, 2949122, 196613, -1610612732, 2949122, 196614, -1610612732, 2949122, 196615, -1610612732, 2949122, 196616, -1610612732, 2949122, 196617, -1610612732, 2949122, 196618, -1610612732, 2949122, 196619, -1610612732, 2949122, 196620, -1610612732, 2949122, 196621, -1610612732, 2949122, 196622, -1610612732, 2949122, 196623, -1610612732, 2949122, 196624, -1073741820, 2949123 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelNodes" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelNode_0001" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 16, 112 )
+State = 1
+LevelID = "level_0001"
+RightNodeName = "LevelNode_0002"
+
+[node name="LevelNode_0002" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 80, 112 )
+LevelID = "level_0002"
+LeftNodeName = "LevelNode_0001"
+RightNodeName = "LevelNode_0003"
+
+[node name="LevelNode_0003" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 152, 112 )
+LevelID = "level_0003"
+LeftNodeName = "LevelNode_0002"
+RightNodeName = "LevelNode_0004"
+
+[node name="LevelNode_0004" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 232, 112 )
+LevelID = "level_0004"
+LeftNodeName = "LevelNode_0003"
+RightNodeName = "LevelNode_0005"
+
+[node name="LevelNode_0005" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 296, 112 )
+LevelID = "level_0005"
+LeftNodeName = "LevelNode_0004"
+RightNodeName = "LevelNode_0006"
+
+[node name="LevelNode_0006" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 368, 112 )
+LevelID = "level_0006"
+LeftNodeName = "LevelNode_0005"
+RightNodeName = "LevelNode_0007"
+
+[node name="LevelNode_0007" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 400, 112 )
+LevelID = "level_0007"
+LeftNodeName = "LevelNode_0006"
+RightNodeName = "LevelNode_0008"
+
+[node name="LevelNode_0008" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 456, 112 )
+LevelID = "level_0008"
+LeftNodeName = "LevelNode_0007"
+RightNodeName = "LevelNode_0009"
+
+[node name="LevelNode_0009" parent="LevelNodes" instance=ExtResource( 3 )]
+position = Vector2( 528, 112 )
+LevelID = "level_0009"
+LeftNodeName = "LevelNode_0008"
+
+[node name="CurrentLevelIndicator" type="Node2D" parent="."]
+position = Vector2( 16, 112 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="CurrentLevelIndicator"]
+position = Vector2( 8, -8 )
+texture = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="CurrentLevelIndicator"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 544
+limit_bottom = 256
+smoothing_enabled = true
+smoothing_speed = 1.0
+editor_draw_limits = true
+
+[node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 2 )]
+layer = 75
+
+[node name="BackgroundPanel" parent="PauseMenu" index="1"]
+visible = false
+
+[node name="Fader" parent="." instance=ExtResource( 6 )]
+
+[editable path="PauseMenu"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/resources/sprite_frames/actors/bat.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://src/PackedScenes/LevelObjects/Actors/Bat/Bat.cs" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 150.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 8 )
+
+[node name="Bat" instance=ExtResource( 1 )]
+collision_mask = 0
+script = ExtResource( 5 )
+Health = 1
+MaxHealth = 1
+IsApplyDeceleration = false
+IsApplyDecelerationX = false
+IsApplyGravity = false
+IsPollInput = false
+IsUpdateFacingDirection = false
+IsUpdateFacingDirectionX = false
+DieKnockback = Vector2( 50, 16 )
+
+[node name="ScanArea" type="Area2D" parent="." index="0"]
+input_pickable = false
+monitorable = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScanArea" index="0"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" parent="." index="1"]
+position = Vector2( 0, 0 )
+frames = ExtResource( 2 )
+animation = "move"
+frame = 3
+
+[node name="Center" parent="." index="2"]
+position = Vector2( 0, 0 )
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2( 0, 0 )
+shape = SubResource( 2 )
+
+[node name="InteractArea" parent="." index="4"]
+collision_mask = 2048
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 3 )
+
+[node name="HitArea" parent="." index="5"]
+collision_mask = 288
+
+[node name="CollisionShape2D" parent="HitArea" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 4 )
+
+[node name="HurtArea" parent="." index="6"]
+collision_layer = 132
+
+[node name="CollisionShape2D" parent="HurtArea" index="0"]
+position = Vector2( 0, 0 )
+shape = SubResource( 5 )
+[connection signal="area_entered" from="ScanArea" to="." method="OnAreaEnteredScanArea"]
+[connection signal="area_exited" from="ScanArea" to="." method="OnAreaExitedScanArea"]
+[connection signal="body_entered" from="ScanArea" to="." method="OnBodyEnteredScanArea"]
+[connection signal="body_exited" from="ScanArea" to="." method="OnBodyExitedScanArea"]

@@ -1,0 +1,3007 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/packed_scenes/levels/templates/level_collect_bones.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/music/forest_0002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/packed_scenes/level_objects/LevelExit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/packed_scenes/level_objects/Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/packed_scenes/level_objects/items/Bone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/resources/tilesets/tileset_0001.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/atlases/atlas_128x128.png" type="Texture" id=7]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Slime.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Bat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/HoppingSlime.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/resources/tilesets/tiles_256x256.tres" type="TileSet" id=11]
+[ext_resource path="res://assets/packed_scenes/level_objects/plants/SmallPlant.tscn" type="PackedScene" id=12]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 7 )
+region = Rect2( 62, 585, 14, 38 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 7 )
+region = Rect2( 774, 327, 120, 57 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 7 )
+region = Rect2( 644, 325, 126, 59 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 774, 327, 120, 57 )
+
+[node name="Level_CollectBones" instance=ExtResource( 1 )]
+LevelID = "level_0008"
+LevelName = "Level 8"
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer" index="0"]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 256, 256 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 256, 0, 0, 256, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -65537, 0, 524290, -131072, 0, 524290, -131071, 0, 524290, -131070, 0, 524290, -131069, 0, 524290, -131068, 0, 524290, -131067, 0, 524290, -131066, 0, 524290, -131065, 0, 524290, -131064, 0, 524290, -131063, 0, 524290, -131062, 0, 524290, -131061, 0, 524290, -131060, 0, 524290, -131059, 0, 524290, -131058, 0, 524290, -1, 0, 524290, -65536, 0, 524290, -65535, 0, 524290, -65534, 0, 524290, -65533, 0, 524290, -65532, 0, 524290, -65531, 0, 524290, -65530, 0, 524290, -65529, 0, 524290, -65528, 0, 524290, -65527, 0, 524290, -65526, 0, 524290, -65525, 0, 524290, -65524, 0, 524290, -65523, 0, 524290, -65522, 0, 524290, 65535, 0, 458753, 0, 0, 458753, 1, 0, 458753, 2, 0, 458753, 3, 0, 458753, 4, 0, 458753, 5, 0, 458753, 6, 0, 458753, 7, 0, 458753, 8, 0, 458753, 9, 0, 458753, 10, 0, 458753, 11, 0, 458753, 12, 0, 458753, 13, 0, 458753, 14, 0, 458753, 131071, 0, 458753, 65536, 0, 458753, 65537, 0, 458753, 65538, 0, 458753, 65539, 0, 458753, 65540, 0, 458753, 65541, 0, 458753, 65542, 0, 458753, 65543, 0, 458753, 65544, 0, 458753, 65545, 0, 458753, 65546, 0, 458753, 65547, 0, 458753, 65548, 0, 458753, 65549, 0, 458753, 65550, 0, 458753 )
+
+[node name="Layer_-10" parent="NegativeLayers" index="0"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -1452, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-10" index="0"]
+motion_offset = Vector2( 1452, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-10" index="2"]
+motion_offset = Vector2( -1452, 0 )
+
+[node name="Layer_-9" parent="NegativeLayers" index="1"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -1306.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-9" index="0"]
+motion_offset = Vector2( 1306.8, 0 )
+
+[node name="DoubleTree1" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="0"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1844, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree1" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree1" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree2" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="1"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1780, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree2" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree2" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree3" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="2"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1716, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree3" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree3" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree4" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="3"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1652, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree4" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree4" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree5" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="4"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1588, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree5" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree5" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree6" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="5"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1524, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree6" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree6" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree7" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="6"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1460, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree7" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree7" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree8" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="7"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1396, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree8" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree8" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree9" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="8"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1332, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree9" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree9" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree10" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="9"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1268, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree10" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree10" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree11" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="10"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1204, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree11" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree11" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree12" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="11"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1140, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree12" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree12" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree13" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="12"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1076, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree13" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree13" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree14" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="13"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -1012, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree14" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree14" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree15" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="14"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -948, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree15" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree15" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree16" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="15"]
+modulate = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+position = Vector2( -884, 288 )
+scale = Vector2( 0.25, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree16" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/DoubleTree16" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Right" parent="NegativeLayers/Layer_-9" index="2"]
+motion_offset = Vector2( -1306.8, 0 )
+
+[node name="Layer_-8" parent="NegativeLayers" index="2"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -1161.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-8" index="0"]
+position = Vector2( -248, 12.5 )
+motion_offset = Vector2( 1161.6, 0 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Node2D2" type="Node2D" parent="NegativeLayers/Layer_-8/Left" index="0"]
+modulate = Color( 0.537255, 0.537255, 0.537255, 1 )
+position = Vector2( -1468, 259.5 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="0"]
+texture = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="1"]
+position = Vector2( 64, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="2"]
+position = Vector2( 128, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="3"]
+position = Vector2( 176, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="4"]
+position = Vector2( 224, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="5"]
+position = Vector2( 288, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite7" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="6"]
+position = Vector2( 336, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite8" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="7"]
+position = Vector2( 400, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite9" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="8"]
+position = Vector2( 480, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite10" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="9"]
+position = Vector2( 544, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite11" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="10"]
+position = Vector2( 624, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite12" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="11"]
+position = Vector2( 688, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite13" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="12"]
+position = Vector2( 752, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite14" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="13"]
+position = Vector2( 816, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite15" type="Sprite" parent="NegativeLayers/Layer_-8/Left/Node2D2" index="14"]
+position = Vector2( 816, 0 )
+texture = SubResource( 2 )
+
+[node name="Right" parent="NegativeLayers/Layer_-8" index="2"]
+motion_offset = Vector2( -1161.6, 0 )
+
+[node name="Layer_-7" parent="NegativeLayers" index="3"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -1016.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-7" index="0"]
+motion_offset = Vector2( 1016.4, 0 )
+
+[node name="Node2D" type="Node2D" parent="NegativeLayers/Layer_-7/Left" index="0"]
+position = Vector2( -1716, 288 )
+
+[node name="DoubleTree5" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="0"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 0, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree5" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree5" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree6" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="1"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 64, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree6" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree6" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree7" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="2"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 128, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree7" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree7" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree8" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="3"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 192, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree8" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree8" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree9" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="4"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 256, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree9" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree9" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree10" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="5"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 320, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree10" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree10" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree11" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="6"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 384, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree11" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree11" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree18" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="7"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 448, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree18" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree18" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree12" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="8"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 512, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree12" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree12" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree13" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="9"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 576, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree13" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree13" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree14" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="10"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 640.001, -6.10352e-05 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree14" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree14" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree15" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="11"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 704.001, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree15" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree15" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree16" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="12"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 768.001, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree16" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree16" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree17" type="Node2D" parent="NegativeLayers/Layer_-7/Left/Node2D" index="13"]
+modulate = Color( 0.380392, 0.380392, 0.380392, 1 )
+position = Vector2( 832.001, 0.727112 )
+scale = Vector2( 0.465801, 0.465801 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree17" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Left/Node2D/DoubleTree17" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Right" parent="NegativeLayers/Layer_-7" index="2"]
+motion_offset = Vector2( -1016.4, 0 )
+
+[node name="Layer_-6" parent="NegativeLayers" index="4"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -871.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-6" index="0"]
+motion_offset = Vector2( 871.2, 0 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Node2D" type="Node2D" parent="NegativeLayers/Layer_-6/Left" index="0"]
+position = Vector2( -1692, 296 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="0"]
+texture = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="1"]
+position = Vector2( 56, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="2"]
+position = Vector2( 96, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="3"]
+position = Vector2( 144, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="4"]
+position = Vector2( 184, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="5"]
+position = Vector2( 216, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite7" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="6"]
+position = Vector2( 248, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite8" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="7"]
+position = Vector2( 288, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite9" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="8"]
+position = Vector2( 328, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite10" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="9"]
+position = Vector2( 360, 0 )
+texture = SubResource( 2 )
+
+[node name="Sprite11" type="Sprite" parent="NegativeLayers/Layer_-6/Left/Node2D" index="10"]
+position = Vector2( 376, 0 )
+texture = SubResource( 2 )
+
+[node name="Right" parent="NegativeLayers/Layer_-6" index="2"]
+motion_offset = Vector2( -871.2, 0 )
+
+[node name="Layer_-5" parent="NegativeLayers" index="5"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -726, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-5" index="0"]
+motion_offset = Vector2( 726, 0 )
+
+[node name="DoubleTree" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="0"]
+position = Vector2( -1876, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree3" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="1"]
+position = Vector2( -1748, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree3" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree3" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree5" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="2"]
+position = Vector2( -1620, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree5" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree5" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree6" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="3"]
+position = Vector2( -1492, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree6" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree6" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree8" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="4"]
+position = Vector2( -1364, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree8" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree8" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree9" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="5"]
+position = Vector2( -1236, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree9" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree9" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree10" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="6"]
+position = Vector2( -1108, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree10" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree10" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree13" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="7"]
+position = Vector2( -980, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree13" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree13" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="DoubleTree12" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="8"]
+position = Vector2( -852, 480 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree12" index="0"]
+position = Vector2( 6.9201, -159.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/DoubleTree12" index="1"]
+position = Vector2( 6.92014, -455.219 )
+scale = Vector2( 8.46214, 8.46214 )
+texture = SubResource( 1 )
+
+[node name="Right" parent="NegativeLayers/Layer_-5" index="2"]
+motion_offset = Vector2( -726, 0 )
+
+[node name="Layer_-4" parent="NegativeLayers" index="6"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -580.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-4" index="0"]
+motion_offset = Vector2( 580.8, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-4" index="2"]
+motion_offset = Vector2( -580.8, 0 )
+
+[node name="Layer_-3" parent="NegativeLayers" index="7"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -435.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-3" index="0"]
+motion_offset = Vector2( 435.6, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-3" index="2"]
+motion_offset = Vector2( -435.6, 0 )
+
+[node name="Layer_-2" parent="NegativeLayers" index="8"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -290.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-2" index="0"]
+motion_offset = Vector2( 290.4, 0 )
+
+[node name="BigTreeBushes" type="Node2D" parent="NegativeLayers/Layer_-2/Center" index="0"]
+position = Vector2( 152, -61 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="0"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 88.5, -156 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="1"]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 88.5, -112 )
+scale = Vector2( 3.83491, 3.83491 )
+texture = SubResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="2"]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( -219.5, -248 )
+rotation = 1.57079
+scale = Vector2( 3.83491, 3.83491 )
+texture = SubResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="3"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( 88.5, -80 )
+scale = Vector2( 2.67457, 2.67457 )
+texture = SubResource( 3 )
+
+[node name="Sprite6" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="4"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( -255.5, -256 )
+rotation = 1.57079
+scale = Vector2( 2.67457, 2.67457 )
+texture = SubResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="5"]
+position = Vector2( 88.5, -44.5 )
+scale = Vector2( 1.52619, 1.52619 )
+texture = SubResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="6"]
+position = Vector2( -291.5, -272 )
+rotation = 1.57079
+scale = Vector2( 1.52619, 1.52619 )
+texture = SubResource( 3 )
+
+[node name="Sprite8" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="7"]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 405.523, -248 )
+rotation = 4.71238
+scale = Vector2( 3.83491, 3.83491 )
+texture = SubResource( 3 )
+
+[node name="Sprite9" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="8"]
+modulate = Color( 0.556863, 0.556863, 0.556863, 1 )
+position = Vector2( 369.523, -256 )
+rotation = 4.71238
+scale = Vector2( 2.67457, 2.67457 )
+texture = SubResource( 3 )
+
+[node name="Sprite10" type="Sprite" parent="NegativeLayers/Layer_-2/Center/BigTreeBushes" index="9"]
+position = Vector2( 333.523, -272 )
+rotation = 4.71238
+scale = Vector2( 1.52619, 1.52619 )
+texture = SubResource( 3 )
+
+[node name="Right" parent="NegativeLayers/Layer_-2" index="2"]
+motion_offset = Vector2( -290.4, 0 )
+
+[node name="Layer_-1" parent="NegativeLayers" index="9"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( -145.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-1" index="0"]
+motion_offset = Vector2( 145.2, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-1" index="2"]
+motion_offset = Vector2( -145.2, 0 )
+
+[node name="BackgroundGreenBushes" type="Node2D" parent="MainLayer" index="0"]
+position = Vector2( 8, 4.5 )
+
+[node name="Sprite11" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="0"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 588, 392 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite12" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="1"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 944, 400 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite13" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="2"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 1373.91, 329.455 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite14" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="3"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 1580, 218 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite15" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="4"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 1920.04, 340.5 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite16" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="5"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 2008, 262 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite19" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="6"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 1960, 99.7728 )
+rotation = 3.14159
+scale = Vector2( 5.7987, 5.7987 )
+texture = SubResource( 3 )
+
+[node name="Sprite17" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="7"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 2392, 202.561 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="Sprite18" type="Sprite" parent="MainLayer/BackgroundGreenBushes" index="8"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 2856, 206.85 )
+scale = Vector2( 5.39753, 5.39753 )
+texture = SubResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="MainLayer/Main_TileMaps" index="0"]
+visible = false
+modulate = Color( 1, 0.258824, 0, 0.737255 )
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 256, 256 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 256, 0, 0, 256, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 65535, 0, 524290, 0, 0, 524290, 1, 0, 524290, 2, 0, 524290, 3, 0, 524290, 4, 0, 524290, 5, 0, 524290, 6, 0, 524290, 7, 0, 524290, 8, 0, 524290, 9, 0, 524290, 10, 0, 524290, 11, 0, 524290, 12, 0, 524290, 13, 0, 524290, 14, 0, 524290, 131071, 0, 524290, 65536, 0, 524290, 65537, 0, 524290, 65538, 0, 524290, 65539, 0, 524290, 65540, 0, 524290, 65541, 0, 524290, 65542, 0, 524290, 65543, 0, 524290, 65544, 0, 524290, 65545, 0, 524290, 65546, 0, 524290, 65547, 0, 524290, 65548, 0, 524290, 65549, 0, 524290, 65550, 0, 524290 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Main" parent="MainLayer/Main_TileMaps" index="1"]
+tile_data = PoolIntArray( -589765, 4, 1900544, -589764, 4, 1835009, -589763, 4, 1835009, -524285, 3, 393216, -524284, 3, 393218, -524238, 3, 393216, -524237, 3, 393218, -524228, 4, 1835009, -524227, 4, 1835009, -524226, 4, 1835010, -524218, 3, 393216, -524217, 3, 393218, -524198, 3, 393216, -524197, 3, 393218, -458749, 3, 65538, -458748, 3, 65539, -458702, 3, 65538, -458701, 3, 65539, -458694, 4, 1900545, -458693, 4, 1900544, -458692, 4, 1835009, -458691, 4, 1835009, -458682, 3, 65538, -458681, 3, 65539, -458662, 3, 65538, -458661, 3, 65539, -393213, 3, 65538, -393212, 3, 65539, -393166, 3, 65538, -393165, 3, 65539, -393156, 4, 1835009, -393155, 4, 1835009, -393154, 4, 1835010, -393153, 4, 1835011, -393146, 3, 65538, -393145, 3, 65539, -393126, 3, 65538, -393125, 3, 65539, -327677, 3, 65538, -327676, 3, 65539, -327630, 3, 65538, -327629, 3, 65539, -327623, 4, 1900545, -327622, 4, 1900545, -327621, 4, 1900544, -327620, 4, 1835009, -327619, 4, 1835009, -327610, 3, 65538, -327609, 3, 65539, -327590, 3, 65538, -327589, 3, 65539, -262141, 3, 65538, -262140, 3, 65539, -262094, 3, 65538, -262093, 3, 65539, -262084, 4, 1835009, -262083, 4, 1835009, -262082, 4, 1835010, -262081, 4, 1835011, -262080, 4, 1835011, -262075, 4, 1900544, -262074, 3, 65538, -262073, 3, 65539, -262054, 3, 65538, -262053, 3, 65539, -196605, 3, 65538, -196604, 3, 65539, -196558, 3, 65538, -196557, 3, 65539, -196556, 4, 1835010, -196548, 4, 1835009, -196547, 4, 1835009, -196538, 3, 65538, -196537, 3, 65539, -196518, 3, 65538, -196517, 3, 65539, -131069, 3, 65538, -131068, 3, 65539, -131022, 3, 65538, -131021, 3, 65539, -131014, 4, 1900545, -131013, 3, 262144, -131012, 3, 262145, -131011, 3, 262145, -131010, 3, 262146, -131009, 4, 1835010, -131002, 3, 65538, -131001, 3, 65539, -130982, 3, 65538, -130981, 3, 65539, -65533, 3, 65538, -65532, 3, 327683, -65531, 3, 393217, -65530, 3, 393217, -65529, 3, 393217, -65528, 3, 393217, -65527, 3, 393217, -65526, 3, 393217, -65525, 3, 393217, -65524, 3, 393217, -65523, 3, 393217, -65522, 3, 393217, -65521, 3, 393217, -65520, 3, 393217, -65519, 3, 393217, -65518, 3, 393217, -65517, 3, 393217, -65516, 3, 393217, -65515, 3, 393217, -65514, 3, 393217, -65513, 3, 393217, -65512, 3, 393217, -65511, 3, 393217, -65510, 3, 393217, -65509, 3, 393217, -65508, 3, 393217, -65507, 3, 393217, -65506, 3, 393217, -65505, 3, 393217, -65504, 3, 393217, -65503, 3, 393217, -65502, 3, 393217, -65501, 3, 393217, -65500, 3, 393217, -65499, 3, 393217, -65498, 3, 393217, -65497, 3, 393217, -65496, 3, 393217, -65495, 3, 393217, -65494, 3, 393217, -65493, 3, 393217, -65492, 3, 393217, -65491, 3, 393217, -65490, 3, 393217, -65489, 3, 393217, -65488, 3, 393217, -65487, 3, 393217, -65486, 3, 327682, -65485, 3, 327683, -65484, 3, 393217, -65483, 3, 393217, -65482, 3, 393218, -65470, 4, 1900544, -65469, 3, 393216, -65468, 3, 393217, -65467, 3, 393217, -65466, 3, 327682, -65465, 3, 327683, -65464, 3, 393217, -65463, 3, 393217, -65462, 3, 393217, -65461, 3, 393217, -65460, 3, 393217, -65459, 3, 393217, -65458, 3, 393217, -65457, 3, 393217, -65456, 3, 393217, -65455, 3, 393217, -65454, 3, 393217, -65453, 3, 393217, -65452, 3, 393217, -65451, 3, 393217, -65450, 3, 393217, -65449, 3, 393217, -65448, 3, 393217, -65447, 3, 393217, -65446, 3, 327682, -65445, 3, 327683, -65444, 3, 393217, -65443, 3, 393218, -65439, 3, 393216, -65438, 3, 393217, -65437, 3, 393217, -65436, 3, 393217, -65435, 3, 393217, -65434, 3, 393217, -65433, 3, 393217, -65432, 3, 393217, -65431, 3, 393217, -65430, 3, 393217, -65429, 3, 393217, -65428, 3, 393217, -65427, 3, 393217, -65426, 3, 393217, -65425, 3, 393217, -65424, 3, 393217, -65423, 3, 393217, -65422, 3, 393217, -65421, 3, 393217, -65420, 3, 393217, -65419, 3, 393218, 3, 3, 131074, 4, 3, 327681, 5, 3, 1, 6, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 1, 10, 3, 1, 11, 3, 1, 12, 3, 1, 13, 3, 1, 14, 3, 1, 15, 3, 1, 16, 3, 327680, 17, 3, 65537, 18, 3, 327681, 19, 3, 1, 20, 3, 1, 21, 3, 1, 22, 3, 1, 23, 3, 1, 24, 3, 1, 25, 3, 1, 26, 3, 1, 27, 3, 1, 28, 3, 1, 29, 3, 1, 30, 3, 1, 31, 3, 327680, 32, 3, 65537, 33, 3, 65537, 34, 3, 65537, 35, 3, 65537, 36, 3, 65537, 37, 3, 327681, 38, 3, 1, 39, 3, 1, 40, 3, 1, 41, 3, 1, 42, 3, 1, 43, 3, 1, 44, 3, 1, 45, 3, 1, 46, 3, 1, 47, 3, 1, 48, 3, 1, 49, 3, 1, 50, 3, 1, 51, 3, 327680, 52, 3, 65537, 53, 3, 65537, 54, 3, 131073, 55, 4, 1835010, 57, 3, 262144, 58, 3, 262146, 61, 4, 1900544, 62, 3, 196608, 64, 4, 1900545, 65, 3, 196608, 67, 3, 131074, 68, 3, 65537, 69, 3, 65537, 70, 3, 327681, 71, 3, 1, 72, 3, 1, 73, 3, 1, 74, 3, 1, 75, 3, 1, 76, 3, 1, 77, 3, 327680, 78, 3, 65537, 79, 3, 65537, 80, 3, 65537, 81, 3, 65537, 82, 3, 65537, 83, 3, 65537, 84, 3, 327681, 85, 3, 1, 86, 3, 1, 87, 3, 327680, 88, 3, 65537, 89, 3, 65537, 90, 3, 327681, 91, 3, 327680, 92, 3, 65537, 93, 3, 131073, 96, 3, 393216, 97, 3, 327682, 98, 3, 1, 99, 3, 1, 100, 3, 1, 101, 3, 1, 102, 3, 1, 103, 3, 1, 104, 3, 1, 105, 3, 1, 106, 3, 1, 107, 3, 1, 108, 3, 1, 109, 3, 1, 110, 3, 1, 111, 3, 1, 112, 3, 1, 113, 3, 1, 114, 3, 1, 115, 3, 1, 116, 3, 1, 117, 3, 65539, 65540, 3, 131074, 65541, 3, 65537, 65542, 3, 65537, 65543, 3, 327681, 65544, 3, 1, 65545, 3, 1, 65546, 3, 1, 65547, 3, 1, 65548, 3, 1, 65549, 3, 1, 65550, 3, 1, 65551, 3, 1, 65552, 3, 65539, 65554, 3, 131074, 65555, 3, 65537, 65556, 3, 327681, 65557, 3, 1, 65558, 3, 1, 65559, 3, 1, 65560, 3, 1, 65561, 3, 327680, 65562, 3, 65537, 65563, 3, 65537, 65564, 3, 327681, 65565, 3, 1, 65566, 3, 1, 65567, 3, 65539, 65573, 3, 131074, 65574, 3, 65537, 65575, 3, 327681, 65576, 3, 1, 65577, 3, 1, 65578, 3, 1, 65579, 3, 1, 65580, 3, 327680, 65581, 3, 65537, 65582, 3, 65537, 65583, 3, 65537, 65584, 3, 65537, 65585, 3, 65537, 65586, 3, 65537, 65587, 3, 131073, 65596, 3, 196608, 65606, 3, 131074, 65607, 3, 65537, 65608, 3, 65537, 65609, 3, 65537, 65610, 3, 65537, 65611, 3, 65537, 65612, 3, 65537, 65613, 3, 131073, 65620, 3, 131074, 65621, 3, 65537, 65622, 3, 65537, 65623, 3, 131073, 65626, 3, 131074, 65627, 3, 131073, 65631, 3, 393216, 65632, 3, 327682, 65633, 3, 1, 65634, 3, 1, 65635, 3, 1, 65636, 3, 1, 65637, 3, 1, 65638, 3, 1, 65639, 3, 1, 65640, 3, 1, 65641, 3, 1, 65642, 3, 1, 65643, 3, 1, 65644, 3, 1, 65645, 3, 1, 65646, 3, 1, 65647, 3, 1, 65648, 3, 1, 65649, 3, 1, 65650, 3, 1, 65651, 3, 1, 65652, 3, 1, 65653, 3, 65539, 131079, 3, 131074, 131080, 3, 327681, 131081, 3, 1, 131082, 3, 1, 131083, 3, 1, 131084, 3, 1, 131085, 3, 1, 131086, 3, 1, 131087, 3, 1, 131088, 3, 65539, 131092, 3, 65538, 131093, 3, 1, 131094, 3, 1, 131095, 3, 1, 131096, 3, 327680, 131097, 3, 131073, 131100, 3, 131074, 131101, 3, 327681, 131102, 3, 1, 131103, 3, 327683, 131104, 3, 393217, 131105, 3, 393218, 131111, 3, 65538, 131112, 3, 1, 131113, 3, 327680, 131114, 3, 65537, 131115, 3, 65537, 131116, 3, 131073, 131126, 4, 1900545, 131127, 3, 262144, 131128, 3, 262146, 131129, 4, 1835010, 131134, 4, 1900544, 131135, 3, 262144, 131136, 3, 262145, 131137, 3, 262146, 131151, 3, 393216, 131152, 3, 393217, 131153, 3, 393217, 131154, 3, 393218, 131165, 3, 393216, 131166, 3, 393217, 131167, 3, 327682, 131168, 3, 1, 131169, 3, 1, 131170, 3, 1, 131171, 3, 1, 131172, 3, 1, 131173, 3, 1, 131174, 3, 1, 131175, 3, 1, 131176, 3, 1, 131177, 3, 1, 131178, 3, 1, 131179, 3, 1, 131180, 3, 1, 131181, 3, 1, 131182, 3, 1, 131183, 3, 1, 131184, 3, 1, 131185, 3, 1, 131186, 3, 1, 131187, 3, 1, 131188, 3, 1, 131189, 3, 65539, 196616, 3, 131074, 196617, 3, 327681, 196618, 3, 1, 196619, 3, 1, 196620, 3, 1, 196621, 3, 1, 196622, 3, 1, 196623, 3, 1, 196624, 3, 327683, 196625, 3, 393217, 196626, 3, 393218, 196628, 3, 131074, 196629, 3, 65537, 196630, 3, 327681, 196631, 3, 1, 196632, 3, 65539, 196637, 3, 65538, 196638, 3, 1, 196639, 3, 1, 196640, 3, 1, 196641, 3, 327683, 196642, 3, 393217, 196643, 3, 393218, 196645, 3, 393216, 196646, 3, 393217, 196647, 3, 327682, 196648, 3, 327680, 196649, 3, 131073, 196654, 3, 393216, 196655, 3, 393217, 196656, 3, 393217, 196657, 3, 393217, 196658, 3, 393217, 196659, 3, 393218, 196666, 4, 1900545, 196667, 3, 262144, 196668, 3, 262146, 196678, 3, 393216, 196679, 3, 393217, 196680, 3, 393217, 196681, 3, 393218, 196685, 3, 393216, 196686, 3, 393217, 196687, 3, 327682, 196688, 3, 1, 196689, 3, 1, 196690, 3, 327683, 196691, 3, 393217, 196692, 3, 393217, 196693, 3, 393217, 196694, 3, 393217, 196695, 3, 393217, 196696, 3, 393217, 196697, 3, 393217, 196698, 3, 393217, 196699, 3, 393217, 196700, 3, 393217, 196701, 3, 327682, 196702, 3, 1, 196703, 3, 1, 196704, 3, 1, 196705, 3, 1, 196706, 3, 1, 196707, 3, 1, 196708, 3, 1, 196709, 3, 1, 196710, 3, 1, 196711, 3, 1, 196712, 3, 1, 196713, 3, 1, 196714, 3, 1, 196715, 3, 1, 196716, 3, 1, 196717, 3, 1, 196718, 3, 1, 196719, 3, 1, 196720, 3, 1, 196721, 3, 1, 196722, 3, 1, 196723, 3, 1, 196724, 3, 1, 196725, 3, 65539, 262153, 3, 131074, 262154, 3, 65537, 262155, 3, 327681, 262156, 3, 1, 262157, 3, 1, 262158, 3, 1, 262159, 3, 1, 262160, 3, 1, 262161, 3, 1, 262162, 3, 65539, 262166, 3, 131074, 262167, 3, 327681, 262168, 3, 327683, 262169, 3, 393217, 262170, 3, 393217, 262171, 3, 393217, 262172, 3, 393217, 262173, 3, 327682, 262174, 3, 327680, 262175, 3, 65537, 262176, 3, 65537, 262177, 3, 65537, 262178, 3, 327681, 262179, 3, 327683, 262180, 3, 393217, 262181, 3, 327682, 262182, 3, 327680, 262183, 3, 65537, 262184, 3, 131073, 262187, 3, 393216, 262188, 3, 393217, 262189, 3, 393217, 262190, 3, 327682, 262191, 3, 1, 262192, 3, 1, 262193, 3, 1, 262194, 3, 1, 262195, 3, 327683, 262196, 3, 393217, 262197, 3, 393217, 262198, 3, 393218, 262211, 3, 393216, 262212, 3, 393217, 262213, 3, 393217, 262214, 3, 327682, 262215, 3, 1, 262216, 3, 327680, 262217, 3, 131073, 262220, 3, 393216, 262221, 3, 327682, 262222, 3, 1, 262223, 3, 1, 262224, 3, 1, 262225, 3, 1, 262226, 3, 1, 262227, 3, 1, 262228, 3, 1, 262229, 3, 1, 262230, 3, 1, 262231, 3, 1, 262232, 3, 1, 262233, 3, 1, 262234, 3, 1, 262235, 3, 1, 262236, 3, 1, 262237, 3, 1, 262238, 3, 1, 262239, 3, 1, 262240, 3, 1, 262241, 3, 1, 262242, 3, 1, 262243, 3, 1, 262244, 3, 1, 262245, 3, 1, 262246, 3, 1, 262247, 3, 1, 262248, 3, 1, 262249, 3, 1, 262250, 3, 1, 262251, 3, 1, 262252, 3, 1, 262253, 3, 1, 262254, 3, 1, 262255, 3, 1, 262256, 3, 1, 262257, 3, 1, 262258, 3, 1, 262259, 3, 1, 262260, 3, 1, 262261, 3, 65539, 327691, 3, 131074, 327692, 3, 65537, 327693, 3, 65537, 327694, 3, 327681, 327695, 3, 327680, 327696, 3, 65537, 327697, 3, 327681, 327698, 3, 327683, 327699, 3, 393217, 327700, 3, 393218, 327703, 3, 131074, 327704, 3, 327681, 327705, 3, 1, 327706, 3, 327680, 327707, 3, 65537, 327708, 3, 65537, 327709, 3, 65537, 327710, 3, 131073, 327714, 3, 131074, 327715, 3, 65537, 327716, 3, 65537, 327717, 3, 65537, 327718, 3, 131073, 327722, 3, 393216, 327723, 3, 327682, 327724, 3, 1, 327725, 3, 327680, 327726, 3, 65537, 327727, 3, 65537, 327728, 3, 327681, 327729, 3, 1, 327730, 3, 1, 327731, 3, 1, 327732, 3, 1, 327733, 3, 1, 327734, 3, 327683, 327735, 3, 393217, 327736, 3, 393217, 327737, 3, 393217, 327738, 3, 393217, 327739, 3, 393217, 327740, 3, 393217, 327741, 3, 393217, 327742, 3, 393217, 327743, 3, 393217, 327744, 3, 393217, 327745, 3, 393217, 327746, 3, 393217, 327747, 3, 327682, 327748, 3, 1, 327749, 3, 1, 327750, 3, 327680, 327751, 3, 65537, 327752, 3, 131073, 327755, 3, 393216, 327756, 3, 327682, 327757, 3, 1, 327758, 3, 1, 327759, 3, 1, 327760, 3, 1, 327761, 3, 1, 327762, 3, 1, 327763, 3, 1, 327764, 3, 1, 327765, 3, 1, 327766, 3, 1, 327767, 3, 1, 327768, 3, 1, 327769, 3, 1, 327770, 3, 1, 327771, 3, 1, 327772, 3, 1, 327773, 3, 1, 327774, 3, 1, 327775, 3, 1, 327776, 3, 1, 327777, 3, 1, 327778, 3, 1, 327779, 3, 1, 327780, 3, 1, 327781, 3, 1, 327782, 3, 1, 327783, 3, 1, 327784, 3, 1, 327785, 3, 1, 327786, 3, 1, 327787, 3, 1, 327788, 3, 1, 327789, 3, 1, 327790, 3, 1, 327791, 3, 1, 327792, 3, 1, 327793, 3, 1, 327794, 3, 1, 327795, 3, 1, 327796, 3, 1, 327797, 3, 65539, 393230, 3, 131074, 393231, 3, 131073, 393233, 3, 131074, 393234, 3, 65537, 393235, 3, 65537, 393236, 3, 131073, 393240, 3, 131074, 393241, 3, 65537, 393242, 3, 131073, 393257, 3, 393216, 393258, 3, 327682, 393259, 3, 1, 393260, 3, 327680, 393261, 3, 131073, 393264, 3, 65538, 393265, 3, 1, 393266, 3, 1, 393267, 3, 1, 393268, 3, 327680, 393269, 3, 65537, 393270, 3, 65537, 393271, 3, 65537, 393272, 3, 65537, 393273, 3, 65537, 393274, 3, 65537, 393275, 3, 65537, 393276, 3, 65537, 393277, 3, 327681, 393278, 3, 1, 393279, 3, 1, 393280, 3, 1, 393281, 3, 1, 393282, 3, 1, 393283, 3, 1, 393284, 3, 327680, 393285, 3, 65537, 393286, 3, 131073, 393290, 3, 393216, 393291, 3, 327682, 393292, 3, 1, 393293, 3, 1, 393294, 3, 1, 393295, 3, 1, 393296, 3, 1, 393297, 3, 1, 393298, 3, 1, 393299, 3, 1, 393300, 3, 1, 393301, 3, 1, 393302, 3, 1, 393303, 3, 1, 393304, 3, 1, 393305, 3, 1, 393306, 3, 1, 393307, 3, 1, 393308, 3, 1, 393309, 3, 1, 393310, 3, 1, 393311, 3, 1, 393312, 3, 1, 393313, 3, 1, 393314, 3, 1, 393315, 3, 1, 393316, 3, 1, 393317, 3, 1, 393318, 3, 1, 393319, 3, 1, 393320, 3, 1, 393321, 3, 1, 393322, 3, 1, 393323, 3, 1, 393324, 3, 1, 393325, 3, 1, 393326, 3, 1, 393327, 3, 1, 393328, 3, 1, 393329, 3, 1, 393330, 3, 1, 393331, 3, 1, 393332, 3, 1, 393333, 3, 65539, 458757, 3, 393216, 458758, 3, 393218, 458790, 3, 393216, 458791, 3, 393217, 458792, 3, 393217, 458793, 3, 327682, 458794, 3, 1, 458795, 3, 1, 458796, 3, 65539, 458800, 3, 65538, 458801, 3, 1, 458802, 3, 1, 458803, 3, 1, 458804, 3, 65539, 458813, 3, 65538, 458814, 3, 1, 458815, 3, 1, 458816, 3, 327680, 458817, 3, 65537, 458818, 3, 65537, 458819, 3, 65537, 458820, 3, 131073, 458824, 3, 393216, 458825, 3, 393217, 458826, 3, 327682, 458827, 3, 1, 458828, 3, 1, 458829, 3, 1, 458830, 3, 1, 458831, 3, 1, 458832, 3, 1, 458833, 3, 1, 458834, 3, 1, 458835, 3, 1, 458836, 3, 1, 458837, 3, 1, 458838, 3, 1, 458839, 3, 1, 458840, 3, 1, 458841, 3, 1, 458842, 3, 1, 458843, 3, 1, 458844, 3, 1, 458845, 3, 1, 458846, 3, 1, 458847, 3, 1, 458848, 3, 1, 458849, 3, 1, 458850, 3, 1, 458851, 3, 1, 458852, 3, 1, 458853, 3, 1, 458854, 3, 1, 458855, 3, 1, 458856, 3, 1, 458857, 3, 1, 458858, 3, 1, 458859, 3, 1, 458860, 3, 1, 458861, 3, 1, 458862, 3, 1, 458863, 3, 1, 458864, 3, 1, 458865, 3, 1, 458866, 3, 1, 458867, 3, 1, 458868, 3, 1, 458869, 3, 65539, 524291, 3, 393216, 524292, 3, 393217, 524293, 3, 327682, 524294, 3, 327683, 524295, 3, 393217, 524296, 3, 393217, 524297, 3, 393217, 524298, 3, 393217, 524299, 3, 393217, 524300, 3, 393217, 524301, 3, 393217, 524302, 3, 393217, 524303, 3, 393217, 524304, 3, 393217, 524305, 3, 393217, 524306, 3, 393218, 524312, 3, 393216, 524313, 3, 393217, 524314, 3, 393218, 524318, 3, 393216, 524319, 3, 393217, 524320, 3, 393218, 524325, 3, 393216, 524326, 3, 327682, 524327, 3, 1, 524328, 3, 1, 524329, 3, 1, 524330, 3, 1, 524331, 3, 1, 524332, 3, 327683, 524333, 3, 393217, 524334, 3, 393218, 524336, 3, 65538, 524337, 3, 1, 524338, 3, 1, 524339, 3, 1, 524340, 3, 65539, 524348, 3, 393216, 524349, 3, 327682, 524350, 3, 1, 524351, 3, 327680, 524352, 3, 131073, 524358, 3, 393216, 524359, 3, 393217, 524360, 3, 327682, 524361, 3, 1, 524362, 3, 1, 524363, 3, 1, 524364, 3, 1, 524365, 3, 1, 524366, 3, 1, 524367, 3, 1, 524368, 3, 1, 524369, 3, 1, 524370, 3, 1, 524371, 3, 1, 524372, 3, 1, 524373, 3, 1, 524374, 3, 1, 524375, 3, 1, 524376, 3, 1, 524377, 3, 1, 524378, 3, 1, 524379, 3, 1, 524380, 3, 1, 524381, 3, 1, 524382, 3, 1, 524383, 3, 1, 524384, 3, 1, 524385, 3, 1, 524386, 3, 1, 524387, 3, 1, 524388, 3, 1, 524389, 3, 1, 524390, 3, 1, 524391, 3, 1, 524392, 3, 1, 524393, 3, 1, 524394, 3, 1, 524395, 3, 1, 524396, 3, 1, 524397, 3, 1, 524398, 3, 1, 524399, 3, 1, 524400, 3, 1, 524401, 3, 1, 524402, 3, 1, 524403, 3, 1, 524404, 3, 1, 524405, 3, 65539, 655357, 3, 393216, 655358, 3, 393217, 655359, 3, 393217, 589824, 3, 393217, 589825, 3, 393217, 589826, 3, 393217, 589827, 3, 327682, 589828, 3, 1, 589829, 3, 1, 589830, 3, 1, 589831, 3, 1, 589832, 3, 1, 589833, 3, 1, 589834, 3, 1, 589835, 3, 1, 589836, 3, 1, 589837, 3, 1, 589838, 3, 1, 589839, 3, 1, 589840, 3, 1, 589841, 3, 1, 589842, 3, 327683, 589843, 3, 393217, 589844, 3, 393217, 589845, 3, 393217, 589846, 3, 393217, 589847, 3, 393217, 589848, 3, 327682, 589849, 3, 1, 589850, 3, 327683, 589851, 3, 393217, 589852, 3, 393217, 589853, 3, 393217, 589854, 3, 327682, 589855, 3, 1, 589856, 3, 327683, 589857, 3, 393218, 589860, 3, 393216, 589861, 3, 327682, 589862, 3, 1, 589863, 3, 327680, 589864, 3, 65537, 589865, 3, 65537, 589866, 3, 65537, 589867, 3, 65537, 589868, 3, 65537, 589869, 3, 327681, 589870, 3, 327683, 589871, 3, 393217, 589872, 3, 327682, 589873, 3, 1, 589874, 3, 1, 589875, 3, 1, 589876, 3, 327683, 589877, 3, 393217, 589878, 3, 393217, 589879, 3, 393218, 589882, 3, 393216, 589883, 3, 393217, 589884, 3, 327682, 589885, 3, 1, 589886, 3, 327680, 589887, 3, 131073, 589890, 3, 393216, 589891, 3, 393217, 589892, 3, 393217, 589893, 3, 393217, 589894, 3, 327682, 589895, 3, 1, 589896, 3, 1, 589897, 3, 1, 589898, 3, 1, 589899, 3, 1, 589900, 3, 1, 589901, 3, 1, 589902, 3, 1, 589903, 3, 1, 589904, 3, 1, 589905, 3, 1, 589906, 3, 1, 589907, 3, 1, 589908, 3, 1, 589909, 3, 1, 589910, 3, 1, 589911, 3, 1, 589912, 3, 1, 589913, 3, 1, 589914, 3, 1, 589915, 3, 1, 589916, 3, 1, 589917, 3, 1, 589918, 3, 1, 589919, 3, 1, 589920, 3, 1, 589921, 3, 1, 589922, 3, 1, 589923, 3, 1, 589924, 3, 1, 589925, 3, 1, 589926, 3, 1, 589927, 3, 1, 589928, 3, 1, 589929, 3, 1, 589930, 3, 1, 589931, 3, 1, 589932, 3, 1, 589933, 3, 1, 589934, 3, 1, 589935, 3, 1, 589936, 3, 1, 589937, 3, 1, 589938, 3, 1, 589939, 3, 1, 589940, 3, 1, 589941, 3, 65539, 720893, 3, 65538, 720894, 3, 1, 720895, 3, 1, 655360, 3, 1, 655361, 3, 1, 655362, 3, 1, 655363, 3, 1, 655364, 3, 1, 655365, 3, 1, 655366, 3, 1, 655367, 3, 1, 655368, 3, 1, 655369, 3, 1, 655370, 3, 1, 655371, 3, 1, 655372, 3, 1, 655373, 3, 1, 655374, 3, 1, 655375, 3, 1, 655376, 3, 1, 655377, 3, 1, 655378, 3, 1, 655379, 3, 327680, 655380, 3, 65537, 655381, 3, 65537, 655382, 3, 327681, 655383, 3, 1, 655384, 3, 1, 655385, 3, 327680, 655386, 3, 65537, 655387, 3, 65537, 655388, 3, 65537, 655389, 3, 327681, 655390, 3, 1, 655391, 3, 1, 655392, 3, 327680, 655393, 3, 131073, 655396, 3, 65538, 655397, 3, 1, 655398, 3, 1, 655399, 3, 65539, 655405, 3, 131074, 655406, 3, 65537, 655407, 3, 65537, 655408, 3, 65537, 655409, 3, 65537, 655410, 3, 65537, 655411, 3, 65537, 655412, 3, 327681, 655413, 3, 1, 655414, 3, 327680, 655415, 3, 131073, 655418, 3, 131074, 655419, 3, 65537, 655420, 3, 65537, 655421, 3, 65537, 655422, 3, 131073, 655425, 3, 393216, 655426, 3, 327682, 655427, 3, 1, 655428, 3, 1, 655429, 3, 1, 655430, 3, 1, 655431, 3, 1, 655432, 3, 1, 655433, 3, 1, 655434, 3, 1, 655435, 3, 1, 655436, 3, 1, 655437, 3, 1, 655438, 3, 1, 655439, 3, 1, 655440, 3, 1, 655441, 3, 1, 655442, 3, 1, 655443, 3, 1, 655444, 3, 1, 655445, 3, 1, 655446, 3, 1, 655447, 3, 1, 655448, 3, 1, 655449, 3, 1, 655450, 3, 1, 655451, 3, 1, 655452, 3, 1, 655453, 3, 1, 655454, 3, 1, 655455, 3, 1, 655456, 3, 1, 655457, 3, 1, 655458, 3, 1, 655459, 3, 1, 655460, 3, 1, 655461, 3, 1, 655462, 3, 1, 655463, 3, 1, 655464, 3, 1, 655465, 3, 1, 655466, 3, 1, 655467, 3, 1, 655468, 3, 1, 655469, 3, 1, 655470, 3, 1, 655471, 3, 1, 655472, 3, 1, 655473, 3, 1, 655474, 3, 1, 655475, 3, 1, 655476, 3, 1, 655477, 3, 65539, 786429, 3, 65538, 786430, 3, 1, 786431, 3, 1, 720896, 3, 1, 720897, 3, 1, 720898, 3, 1, 720899, 3, 1, 720900, 3, 1, 720901, 3, 1, 720902, 3, 1, 720903, 3, 1, 720904, 3, 1, 720905, 3, 1, 720906, 3, 1, 720907, 3, 1, 720908, 3, 1, 720909, 3, 1, 720910, 3, 1, 720911, 3, 1, 720912, 3, 1, 720913, 3, 1, 720914, 3, 327680, 720915, 3, 131073, 720918, 3, 65538, 720919, 3, 327680, 720920, 3, 65537, 720921, 3, 131073, 720925, 3, 65538, 720926, 3, 1, 720927, 3, 327680, 720928, 3, 131073, 720931, 3, 393216, 720932, 3, 327682, 720933, 3, 1, 720934, 3, 327680, 720935, 3, 131073, 720937, 3, 393216, 720938, 3, 393218, 720948, 3, 131074, 720949, 3, 65537, 720950, 3, 131073, 720960, 3, 393216, 720961, 3, 327682, 720962, 3, 1, 720963, 3, 1, 720964, 3, 1, 720965, 3, 1, 720966, 3, 1, 720967, 3, 1, 720968, 3, 1, 720969, 3, 1, 720970, 3, 1, 720971, 3, 1, 720972, 3, 1, 720973, 3, 1, 720974, 3, 1, 720975, 3, 1, 720976, 3, 1, 720977, 3, 1, 720978, 3, 1, 720979, 3, 1, 720980, 3, 1, 720981, 3, 1, 720982, 3, 1, 720983, 3, 1, 720984, 3, 1, 720985, 3, 1, 720986, 3, 1, 720987, 3, 1, 720988, 3, 1, 720989, 3, 1, 720990, 3, 1, 720991, 3, 1, 720992, 3, 1, 720993, 3, 1, 720994, 3, 1, 720995, 3, 1, 720996, 3, 1, 720997, 3, 1, 720998, 3, 1, 720999, 3, 1, 721000, 3, 1, 721001, 3, 1, 721002, 3, 1, 721003, 3, 1, 721004, 3, 1, 721005, 3, 1, 721006, 3, 1, 721007, 3, 1, 721008, 3, 1, 721009, 3, 1, 721010, 3, 1, 721011, 3, 1, 721012, 3, 1, 721013, 3, 65539, 851965, 3, 65538, 851966, 3, 1, 851967, 3, 1, 786432, 3, 1, 786433, 3, 1, 786434, 3, 1, 786435, 3, 1, 786436, 3, 1, 786437, 3, 1, 786438, 3, 1, 786439, 3, 1, 786440, 3, 1, 786441, 3, 1, 786442, 3, 1, 786443, 3, 1, 786444, 3, 1, 786445, 3, 1, 786446, 3, 1, 786447, 3, 1, 786448, 3, 1, 786449, 3, 327680, 786450, 3, 131073, 786453, 3, 393216, 786454, 3, 327682, 786455, 3, 65539, 786461, 3, 65538, 786462, 3, 1, 786463, 3, 65539, 786467, 3, 131074, 786468, 3, 65537, 786469, 3, 65537, 786470, 3, 131073, 786473, 3, 131074, 786474, 3, 131073, 786478, 3, 393216, 786479, 3, 393217, 786480, 3, 393218, 786492, 3, 393216, 786493, 3, 393217, 786494, 3, 393217, 786495, 3, 393217, 786496, 3, 327682, 786497, 3, 1, 786498, 3, 1, 786499, 3, 1, 786500, 3, 1, 786501, 3, 1, 786502, 3, 1, 786503, 3, 1, 786504, 3, 1, 786505, 3, 1, 786506, 3, 1, 786507, 3, 1, 786508, 3, 1, 786509, 3, 1, 786510, 3, 1, 786511, 3, 1, 786512, 3, 1, 786513, 3, 1, 786514, 3, 1, 786515, 3, 1, 786516, 3, 1, 786517, 3, 1, 786518, 3, 1, 786519, 3, 1, 786520, 3, 1, 786521, 3, 1, 786522, 3, 1, 786523, 3, 1, 786524, 3, 1, 786525, 3, 1, 786526, 3, 1, 786527, 3, 1, 786528, 3, 1, 786529, 3, 1, 786530, 3, 1, 786531, 3, 1, 786532, 3, 1, 786533, 3, 1, 786534, 3, 1, 786535, 3, 1, 786536, 3, 1, 786537, 3, 1, 786538, 3, 1, 786539, 3, 1, 786540, 3, 1, 786541, 3, 1, 786542, 3, 1, 786543, 3, 1, 786544, 3, 1, 786545, 3, 1, 786546, 3, 1, 786547, 3, 1, 786548, 3, 1, 786549, 3, 65539, 917501, 3, 65538, 917502, 3, 1, 917503, 3, 1, 851968, 3, 1, 851969, 3, 1, 851970, 3, 1, 851971, 3, 1, 851972, 3, 1, 851973, 3, 1, 851974, 3, 1, 851975, 3, 1, 851976, 3, 1, 851977, 3, 1, 851978, 3, 1, 851979, 3, 1, 851980, 3, 1, 851981, 3, 1, 851982, 3, 1, 851983, 3, 1, 851984, 3, 1, 851985, 3, 65539, 851988, 3, 393216, 851989, 3, 327682, 851990, 3, 1, 851991, 3, 327683, 851992, 3, 393217, 851993, 3, 393217, 851994, 3, 393217, 851995, 3, 393218, 851997, 3, 65538, 851998, 3, 1, 851999, 3, 65539, 852013, 3, 393216, 852014, 3, 327682, 852015, 3, 1, 852016, 3, 327683, 852017, 3, 393218, 852020, 3, 393216, 852021, 3, 393217, 852022, 3, 393218, 852027, 3, 393216, 852028, 3, 327682, 852029, 3, 1, 852030, 3, 1, 852031, 3, 1, 852032, 3, 1, 852033, 3, 1, 852034, 3, 1, 852035, 3, 1, 852036, 3, 1, 852037, 3, 1, 852038, 3, 1, 852039, 3, 1, 852040, 3, 1, 852041, 3, 1, 852042, 3, 1, 852043, 3, 1, 852044, 3, 1, 852045, 3, 1, 852046, 3, 1, 852047, 3, 1, 852048, 3, 1, 852049, 3, 1, 852050, 3, 1, 852051, 3, 1, 852052, 3, 1, 852053, 3, 1, 852054, 3, 1, 852055, 3, 1, 852056, 3, 1, 852057, 3, 1, 852058, 3, 1, 852059, 3, 1, 852060, 3, 1, 852061, 3, 1, 852062, 3, 1, 852063, 3, 1, 852064, 3, 1, 852065, 3, 1, 852066, 3, 1, 852067, 3, 1, 852068, 3, 1, 852069, 3, 1, 852070, 3, 1, 852071, 3, 1, 852072, 3, 1, 852073, 3, 1, 852074, 3, 1, 852075, 3, 1, 852076, 3, 1, 852077, 3, 1, 852078, 3, 1, 852079, 3, 1, 852080, 3, 1, 852081, 3, 1, 852082, 3, 1, 852083, 3, 1, 852084, 3, 1, 852085, 3, 65539, 983037, 3, 65538, 983038, 3, 1, 983039, 3, 1, 917504, 3, 1, 917505, 3, 1, 917506, 3, 1, 917507, 3, 1, 917508, 3, 1, 917509, 3, 1, 917510, 3, 1, 917511, 3, 1, 917512, 3, 1, 917513, 3, 1, 917514, 3, 1, 917515, 3, 1, 917516, 3, 1, 917517, 3, 1, 917518, 3, 1, 917519, 3, 1, 917520, 3, 1, 917521, 3, 327683, 917522, 3, 393217, 917523, 3, 393217, 917524, 3, 327682, 917525, 3, 1, 917526, 3, 1, 917527, 3, 1, 917528, 3, 1, 917529, 3, 1, 917530, 3, 1, 917531, 3, 327683, 917532, 3, 393217, 917533, 3, 327682, 917534, 3, 1, 917535, 3, 327683, 917536, 3, 393217, 917537, 3, 393217, 917538, 3, 393217, 917539, 3, 393217, 917540, 3, 393217, 917541, 3, 393217, 917542, 3, 393217, 917543, 3, 393217, 917544, 3, 393217, 917545, 3, 393217, 917546, 3, 393217, 917547, 3, 393217, 917548, 3, 393217, 917549, 3, 327682, 917550, 3, 1, 917551, 3, 1, 917552, 3, 1, 917553, 3, 327683, 917554, 3, 393217, 917555, 3, 393217, 917556, 3, 327682, 917557, 3, 1, 917558, 3, 327683, 917559, 3, 393217, 917560, 3, 393217, 917561, 3, 393217, 917562, 3, 393217, 917563, 3, 327682, 917564, 3, 1, 917565, 3, 1, 917566, 3, 1, 917567, 3, 1, 917568, 3, 1, 917569, 3, 1, 917570, 3, 1, 917571, 3, 1, 917572, 3, 1, 917573, 3, 1, 917574, 3, 1, 917575, 3, 1, 917576, 3, 1, 917577, 3, 1, 917578, 3, 1, 917579, 3, 1, 917580, 3, 1, 917581, 3, 1, 917582, 3, 1, 917583, 3, 1, 917584, 3, 1, 917585, 3, 1, 917586, 3, 1, 917587, 3, 1, 917588, 3, 1, 917589, 3, 1, 917590, 3, 1, 917591, 3, 1, 917592, 3, 1, 917593, 3, 1, 917594, 3, 1, 917595, 3, 1, 917596, 3, 1, 917597, 3, 1, 917598, 3, 1, 917599, 3, 1, 917600, 3, 1, 917601, 3, 1, 917602, 3, 1, 917603, 3, 1, 917604, 3, 1, 917605, 3, 1, 917606, 3, 1, 917607, 3, 1, 917608, 3, 1, 917609, 3, 1, 917610, 3, 1, 917611, 3, 1, 917612, 3, 1, 917613, 3, 1, 917614, 3, 1, 917615, 3, 1, 917616, 3, 1, 917617, 3, 1, 917618, 3, 1, 917619, 3, 1, 917620, 3, 1, 917621, 3, 65539, 1048573, 3, 131074, 1048574, 3, 65537, 1048575, 3, 65537, 983040, 3, 65537, 983041, 3, 65537, 983042, 3, 65537, 983043, 3, 65537, 983044, 3, 65537, 983045, 3, 65537, 983046, 3, 65537, 983047, 3, 65537, 983048, 3, 65537, 983049, 3, 65537, 983050, 3, 65537, 983051, 3, 65537, 983052, 3, 65537, 983053, 3, 65537, 983054, 3, 65537, 983055, 3, 65537, 983056, 3, 65537, 983057, 3, 65537, 983058, 3, 65537, 983059, 3, 65537, 983060, 3, 65537, 983061, 3, 65537, 983062, 3, 65537, 983063, 3, 65537, 983064, 3, 65537, 983065, 3, 65537, 983066, 3, 65537, 983067, 3, 65537, 983068, 3, 65537, 983069, 3, 65537, 983070, 3, 65537, 983071, 3, 65537, 983072, 3, 65537, 983073, 3, 65537, 983074, 3, 65537, 983075, 3, 65537, 983076, 3, 65537, 983077, 3, 65537, 983078, 3, 65537, 983079, 3, 65537, 983080, 3, 65537, 983081, 3, 65537, 983082, 3, 65537, 983083, 3, 65537, 983084, 3, 65537, 983085, 3, 65537, 983086, 3, 65537, 983087, 3, 65537, 983088, 3, 65537, 983089, 3, 65537, 983090, 3, 65537, 983091, 3, 65537, 983092, 3, 65537, 983093, 3, 65537, 983094, 3, 65537, 983095, 3, 65537, 983096, 3, 65537, 983097, 3, 65537, 983098, 3, 65537, 983099, 3, 65537, 983100, 3, 65537, 983101, 3, 65537, 983102, 3, 65537, 983103, 3, 65537, 983104, 3, 65537, 983105, 3, 65537, 983106, 3, 65537, 983107, 3, 65537, 983108, 3, 65537, 983109, 3, 65537, 983110, 3, 65537, 983111, 3, 65537, 983112, 3, 65537, 983113, 3, 65537, 983114, 3, 65537, 983115, 3, 65537, 983116, 3, 65537, 983117, 3, 65537, 983118, 3, 65537, 983119, 3, 65537, 983120, 3, 65537, 983121, 3, 65537, 983122, 3, 65537, 983123, 3, 65537, 983124, 3, 65537, 983125, 3, 65537, 983126, 3, 65537, 983127, 3, 65537, 983128, 3, 65537, 983129, 3, 65537, 983130, 3, 65537, 983131, 3, 65537, 983132, 3, 65537, 983133, 3, 65537, 983134, 3, 65537, 983135, 3, 65537, 983136, 3, 65537, 983137, 3, 65537, 983138, 3, 65537, 983139, 3, 65537, 983140, 3, 65537, 983141, 3, 65537, 983142, 3, 65537, 983143, 3, 65537, 983144, 3, 65537, 983145, 3, 65537, 983146, 3, 65537, 983147, 3, 65537, 983148, 3, 65537, 983149, 3, 65537, 983150, 3, 65537, 983151, 3, 65537, 983152, 3, 65537, 983153, 3, 65537, 983154, 3, 65537, 983155, 3, 65537, 983156, 3, 65537, 983157, 3, 131073 )
+
+[node name="MapBounds" parent="MainLayer" index="2"]
+anchor_left = -0.16
+anchor_top = -2.13333
+anchor_right = 8.26
+anchor_bottom = 2.0
+
+[node name="LevelExit" parent="MainLayer/Exits" index="0" instance=ExtResource( 3 )]
+position = Vector2( 3272, -32 )
+
+[node name="SmallPlant" parent="MainLayer/Plants" index="0" instance=ExtResource( 12 )]
+position = Vector2( 3120, -32 )
+
+[node name="SmallPlant2" parent="MainLayer/Plants" index="1" instance=ExtResource( 12 )]
+position = Vector2( 3136, -32 )
+
+[node name="SmallPlant3" parent="MainLayer/Plants" index="2" instance=ExtResource( 12 )]
+position = Vector2( 3176, -32 )
+
+[node name="SmallPlant4" parent="MainLayer/Plants" index="3" instance=ExtResource( 12 )]
+position = Vector2( 3184, -32 )
+
+[node name="SmallPlant5" parent="MainLayer/Plants" index="4" instance=ExtResource( 12 )]
+position = Vector2( 3232, -32 )
+
+[node name="SmallPlant6" parent="MainLayer/Plants" index="5" instance=ExtResource( 12 )]
+position = Vector2( 3256, -32 )
+
+[node name="SmallPlant7" parent="MainLayer/Plants" index="6" instance=ExtResource( 12 )]
+position = Vector2( 3280, -32 )
+
+[node name="SmallPlant8" parent="MainLayer/Plants" index="7" instance=ExtResource( 12 )]
+position = Vector2( 3296, -32 )
+
+[node name="SmallPlant9" parent="MainLayer/Plants" index="8" instance=ExtResource( 12 )]
+position = Vector2( 3096, 0 )
+
+[node name="SmallPlant10" parent="MainLayer/Plants" index="9" instance=ExtResource( 12 )]
+position = Vector2( 3088, 0 )
+
+[node name="SmallPlant11" parent="MainLayer/Plants" index="10" instance=ExtResource( 12 )]
+position = Vector2( 3056, 32 )
+
+[node name="SmallPlant12" parent="MainLayer/Plants" index="11" instance=ExtResource( 12 )]
+position = Vector2( 2992, -32 )
+
+[node name="SmallPlant13" parent="MainLayer/Plants" index="12" instance=ExtResource( 12 )]
+position = Vector2( 2984, -32 )
+
+[node name="SmallPlant14" parent="MainLayer/Plants" index="13" instance=ExtResource( 12 )]
+position = Vector2( 2960, -32 )
+
+[node name="SmallPlant15" parent="MainLayer/Plants" index="14" instance=ExtResource( 12 )]
+position = Vector2( 3048, 32 )
+
+[node name="Slime" parent="MainLayer/Actors/Slimes" index="0" instance=ExtResource( 8 )]
+position = Vector2( 128, 256 )
+
+[node name="Slime2" parent="MainLayer/Actors/Slimes" index="1" instance=ExtResource( 8 )]
+position = Vector2( 288, 255 )
+
+[node name="Slime3" parent="MainLayer/Actors/Slimes" index="2" instance=ExtResource( 8 )]
+position = Vector2( 624, 141 )
+
+[node name="Slime4" parent="MainLayer/Actors/Slimes" index="3" instance=ExtResource( 8 )]
+position = Vector2( 864, 112 )
+
+[node name="Slime5" parent="MainLayer/Actors/Slimes" index="4" instance=ExtResource( 8 )]
+position = Vector2( 852, 408 )
+
+[node name="Slime6" parent="MainLayer/Actors/Slimes" index="5" instance=ExtResource( 8 )]
+position = Vector2( 692, 275.5 )
+
+[node name="Slime7" parent="MainLayer/Actors/Slimes" index="6" instance=ExtResource( 8 )]
+position = Vector2( 1248, 223 )
+
+[node name="Slime8" parent="MainLayer/Actors/Slimes" index="7" instance=ExtResource( 8 )]
+position = Vector2( 1088, 435.5 )
+
+[node name="Slime9" parent="MainLayer/Actors/Slimes" index="8" instance=ExtResource( 8 )]
+position = Vector2( 1344, 344 )
+
+[node name="Slime10" parent="MainLayer/Actors/Slimes" index="9" instance=ExtResource( 8 )]
+position = Vector2( 1624, 403.5 )
+
+[node name="Slime11" parent="MainLayer/Actors/Slimes" index="10" instance=ExtResource( 8 )]
+position = Vector2( 1880, 272 )
+
+[node name="Slime12" parent="MainLayer/Actors/Slimes" index="11" instance=ExtResource( 8 )]
+position = Vector2( 1424, 120 )
+
+[node name="Slime13" parent="MainLayer/Actors/Slimes" index="12" instance=ExtResource( 8 )]
+position = Vector2( 2320, 88 )
+
+[node name="Slime14" parent="MainLayer/Actors/Slimes" index="13" instance=ExtResource( 8 )]
+position = Vector2( 2576, 56 )
+
+[node name="Slime15" parent="MainLayer/Actors/Slimes" index="14" instance=ExtResource( 8 )]
+position = Vector2( 2840, 86 )
+
+[node name="HoppingSlime" parent="MainLayer/Actors/HoppingSlimes" index="0" instance=ExtResource( 10 )]
+position = Vector2( 1800, 160 )
+
+[node name="HoppingSlime2" parent="MainLayer/Actors/HoppingSlimes" index="1" instance=ExtResource( 10 )]
+position = Vector2( 1944, 160 )
+
+[node name="HoppingSlime3" parent="MainLayer/Actors/HoppingSlimes" index="2" instance=ExtResource( 10 )]
+position = Vector2( 2096, 160 )
+
+[node name="Bat" parent="MainLayer/Actors/Bats" index="0" instance=ExtResource( 9 )]
+position = Vector2( 824, 218 )
+
+[node name="Bat2" parent="MainLayer/Actors/Bats" index="1" instance=ExtResource( 9 )]
+position = Vector2( 856, 312 )
+
+[node name="Bat3" parent="MainLayer/Actors/Bats" index="2" instance=ExtResource( 9 )]
+position = Vector2( 1136, 235 )
+
+[node name="Bat4" parent="MainLayer/Actors/Bats" index="3" instance=ExtResource( 9 )]
+position = Vector2( 1344, 384 )
+
+[node name="Bat5" parent="MainLayer/Actors/Bats" index="4" instance=ExtResource( 9 )]
+position = Vector2( 1500, 223 )
+
+[node name="Bat6" parent="MainLayer/Actors/Bats" index="5" instance=ExtResource( 9 )]
+position = Vector2( 2320, 283.5 )
+
+[node name="Bat7" parent="MainLayer/Actors/Bats" index="6" instance=ExtResource( 9 )]
+position = Vector2( 2112, 368 )
+
+[node name="Bat8" parent="MainLayer/Actors/Bats" index="7" instance=ExtResource( 9 )]
+position = Vector2( 1832, -176 )
+
+[node name="Bat9" parent="MainLayer/Actors/Bats" index="8" instance=ExtResource( 9 )]
+position = Vector2( 1864, -240 )
+
+[node name="Bat10" parent="MainLayer/Actors/Bats" index="9" instance=ExtResource( 9 )]
+position = Vector2( 1904, -304 )
+
+[node name="Bat11" parent="MainLayer/Actors/Bats" index="10" instance=ExtResource( 9 )]
+position = Vector2( 2000, -272 )
+
+[node name="Bat12" parent="MainLayer/Actors/Bats" index="11" instance=ExtResource( 9 )]
+position = Vector2( 2032, -208 )
+
+[node name="Bat13" parent="MainLayer/Actors/Bats" index="12" instance=ExtResource( 9 )]
+position = Vector2( 2064, -144 )
+
+[node name="Bone" parent="MainLayer/Bones" index="0" instance=ExtResource( 5 )]
+position = Vector2( 1904, -304 )
+
+[node name="Bone2" parent="MainLayer/Bones" index="1" instance=ExtResource( 5 )]
+position = Vector2( 2000, -272 )
+
+[node name="Bone3" parent="MainLayer/Bones" index="2" instance=ExtResource( 5 )]
+position = Vector2( 1864, -240 )
+
+[node name="Bone4" parent="MainLayer/Bones" index="3" instance=ExtResource( 5 )]
+position = Vector2( 2032, -208 )
+
+[node name="Bone6" parent="MainLayer/Bones" index="4" instance=ExtResource( 5 )]
+position = Vector2( 2064, -144 )
+
+[node name="Bone5" parent="MainLayer/Bones" index="5" instance=ExtResource( 5 )]
+position = Vector2( 1832, -176 )
+
+[node name="Bonez" parent="MainLayer" index="13"]
+position = Vector2( 0, 288 )
+
+[node name="Camera2D" parent="MainLayer/Bonez" index="12"]
+limit_left = -64
+limit_top = -511
+limit_right = 3304
+limit_bottom = 480
+
+[node name="Tree" parent="MainLayer" index="14" instance=ExtResource( 4 )]
+position = Vector2( 1957, -64 )
+scale = Vector2( 9.18705, 9.18705 )
+
+[node name="TileMap_Foreground" type="TileMap" parent="MainLayer" index="15"]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -196549, 4, 2293760, -196548, 4, 2293760, -196547, 4, 2293760, -196546, 4, 2293760, -131067, 4, 2293760, -131066, 4, 2293760, -131065, 4, 2293760, -131064, 4, 2293760, -131063, 4, 2293760, -131062, 4, 2293760, -131061, 4, 2293760, -131060, 4, 2293760, -131059, 4, 2293760, -131058, 4, 2293760, -131057, 4, 2293760, -131056, 4, 2293760, -131055, 4, 2293760, -131054, 4, 2293760, -131053, 4, 2293760, -131052, 4, 2293760, -131051, 4, 2293760, -131050, 4, 2293760, -131049, 4, 2293760, -131048, 4, 2293760, -131047, 4, 2293760, -131046, 4, 2293760, -131045, 4, 2293760, -131044, 4, 2293760, -131043, 4, 2293760, -131042, 4, 2293760, -131041, 4, 2293760, -131040, 4, 2293760, -131039, 4, 2293760, -131038, 4, 2293760, -131037, 4, 2293760, -131036, 4, 2293760, -131035, 4, 2293760, -131034, 4, 2293760, -131033, 4, 2293760, -131032, 4, 2293760, -131031, 4, 2293760, -131030, 4, 2293760, -131029, 4, 2293760, -131028, 4, 2293760, -131027, 4, 2293760, -131026, 4, 2293760, -131025, 4, 2293760, -131024, 4, 2293760, -131023, 4, 2293760, -131020, 4, 2293760, -131019, 4, 2293760, -131018, 4, 2293760, -131005, 4, 2293760, -131004, 4, 2293760, -131003, 4, 2293760, -130980, 4, 2293760, -130979, 4, 2293760, -130975, 4, 2293760, -130974, 4, 2293760, -130973, 4, 2293760, -130972, 4, 2293760, -130971, 4, 2293760, -130970, 4, 2293760, -130969, 4, 2293760, -130968, 4, 2293760, -130967, 4, 2293760, -130966, 4, 2293760, -130965, 4, 2293760, -130964, 4, 2293760, -130963, 4, 2293760, -130962, 4, 2293760, -130961, 4, 2293760, -130960, 4, 2293760, -130959, 4, 2293760, -130958, 4, 2293760, -130957, 4, 2293760, -65479, 4, 2293760, -65478, 4, 2293760, -65474, 4, 2293760, -65471, 4, 2293760, -65440, 4, 2293760, 60, 4, 2293760, 95, 4, 2293760, 65568, 4, 2293760, 65569, 4, 2293760, 65591, 4, 2293760, 65592, 4, 2293760, 65599, 4, 2293760, 65600, 4, 2293760, 65601, 4, 2293760, 65615, 4, 2293760, 65616, 4, 2293760, 65617, 4, 2293760, 65618, 4, 2293760, 65629, 4, 2293760, 65630, 4, 2293760, 131089, 4, 2293760, 131090, 4, 2293760, 131106, 4, 2293760, 131107, 4, 2293760, 131109, 4, 2293760, 131110, 4, 2293760, 131118, 4, 2293760, 131119, 4, 2293760, 131120, 4, 2293760, 131121, 4, 2293760, 131122, 4, 2293760, 131123, 4, 2293760, 131131, 4, 2293760, 131132, 4, 2293760, 131142, 4, 2293760, 131143, 4, 2293760, 131144, 4, 2293760, 131145, 4, 2293760, 131149, 4, 2293760, 131150, 4, 2293760, 131155, 4, 2293760, 131156, 4, 2293760, 131157, 4, 2293760, 131158, 4, 2293760, 131159, 4, 2293760, 131160, 4, 2293760, 131161, 4, 2293760, 131162, 4, 2293760, 131163, 4, 2293760, 131164, 4, 2293760, 196633, 4, 2293760, 196634, 4, 2293760, 196635, 4, 2293760, 196636, 4, 2293760, 196644, 4, 2293760, 196651, 4, 2293760, 196652, 4, 2293760, 196653, 4, 2293760, 196660, 4, 2293760, 196661, 4, 2293760, 196662, 4, 2293760, 196675, 4, 2293760, 196676, 4, 2293760, 196677, 4, 2293760, 196684, 4, 2293760, 262163, 4, 2293760, 262164, 4, 2293760, 262186, 4, 2293760, 262199, 4, 2293760, 262200, 4, 2293760, 262201, 4, 2293760, 262202, 4, 2293760, 262203, 4, 2293760, 262204, 4, 2293760, 262205, 4, 2293760, 262206, 4, 2293760, 262207, 4, 2293760, 262208, 4, 2293760, 262209, 4, 2293760, 262210, 4, 2293760, 262219, 4, 2293760, 327721, 4, 2293760, 327754, 4, 2293760, 393221, 4, 2293760, 393222, 4, 2293760, 393254, 4, 2293760, 393255, 4, 2293760, 393256, 4, 2293760, 393288, 4, 2293760, 393289, 4, 2293760, 458755, 4, 2293760, 458756, 4, 2293760, 458759, 4, 2293760, 458760, 4, 2293760, 458761, 4, 2293760, 458762, 4, 2293760, 458763, 4, 2293760, 458764, 4, 2293760, 458765, 4, 2293760, 458766, 4, 2293760, 458767, 4, 2293760, 458768, 4, 2293760, 458769, 4, 2293760, 458770, 4, 2293760, 458776, 4, 2293760, 458777, 4, 2293760, 458778, 4, 2293760, 458782, 4, 2293760, 458783, 4, 2293760, 458784, 4, 2293760, 458789, 4, 2293760, 458797, 4, 2293760, 458798, 4, 2293760, 458812, 4, 2293760, 458822, 4, 2293760, 458823, 4, 2293760, 589821, 4, 2293760, 589822, 4, 2293760, 589823, 4, 2293760, 524288, 4, 2293760, 524289, 4, 2293760, 524290, 4, 2293760, 524307, 4, 2293760, 524308, 4, 2293760, 524309, 4, 2293760, 524310, 4, 2293760, 524311, 4, 2293760, 524315, 4, 2293760, 524316, 4, 2293760, 524317, 4, 2293760, 524321, 4, 2293760, 524324, 4, 2293760, 524335, 4, 2293760, 524341, 4, 2293760, 524342, 4, 2293760, 524343, 4, 2293760, 524346, 4, 2293760, 524347, 4, 2293760, 524354, 4, 2293760, 524355, 4, 2293760, 524356, 4, 2293760, 524357, 4, 2293760, 589889, 4, 2293760, 655395, 4, 2293760, 655401, 4, 2293760, 655402, 4, 2293760, 655424, 4, 2293760, 720917, 4, 2293760, 720942, 4, 2293760, 720943, 4, 2293760, 720944, 4, 2293760, 720956, 4, 2293760, 720957, 4, 2293760, 720958, 4, 2293760, 720959, 4, 2293760, 786452, 4, 2293760, 786456, 4, 2293760, 786457, 4, 2293760, 786458, 4, 2293760, 786459, 4, 2293760, 786477, 4, 2293760, 786481, 4, 2293760, 786484, 4, 2293760, 786485, 4, 2293760, 786486, 4, 2293760, 786491, 4, 2293760, 851986, 4, 2293760, 851987, 4, 2293760, 851996, 4, 2293760, 852000, 4, 2293760, 852001, 4, 2293760, 852002, 4, 2293760, 852003, 4, 2293760, 852004, 4, 2293760, 852005, 4, 2293760, 852006, 4, 2293760, 852007, 4, 2293760, 852008, 4, 2293760, 852009, 4, 2293760, 852010, 4, 2293760, 852011, 4, 2293760, 852012, 4, 2293760, 852018, 4, 2293760, 852019, 4, 2293760, 852023, 4, 2293760, 852024, 4, 2293760, 852025, 4, 2293760, 852026, 4, 2293760 )
+
+[node name="SiloetteBushes" type="Node2D" parent="MainLayer" index="16"]
+modulate = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="MainLayer/SiloetteBushes" index="0"]
+position = Vector2( 348, 163 )
+rotation = -2.87979
+texture = SubResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="MainLayer/SiloetteBushes" index="1"]
+position = Vector2( 388, 179 )
+rotation = -2.87979
+texture = SubResource( 4 )
+
+[node name="Sprite322" type="Sprite" parent="MainLayer/SiloetteBushes" index="2"]
+position = Vector2( 388, 179 )
+rotation = -2.87979
+texture = SubResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="MainLayer/SiloetteBushes" index="3"]
+position = Vector2( 484.315, 207 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite323" type="Sprite" parent="MainLayer/SiloetteBushes" index="4"]
+position = Vector2( 448, 168 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite324" type="Sprite" parent="MainLayer/SiloetteBushes" index="5"]
+position = Vector2( 448, 168 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="MainLayer/SiloetteBushes" index="6"]
+position = Vector2( 576, 200 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="MainLayer/SiloetteBushes" index="7"]
+position = Vector2( 640, 200 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite6" type="Sprite" parent="MainLayer/SiloetteBushes" index="8"]
+position = Vector2( 632, 173 )
+texture = SubResource( 4 )
+
+[node name="Sprite7" type="Sprite" parent="MainLayer/SiloetteBushes" index="9"]
+position = Vector2( 584, 125 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="MainLayer/SiloetteBushes" index="10"]
+position = Vector2( 528, 125 )
+rotation = -1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite9" type="Sprite" parent="MainLayer/SiloetteBushes" index="11"]
+position = Vector2( 488, 157 )
+texture = SubResource( 4 )
+
+[node name="Sprite10" type="Sprite" parent="MainLayer/SiloetteBushes" index="12"]
+position = Vector2( 408, 128 )
+texture = SubResource( 4 )
+
+[node name="Sprite11" type="Sprite" parent="MainLayer/SiloetteBushes" index="13"]
+position = Vector2( 288, 112 )
+rotation = -1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite57" type="Sprite" parent="MainLayer/SiloetteBushes" index="14"]
+position = Vector2( 328, 272 )
+texture = SubResource( 4 )
+
+[node name="Sprite58" type="Sprite" parent="MainLayer/SiloetteBushes" index="15"]
+position = Vector2( 400, 272 )
+texture = SubResource( 4 )
+
+[node name="Sprite59" type="Sprite" parent="MainLayer/SiloetteBushes" index="16"]
+position = Vector2( 460, 280 )
+texture = SubResource( 4 )
+
+[node name="Sprite60" type="Sprite" parent="MainLayer/SiloetteBushes" index="17"]
+position = Vector2( 536, 272 )
+texture = SubResource( 4 )
+
+[node name="Sprite61" type="Sprite" parent="MainLayer/SiloetteBushes" index="18"]
+position = Vector2( 572, 280 )
+texture = SubResource( 4 )
+
+[node name="Sprite62" type="Sprite" parent="MainLayer/SiloetteBushes" index="19"]
+position = Vector2( 648, 312 )
+texture = SubResource( 4 )
+
+[node name="Sprite99" type="Sprite" parent="MainLayer/SiloetteBushes" index="20"]
+position = Vector2( 696, 332.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite100" type="Sprite" parent="MainLayer/SiloetteBushes" index="21"]
+position = Vector2( 600, 360 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite101" type="Sprite" parent="MainLayer/SiloetteBushes" index="22"]
+position = Vector2( 680, 416 )
+rotation = 5.49778
+texture = SubResource( 4 )
+
+[node name="Sprite102" type="Sprite" parent="MainLayer/SiloetteBushes" index="23"]
+position = Vector2( 624, 472 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite103" type="Sprite" parent="MainLayer/SiloetteBushes" index="24"]
+position = Vector2( 576, 480 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite104" type="Sprite" parent="MainLayer/SiloetteBushes" index="25"]
+position = Vector2( 748, 400 )
+rotation = 7.85397
+texture = SubResource( 4 )
+
+[node name="Sprite105" type="Sprite" parent="MainLayer/SiloetteBushes" index="26"]
+position = Vector2( 912, 332.5 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite106" type="Sprite" parent="MainLayer/SiloetteBushes" index="27"]
+position = Vector2( 824, 336 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite107" type="Sprite" parent="MainLayer/SiloetteBushes" index="28"]
+position = Vector2( 788, 368 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite108" type="Sprite" parent="MainLayer/SiloetteBushes" index="29"]
+position = Vector2( 720, 368 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite109" type="Sprite" parent="MainLayer/SiloetteBushes" index="30"]
+position = Vector2( 792, 440 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite110" type="Sprite" parent="MainLayer/SiloetteBushes" index="31"]
+position = Vector2( 852, 448 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite111" type="Sprite" parent="MainLayer/SiloetteBushes" index="32"]
+position = Vector2( 912, 448 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite112" type="Sprite" parent="MainLayer/SiloetteBushes" index="33"]
+position = Vector2( 944, 384 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite113" type="Sprite" parent="MainLayer/SiloetteBushes" index="34"]
+position = Vector2( 968, 346.231 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite114" type="Sprite" parent="MainLayer/SiloetteBushes" index="35"]
+position = Vector2( 1016, 332.5 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite115" type="Sprite" parent="MainLayer/SiloetteBushes" index="36"]
+position = Vector2( 992, 344 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite116" type="Sprite" parent="MainLayer/SiloetteBushes" index="37"]
+position = Vector2( 960, 448 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite117" type="Sprite" parent="MainLayer/SiloetteBushes" index="38"]
+position = Vector2( 952, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite118" type="Sprite" parent="MainLayer/SiloetteBushes" index="39"]
+position = Vector2( 848, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite119" type="Sprite" parent="MainLayer/SiloetteBushes" index="40"]
+position = Vector2( 760, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite120" type="Sprite" parent="MainLayer/SiloetteBushes" index="41"]
+position = Vector2( 704, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite121" type="Sprite" parent="MainLayer/SiloetteBushes" index="42"]
+position = Vector2( 720, 435.5 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite63" type="Sprite" parent="MainLayer/SiloetteBushes" index="43"]
+position = Vector2( 728, 312 )
+texture = SubResource( 4 )
+
+[node name="Sprite64" type="Sprite" parent="MainLayer/SiloetteBushes" index="44"]
+position = Vector2( 808, 304 )
+texture = SubResource( 4 )
+
+[node name="Sprite65" type="Sprite" parent="MainLayer/SiloetteBushes" index="45"]
+position = Vector2( 816, 275.5 )
+texture = SubResource( 4 )
+
+[node name="Sprite66" type="Sprite" parent="MainLayer/SiloetteBushes" index="46"]
+position = Vector2( 912, 304 )
+texture = SubResource( 4 )
+
+[node name="Sprite67" type="Sprite" parent="MainLayer/SiloetteBushes" index="47"]
+position = Vector2( 1064, 312 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite68" type="Sprite" parent="MainLayer/SiloetteBushes" index="48"]
+position = Vector2( 1032, 352 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite69" type="Sprite" parent="MainLayer/SiloetteBushes" index="49"]
+position = Vector2( 1000, 424 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite70" type="Sprite" parent="MainLayer/SiloetteBushes" index="50"]
+position = Vector2( 1048, 464 )
+texture = SubResource( 4 )
+
+[node name="Sprite71" type="Sprite" parent="MainLayer/SiloetteBushes" index="51"]
+position = Vector2( 1136, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite72" type="Sprite" parent="MainLayer/SiloetteBushes" index="52"]
+position = Vector2( 1272, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite300" type="Sprite" parent="MainLayer/SiloetteBushes" index="53"]
+position = Vector2( 1272, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite73" type="Sprite" parent="MainLayer/SiloetteBushes" index="54"]
+position = Vector2( 1192, 468.5 )
+texture = SubResource( 4 )
+
+[node name="Sprite301" type="Sprite" parent="MainLayer/SiloetteBushes" index="55"]
+position = Vector2( 1313.91, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite302" type="Sprite" parent="MainLayer/SiloetteBushes" index="56"]
+position = Vector2( 1313.91, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite74" type="Sprite" parent="MainLayer/SiloetteBushes" index="57"]
+position = Vector2( 1368, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite303" type="Sprite" parent="MainLayer/SiloetteBushes" index="58"]
+position = Vector2( 1240, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite304" type="Sprite" parent="MainLayer/SiloetteBushes" index="59"]
+position = Vector2( 1104, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite75" type="Sprite" parent="MainLayer/SiloetteBushes" index="60"]
+position = Vector2( 1440, 468.5 )
+texture = SubResource( 4 )
+
+[node name="Sprite76" type="Sprite" parent="MainLayer/SiloetteBushes" index="61"]
+position = Vector2( 1464, 448 )
+rotation = -0.785397
+texture = SubResource( 4 )
+
+[node name="Sprite77" type="Sprite" parent="MainLayer/SiloetteBushes" index="62"]
+position = Vector2( 1496, 408 )
+rotation = -0.785397
+texture = SubResource( 4 )
+
+[node name="Sprite78" type="Sprite" parent="MainLayer/SiloetteBushes" index="63"]
+position = Vector2( 1560, 400 )
+rotation = 0.523598
+texture = SubResource( 4 )
+
+[node name="Sprite79" type="Sprite" parent="MainLayer/SiloetteBushes" index="64"]
+position = Vector2( 1592, 472 )
+texture = SubResource( 4 )
+
+[node name="Sprite80" type="Sprite" parent="MainLayer/SiloetteBushes" index="65"]
+position = Vector2( 1696, 440 )
+texture = SubResource( 4 )
+
+[node name="Sprite81" type="Sprite" parent="MainLayer/SiloetteBushes" index="66"]
+position = Vector2( 1528, 440 )
+texture = SubResource( 4 )
+
+[node name="Sprite82" type="Sprite" parent="MainLayer/SiloetteBushes" index="67"]
+position = Vector2( 1520, 468.5 )
+texture = SubResource( 4 )
+
+[node name="Sprite83" type="Sprite" parent="MainLayer/SiloetteBushes" index="68"]
+position = Vector2( 1560, 480 )
+texture = SubResource( 4 )
+
+[node name="Sprite84" type="Sprite" parent="MainLayer/SiloetteBushes" index="69"]
+position = Vector2( 1336, 360 )
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite85" type="Sprite" parent="MainLayer/SiloetteBushes" index="70"]
+position = Vector2( 1352, 360 )
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite86" type="Sprite" parent="MainLayer/SiloetteBushes" index="71"]
+position = Vector2( 1368, 376 )
+rotation = 1.57079
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite87" type="Sprite" parent="MainLayer/SiloetteBushes" index="72"]
+position = Vector2( 1368, 392 )
+rotation = 1.57079
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite88" type="Sprite" parent="MainLayer/SiloetteBushes" index="73"]
+position = Vector2( 1352, 407 )
+rotation = 3.14159
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite89" type="Sprite" parent="MainLayer/SiloetteBushes" index="74"]
+position = Vector2( 1336, 411.5 )
+rotation = 3.14159
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite90" type="Sprite" parent="MainLayer/SiloetteBushes" index="75"]
+position = Vector2( 1320, 384 )
+rotation = 4.71238
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite91" type="Sprite" parent="MainLayer/SiloetteBushes" index="76"]
+position = Vector2( 1344, 384 )
+rotation = 4.71238
+scale = Vector2( 0.483125, 0.483125 )
+texture = SubResource( 4 )
+
+[node name="Sprite12" type="Sprite" parent="MainLayer/SiloetteBushes" index="77"]
+position = Vector2( 256, 48 )
+rotation = -1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite13" type="Sprite" parent="MainLayer/SiloetteBushes" index="78"]
+position = Vector2( 304, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite14" type="Sprite" parent="MainLayer/SiloetteBushes" index="79"]
+position = Vector2( 368, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite15" type="Sprite" parent="MainLayer/SiloetteBushes" index="80"]
+position = Vector2( 440, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite92" type="Sprite" parent="MainLayer/SiloetteBushes" index="81"]
+position = Vector2( 424, 105 )
+scale = Vector2( 2.07192, 1.81274 )
+texture = SubResource( 4 )
+
+[node name="Sprite93" type="Sprite" parent="MainLayer/SiloetteBushes" index="82"]
+position = Vector2( 424, 56 )
+scale = Vector2( 2.07192, 1.81274 )
+texture = SubResource( 4 )
+
+[node name="Sprite94" type="Sprite" parent="MainLayer/SiloetteBushes" index="83"]
+position = Vector2( 360, 40 )
+scale = Vector2( 2.07192, 1.81274 )
+texture = SubResource( 4 )
+
+[node name="Sprite95" type="Sprite" parent="MainLayer/SiloetteBushes" index="84"]
+position = Vector2( 296, 376 )
+rotation = -1.57079
+scale = Vector2( 2.07192, 1.81274 )
+texture = SubResource( 4 )
+
+[node name="Sprite96" type="Sprite" parent="MainLayer/SiloetteBushes" index="85"]
+position = Vector2( 288, 464 )
+rotation = -1.57079
+scale = Vector2( 2.07192, 1.81274 )
+texture = SubResource( 4 )
+
+[node name="Sprite97" type="Sprite" parent="MainLayer/SiloetteBushes" index="86"]
+position = Vector2( 480, 424 )
+rotation = -3.14159
+scale = Vector2( 2.46985, 4.57142 )
+texture = SubResource( 4 )
+
+[node name="Sprite98" type="Sprite" parent="MainLayer/SiloetteBushes" index="87"]
+position = Vector2( 400, 492.5 )
+rotation = -3.14159
+scale = Vector2( 2.46985, 4.57142 )
+texture = SubResource( 4 )
+
+[node name="Sprite16" type="Sprite" parent="MainLayer/SiloetteBushes" index="88"]
+position = Vector2( 504, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite17" type="Sprite" parent="MainLayer/SiloetteBushes" index="89"]
+position = Vector2( 504, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite18" type="Sprite" parent="MainLayer/SiloetteBushes" index="90"]
+position = Vector2( 572, 0 )
+texture = SubResource( 4 )
+
+[node name="Sprite19" type="Sprite" parent="MainLayer/SiloetteBushes" index="91"]
+position = Vector2( 520, 48 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite20" type="Sprite" parent="MainLayer/SiloetteBushes" index="92"]
+position = Vector2( 564, 8 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite21" type="Sprite" parent="MainLayer/SiloetteBushes" index="93"]
+position = Vector2( 608, 56 )
+rotation = 3.66519
+texture = SubResource( 4 )
+
+[node name="Sprite22" type="Sprite" parent="MainLayer/SiloetteBushes" index="94"]
+position = Vector2( 672, 120 )
+rotation = 3.66519
+texture = SubResource( 4 )
+
+[node name="Sprite23" type="Sprite" parent="MainLayer/SiloetteBushes" index="95"]
+position = Vector2( 736, 160 )
+rotation = 3.92699
+texture = SubResource( 4 )
+
+[node name="Sprite183" type="Sprite" parent="MainLayer/SiloetteBushes" index="96"]
+position = Vector2( 824, 48 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite184" type="Sprite" parent="MainLayer/SiloetteBushes" index="97"]
+position = Vector2( 904, 53.3369 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite185" type="Sprite" parent="MainLayer/SiloetteBushes" index="98"]
+position = Vector2( 928, 88 )
+rotation = 3.92699
+texture = SubResource( 4 )
+
+[node name="Sprite186" type="Sprite" parent="MainLayer/SiloetteBushes" index="99"]
+position = Vector2( 928, 141 )
+rotation = 6.02138
+texture = SubResource( 4 )
+
+[node name="Sprite187" type="Sprite" parent="MainLayer/SiloetteBushes" index="100"]
+position = Vector2( 876, 152 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite188" type="Sprite" parent="MainLayer/SiloetteBushes" index="101"]
+position = Vector2( 824, 147 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite189" type="Sprite" parent="MainLayer/SiloetteBushes" index="102"]
+position = Vector2( 784, 104 )
+rotation = 7.85397
+texture = SubResource( 4 )
+
+[node name="Sprite191" type="Sprite" parent="MainLayer/SiloetteBushes" index="103"]
+position = Vector2( 728, 112 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite192" type="Sprite" parent="MainLayer/SiloetteBushes" index="104"]
+position = Vector2( 736, 72 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite193" type="Sprite" parent="MainLayer/SiloetteBushes" index="105"]
+position = Vector2( 744, 28.5 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite194" type="Sprite" parent="MainLayer/SiloetteBushes" index="106"]
+position = Vector2( 696, 4.33693 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite195" type="Sprite" parent="MainLayer/SiloetteBushes" index="107"]
+position = Vector2( 648, 8.00002 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite196" type="Sprite" parent="MainLayer/SiloetteBushes" index="108"]
+position = Vector2( 656, 48 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite197" type="Sprite" parent="MainLayer/SiloetteBushes" index="109"]
+position = Vector2( 696, 53.3369 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite198" type="Sprite" parent="MainLayer/SiloetteBushes" index="110"]
+position = Vector2( 1128, 125 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite199" type="Sprite" parent="MainLayer/SiloetteBushes" index="111"]
+position = Vector2( 1088, 96 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite200" type="Sprite" parent="MainLayer/SiloetteBushes" index="112"]
+position = Vector2( 1008, 53.3369 )
+rotation = 7.59217
+texture = SubResource( 4 )
+
+[node name="Sprite201" type="Sprite" parent="MainLayer/SiloetteBushes" index="113"]
+position = Vector2( 1056, 16 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite202" type="Sprite" parent="MainLayer/SiloetteBushes" index="114"]
+position = Vector2( 1144, 32 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite203" type="Sprite" parent="MainLayer/SiloetteBushes" index="115"]
+position = Vector2( 1224, 53.3369 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite204" type="Sprite" parent="MainLayer/SiloetteBushes" index="116"]
+position = Vector2( 1272, 80 )
+rotation = 10.2102
+texture = SubResource( 4 )
+
+[node name="Sprite205" type="Sprite" parent="MainLayer/SiloetteBushes" index="117"]
+position = Vector2( 1192, 128 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite206" type="Sprite" parent="MainLayer/SiloetteBushes" index="118"]
+position = Vector2( 1244, 112 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite207" type="Sprite" parent="MainLayer/SiloetteBushes" index="119"]
+position = Vector2( 1032, 125 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite208" type="Sprite" parent="MainLayer/SiloetteBushes" index="120"]
+position = Vector2( 1016, 105 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite209" type="Sprite" parent="MainLayer/SiloetteBushes" index="121"]
+position = Vector2( 984, 88 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite210" type="Sprite" parent="MainLayer/SiloetteBushes" index="122"]
+position = Vector2( 960, 56 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite211" type="Sprite" parent="MainLayer/SiloetteBushes" index="123"]
+position = Vector2( 1088, 141 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite212" type="Sprite" parent="MainLayer/SiloetteBushes" index="124"]
+position = Vector2( 736, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite213" type="Sprite" parent="MainLayer/SiloetteBushes" index="125"]
+position = Vector2( 808, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite214" type="Sprite" parent="MainLayer/SiloetteBushes" index="126"]
+position = Vector2( 868, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite215" type="Sprite" parent="MainLayer/SiloetteBushes" index="127"]
+position = Vector2( 920, 8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite216" type="Sprite" parent="MainLayer/SiloetteBushes" index="128"]
+position = Vector2( 936, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite217" type="Sprite" parent="MainLayer/SiloetteBushes" index="129"]
+position = Vector2( 1016, -11.6631 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite218" type="Sprite" parent="MainLayer/SiloetteBushes" index="130"]
+position = Vector2( 1088, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite219" type="Sprite" parent="MainLayer/SiloetteBushes" index="131"]
+position = Vector2( 1184, -16 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite220" type="Sprite" parent="MainLayer/SiloetteBushes" index="132"]
+position = Vector2( 1232, 4.33687 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite221" type="Sprite" parent="MainLayer/SiloetteBushes" index="133"]
+position = Vector2( 1313.91, -16 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite222" type="Sprite" parent="MainLayer/SiloetteBushes" index="134"]
+position = Vector2( 1312, 28.5 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite224" type="Sprite" parent="MainLayer/SiloetteBushes" index="135"]
+position = Vector2( 1392, 40 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite225" type="Sprite" parent="MainLayer/SiloetteBushes" index="136"]
+position = Vector2( 1380.99, 8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite226" type="Sprite" parent="MainLayer/SiloetteBushes" index="137"]
+position = Vector2( 1400, -11.6631 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite227" type="Sprite" parent="MainLayer/SiloetteBushes" index="138"]
+position = Vector2( 1460, 8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite228" type="Sprite" parent="MainLayer/SiloetteBushes" index="139"]
+position = Vector2( 1512, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite229" type="Sprite" parent="MainLayer/SiloetteBushes" index="140"]
+position = Vector2( 1544, 8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite230" type="Sprite" parent="MainLayer/SiloetteBushes" index="141"]
+position = Vector2( 1596, -8 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite231" type="Sprite" parent="MainLayer/SiloetteBushes" index="142"]
+position = Vector2( 1652, -24 )
+rotation = 14.1371
+texture = SubResource( 4 )
+
+[node name="Sprite232" type="Sprite" parent="MainLayer/SiloetteBushes" index="143"]
+position = Vector2( 1652, -80 )
+rotation = 14.1371
+texture = SubResource( 4 )
+
+[node name="Sprite233" type="Sprite" parent="MainLayer/SiloetteBushes" index="144"]
+position = Vector2( 1640, -136 )
+rotation = 14.1371
+texture = SubResource( 4 )
+
+[node name="Sprite234" type="Sprite" parent="MainLayer/SiloetteBushes" index="145"]
+position = Vector2( 1648, -176 )
+rotation = 14.1371
+texture = SubResource( 4 )
+
+[node name="Sprite235" type="Sprite" parent="MainLayer/SiloetteBushes" index="146"]
+position = Vector2( 1648, -216 )
+rotation = 14.1371
+texture = SubResource( 4 )
+
+[node name="Sprite236" type="Sprite" parent="MainLayer/SiloetteBushes" index="147"]
+position = Vector2( 1584, -256 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite237" type="Sprite" parent="MainLayer/SiloetteBushes" index="148"]
+position = Vector2( 1512, -256 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite238" type="Sprite" parent="MainLayer/SiloetteBushes" index="149"]
+position = Vector2( 1476, -128 )
+rotation = 14.1371
+scale = Vector2( 1.97039, -5.30923 )
+texture = SubResource( 4 )
+
+[node name="Sprite239" type="Sprite" parent="MainLayer/SiloetteBushes" index="150"]
+position = Vector2( 1400, -120 )
+rotation = 14.6607
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite305" type="Sprite" parent="MainLayer/SiloetteBushes" index="151"]
+position = Vector2( 2488, -128 )
+rotation = 15.7079
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite306" type="Sprite" parent="MainLayer/SiloetteBushes" index="152"]
+position = Vector2( 2704, -120 )
+rotation = 15.7079
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite307" type="Sprite" parent="MainLayer/SiloetteBushes" index="153"]
+position = Vector2( 2784, -168 )
+rotation = 14.1371
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite308" type="Sprite" parent="MainLayer/SiloetteBushes" index="154"]
+position = Vector2( 2496, -256 )
+rotation = 15.7079
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite309" type="Sprite" parent="MainLayer/SiloetteBushes" index="155"]
+position = Vector2( 2672, -280 )
+rotation = 15.7079
+scale = Vector2( 3.2525, -4.2901 )
+texture = SubResource( 4 )
+
+[node name="Sprite223" type="Sprite" parent="MainLayer/SiloetteBushes" index="156"]
+position = Vector2( 1320, 64 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite190" type="Sprite" parent="MainLayer/SiloetteBushes" index="157"]
+position = Vector2( 816, 64 )
+rotation = 8.37757
+texture = SubResource( 4 )
+
+[node name="Sprite24" type="Sprite" parent="MainLayer/SiloetteBushes" index="158"]
+position = Vector2( 784, 201.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite25" type="Sprite" parent="MainLayer/SiloetteBushes" index="159"]
+position = Vector2( 824, 213 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite26" type="Sprite" parent="MainLayer/SiloetteBushes" index="160"]
+position = Vector2( 880, 192 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite27" type="Sprite" parent="MainLayer/SiloetteBushes" index="161"]
+position = Vector2( 968, 173 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite28" type="Sprite" parent="MainLayer/SiloetteBushes" index="162"]
+position = Vector2( 1080, 168 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite29" type="Sprite" parent="MainLayer/SiloetteBushes" index="163"]
+position = Vector2( 1128, 173 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite30" type="Sprite" parent="MainLayer/SiloetteBushes" index="164"]
+position = Vector2( 1192, 173 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite31" type="Sprite" parent="MainLayer/SiloetteBushes" index="165"]
+position = Vector2( 1248, 168 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite32" type="Sprite" parent="MainLayer/SiloetteBushes" index="166"]
+position = Vector2( 1280, 141 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite33" type="Sprite" parent="MainLayer/SiloetteBushes" index="167"]
+position = Vector2( 1352, 99.5 )
+rotation = 2.61799
+texture = SubResource( 4 )
+
+[node name="Sprite34" type="Sprite" parent="MainLayer/SiloetteBushes" index="168"]
+position = Vector2( 1424, 72 )
+rotation = 2.61799
+texture = SubResource( 4 )
+
+[node name="Sprite35" type="Sprite" parent="MainLayer/SiloetteBushes" index="169"]
+position = Vector2( 1488, 48 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite36" type="Sprite" parent="MainLayer/SiloetteBushes" index="170"]
+position = Vector2( 1536, 32 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite37" type="Sprite" parent="MainLayer/SiloetteBushes" index="171"]
+position = Vector2( 1592, 16 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite38" type="Sprite" parent="MainLayer/SiloetteBushes" index="172"]
+position = Vector2( 1624, 24 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite39" type="Sprite" parent="MainLayer/SiloetteBushes" index="173"]
+position = Vector2( 1704, 16 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite240" type="Sprite" parent="MainLayer/SiloetteBushes" index="174"]
+position = Vector2( 1712, -16 )
+texture = SubResource( 4 )
+
+[node name="Sprite40" type="Sprite" parent="MainLayer/SiloetteBushes" index="175"]
+position = Vector2( 1588, 144.5 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite241" type="Sprite" parent="MainLayer/SiloetteBushes" index="176"]
+position = Vector2( 1624, 156.5 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite242" type="Sprite" parent="MainLayer/SiloetteBushes" index="177"]
+position = Vector2( 1704, 173 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite243" type="Sprite" parent="MainLayer/SiloetteBushes" index="178"]
+position = Vector2( 1808, 192 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite246" type="Sprite" parent="MainLayer/SiloetteBushes" index="179"]
+position = Vector2( 1808, 192 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite244" type="Sprite" parent="MainLayer/SiloetteBushes" index="180"]
+position = Vector2( 1872, 185.5 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite298" type="Sprite" parent="MainLayer/SiloetteBushes" index="181"]
+position = Vector2( 1824, 227 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite245" type="Sprite" parent="MainLayer/SiloetteBushes" index="182"]
+position = Vector2( 1936, 192 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite41" type="Sprite" parent="MainLayer/SiloetteBushes" index="183"]
+position = Vector2( 1580, 136 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite42" type="Sprite" parent="MainLayer/SiloetteBushes" index="184"]
+position = Vector2( 1544, 128 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite43" type="Sprite" parent="MainLayer/SiloetteBushes" index="185"]
+position = Vector2( 1504, 120 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite44" type="Sprite" parent="MainLayer/SiloetteBushes" index="186"]
+position = Vector2( 1448, 156.5 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite45" type="Sprite" parent="MainLayer/SiloetteBushes" index="187"]
+position = Vector2( 1376, 163 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite46" type="Sprite" parent="MainLayer/SiloetteBushes" index="188"]
+position = Vector2( 1304, 227 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite47" type="Sprite" parent="MainLayer/SiloetteBushes" index="189"]
+position = Vector2( 1232, 264 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite48" type="Sprite" parent="MainLayer/SiloetteBushes" index="190"]
+position = Vector2( 1192, 296 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite122" type="Sprite" parent="MainLayer/SiloetteBushes" index="191"]
+position = Vector2( 1216, 360 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite123" type="Sprite" parent="MainLayer/SiloetteBushes" index="192"]
+position = Vector2( 1216, 328 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite124" type="Sprite" parent="MainLayer/SiloetteBushes" index="193"]
+position = Vector2( 1272, 283.5 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite125" type="Sprite" parent="MainLayer/SiloetteBushes" index="194"]
+position = Vector2( 1380.99, 208 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite126" type="Sprite" parent="MainLayer/SiloetteBushes" index="195"]
+position = Vector2( 1328, 256 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite127" type="Sprite" parent="MainLayer/SiloetteBushes" index="196"]
+position = Vector2( 1352, 272 )
+rotation = 4.71238
+texture = SubResource( 4 )
+
+[node name="Sprite128" type="Sprite" parent="MainLayer/SiloetteBushes" index="197"]
+position = Vector2( 1400, 264 )
+rotation = 4.71238
+texture = SubResource( 4 )
+
+[node name="Sprite129" type="Sprite" parent="MainLayer/SiloetteBushes" index="198"]
+position = Vector2( 1416, 243.5 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite130" type="Sprite" parent="MainLayer/SiloetteBushes" index="199"]
+position = Vector2( 1460, 283.5 )
+texture = SubResource( 4 )
+
+[node name="Sprite131" type="Sprite" parent="MainLayer/SiloetteBushes" index="200"]
+position = Vector2( 1536, 312 )
+texture = SubResource( 4 )
+
+[node name="Sprite137" type="Sprite" parent="MainLayer/SiloetteBushes" index="201"]
+position = Vector2( 1536, 336 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite138" type="Sprite" parent="MainLayer/SiloetteBushes" index="202"]
+position = Vector2( 1608, 344 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite139" type="Sprite" parent="MainLayer/SiloetteBushes" index="203"]
+position = Vector2( 1692, 368 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite140" type="Sprite" parent="MainLayer/SiloetteBushes" index="204"]
+position = Vector2( 1736, 368 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite141" type="Sprite" parent="MainLayer/SiloetteBushes" index="205"]
+position = Vector2( 1752, 304 )
+texture = SubResource( 4 )
+
+[node name="Sprite142" type="Sprite" parent="MainLayer/SiloetteBushes" index="206"]
+position = Vector2( 1744, 346.231 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite143" type="Sprite" parent="MainLayer/SiloetteBushes" index="207"]
+position = Vector2( 1688, 304 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite144" type="Sprite" parent="MainLayer/SiloetteBushes" index="208"]
+position = Vector2( 1680, 229 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite145" type="Sprite" parent="MainLayer/SiloetteBushes" index="209"]
+position = Vector2( 1720, 200 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite146" type="Sprite" parent="MainLayer/SiloetteBushes" index="210"]
+position = Vector2( 1744, 218 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite147" type="Sprite" parent="MainLayer/SiloetteBushes" index="211"]
+position = Vector2( 1616, 201.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite247" type="Sprite" parent="MainLayer/SiloetteBushes" index="212"]
+position = Vector2( 1616, 235 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite248" type="Sprite" parent="MainLayer/SiloetteBushes" index="213"]
+position = Vector2( 1616, 272 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite249" type="Sprite" parent="MainLayer/SiloetteBushes" index="214"]
+position = Vector2( 1632, 308.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite148" type="Sprite" parent="MainLayer/SiloetteBushes" index="215"]
+position = Vector2( 1896, 208 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite149" type="Sprite" parent="MainLayer/SiloetteBushes" index="216"]
+position = Vector2( 1968, 232 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite150" type="Sprite" parent="MainLayer/SiloetteBushes" index="217"]
+position = Vector2( 1976, 255 )
+rotation = 4.71238
+texture = SubResource( 4 )
+
+[node name="Sprite151" type="Sprite" parent="MainLayer/SiloetteBushes" index="218"]
+position = Vector2( 1936, 283.5 )
+rotation = 5.75958
+texture = SubResource( 4 )
+
+[node name="Sprite152" type="Sprite" parent="MainLayer/SiloetteBushes" index="219"]
+position = Vector2( 1896, 308.5 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite153" type="Sprite" parent="MainLayer/SiloetteBushes" index="220"]
+position = Vector2( 1896, 344 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite154" type="Sprite" parent="MainLayer/SiloetteBushes" index="221"]
+position = Vector2( 1960, 346.231 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite155" type="Sprite" parent="MainLayer/SiloetteBushes" index="222"]
+position = Vector2( 2008, 328 )
+rotation = 8.63937
+texture = SubResource( 4 )
+
+[node name="Sprite156" type="Sprite" parent="MainLayer/SiloetteBushes" index="223"]
+position = Vector2( 2056, 288 )
+rotation = 8.63937
+texture = SubResource( 4 )
+
+[node name="Sprite157" type="Sprite" parent="MainLayer/SiloetteBushes" index="224"]
+position = Vector2( 2120, 251.5 )
+rotation = 9.16296
+texture = SubResource( 4 )
+
+[node name="Sprite250" type="Sprite" parent="MainLayer/SiloetteBushes" index="225"]
+position = Vector2( 2088, 200 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite251" type="Sprite" parent="MainLayer/SiloetteBushes" index="226"]
+position = Vector2( 2168, 208 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite252" type="Sprite" parent="MainLayer/SiloetteBushes" index="227"]
+position = Vector2( 2224, 173 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite253" type="Sprite" parent="MainLayer/SiloetteBushes" index="228"]
+position = Vector2( 2320, 112 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite256" type="Sprite" parent="MainLayer/SiloetteBushes" index="229"]
+position = Vector2( 2296, 112 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite257" type="Sprite" parent="MainLayer/SiloetteBushes" index="230"]
+position = Vector2( 2320, 152 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite258" type="Sprite" parent="MainLayer/SiloetteBushes" index="231"]
+position = Vector2( 2400, 235 )
+rotation = 5.49778
+texture = SubResource( 4 )
+
+[node name="Sprite259" type="Sprite" parent="MainLayer/SiloetteBushes" index="232"]
+position = Vector2( 2432, 185.5 )
+rotation = 5.49778
+texture = SubResource( 4 )
+
+[node name="Sprite260" type="Sprite" parent="MainLayer/SiloetteBushes" index="233"]
+position = Vector2( 2489.85, 131 )
+rotation = 5.49778
+texture = SubResource( 4 )
+
+[node name="Sprite261" type="Sprite" parent="MainLayer/SiloetteBushes" index="234"]
+position = Vector2( 2496, 184 )
+rotation = 6.02138
+texture = SubResource( 4 )
+
+[node name="Sprite262" type="Sprite" parent="MainLayer/SiloetteBushes" index="235"]
+position = Vector2( 2536, 141 )
+rotation = 6.02138
+texture = SubResource( 4 )
+
+[node name="Sprite263" type="Sprite" parent="MainLayer/SiloetteBushes" index="236"]
+position = Vector2( 2568, 88 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite264" type="Sprite" parent="MainLayer/SiloetteBushes" index="237"]
+position = Vector2( 2616, 88 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite265" type="Sprite" parent="MainLayer/SiloetteBushes" index="238"]
+position = Vector2( 2600, 112 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite266" type="Sprite" parent="MainLayer/SiloetteBushes" index="239"]
+position = Vector2( 2688, 120 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite267" type="Sprite" parent="MainLayer/SiloetteBushes" index="240"]
+position = Vector2( 2768, 112 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite310" type="Sprite" parent="MainLayer/SiloetteBushes" index="241"]
+position = Vector2( 2592, 12.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite311" type="Sprite" parent="MainLayer/SiloetteBushes" index="242"]
+position = Vector2( 2656, 24 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite312" type="Sprite" parent="MainLayer/SiloetteBushes" index="243"]
+position = Vector2( 2720, 48 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite313" type="Sprite" parent="MainLayer/SiloetteBushes" index="244"]
+position = Vector2( 2784, 48 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite314" type="Sprite" parent="MainLayer/SiloetteBushes" index="245"]
+position = Vector2( 2744, 12.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite315" type="Sprite" parent="MainLayer/SiloetteBushes" index="246"]
+position = Vector2( 2864, 16 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite316" type="Sprite" parent="MainLayer/SiloetteBushes" index="247"]
+position = Vector2( 2920, -40 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite317" type="Sprite" parent="MainLayer/SiloetteBushes" index="248"]
+position = Vector2( 2936, -96 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite318" type="Sprite" parent="MainLayer/SiloetteBushes" index="249"]
+position = Vector2( 2944, -168 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite319" type="Sprite" parent="MainLayer/SiloetteBushes" index="250"]
+position = Vector2( 2936, -216 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite320" type="Sprite" parent="MainLayer/SiloetteBushes" index="251"]
+position = Vector2( 2904, -248 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite321" type="Sprite" parent="MainLayer/SiloetteBushes" index="252"]
+position = Vector2( 2912, -144 )
+rotation = 1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite268" type="Sprite" parent="MainLayer/SiloetteBushes" index="253"]
+position = Vector2( 2824, 120 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite269" type="Sprite" parent="MainLayer/SiloetteBushes" index="254"]
+position = Vector2( 2896, 107.663 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite270" type="Sprite" parent="MainLayer/SiloetteBushes" index="255"]
+position = Vector2( 2968, 120 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite271" type="Sprite" parent="MainLayer/SiloetteBushes" index="256"]
+position = Vector2( 3016, 80 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite272" type="Sprite" parent="MainLayer/SiloetteBushes" index="257"]
+position = Vector2( 3072, 120 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite273" type="Sprite" parent="MainLayer/SiloetteBushes" index="258"]
+position = Vector2( 3048, 120 )
+rotation = 7.06857
+texture = SubResource( 4 )
+
+[node name="Sprite274" type="Sprite" parent="MainLayer/SiloetteBushes" index="259"]
+position = Vector2( 2256, -56 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite275" type="Sprite" parent="MainLayer/SiloetteBushes" index="260"]
+position = Vector2( 2256, -136 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite276" type="Sprite" parent="MainLayer/SiloetteBushes" index="261"]
+position = Vector2( 2248, -216 )
+rotation = 10.9956
+texture = SubResource( 4 )
+
+[node name="Sprite277" type="Sprite" parent="MainLayer/SiloetteBushes" index="262"]
+position = Vector2( 2296, -216 )
+rotation = 7.85397
+texture = SubResource( 4 )
+
+[node name="Sprite278" type="Sprite" parent="MainLayer/SiloetteBushes" index="263"]
+position = Vector2( 2304, -152 )
+rotation = 7.85397
+texture = SubResource( 4 )
+
+[node name="Sprite279" type="Sprite" parent="MainLayer/SiloetteBushes" index="264"]
+position = Vector2( 2304, -48 )
+rotation = 7.85397
+texture = SubResource( 4 )
+
+[node name="Sprite280" type="Sprite" parent="MainLayer/SiloetteBushes" index="265"]
+position = Vector2( 2216, -28.5 )
+rotation = 6.02138
+texture = SubResource( 4 )
+
+[node name="Sprite281" type="Sprite" parent="MainLayer/SiloetteBushes" index="266"]
+position = Vector2( 2200, 28.5 )
+rotation = 3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite282" type="Sprite" parent="MainLayer/SiloetteBushes" index="267"]
+position = Vector2( 2200, -24 )
+texture = SubResource( 4 )
+
+[node name="Sprite325" type="Sprite" parent="MainLayer/SiloetteBushes" index="268"]
+position = Vector2( 2200, -24 )
+texture = SubResource( 4 )
+
+[node name="Sprite283" type="Sprite" parent="MainLayer/SiloetteBushes" index="269"]
+position = Vector2( 2288, 53.3369 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite284" type="Sprite" parent="MainLayer/SiloetteBushes" index="270"]
+position = Vector2( 2352, 40 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite285" type="Sprite" parent="MainLayer/SiloetteBushes" index="271"]
+position = Vector2( 2400, 48 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite286" type="Sprite" parent="MainLayer/SiloetteBushes" index="272"]
+position = Vector2( 2472, 48 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite287" type="Sprite" parent="MainLayer/SiloetteBushes" index="273"]
+position = Vector2( 2536, 8 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite288" type="Sprite" parent="MainLayer/SiloetteBushes" index="274"]
+position = Vector2( 2448, 4.5 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite289" type="Sprite" parent="MainLayer/SiloetteBushes" index="275"]
+position = Vector2( 2480, 12.5 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite290" type="Sprite" parent="MainLayer/SiloetteBushes" index="276"]
+position = Vector2( 2400, 8 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite291" type="Sprite" parent="MainLayer/SiloetteBushes" index="277"]
+position = Vector2( 2272, 12.5 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite292" type="Sprite" parent="MainLayer/SiloetteBushes" index="278"]
+position = Vector2( 2352, 4.33687 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite293" type="Sprite" parent="MainLayer/SiloetteBushes" index="279"]
+position = Vector2( 2272, 56 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite294" type="Sprite" parent="MainLayer/SiloetteBushes" index="280"]
+position = Vector2( 2072, 227 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite295" type="Sprite" parent="MainLayer/SiloetteBushes" index="281"]
+position = Vector2( 2016, 256 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite296" type="Sprite" parent="MainLayer/SiloetteBushes" index="282"]
+position = Vector2( 2008, 275.5 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite297" type="Sprite" parent="MainLayer/SiloetteBushes" index="283"]
+position = Vector2( 1976, 296 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite254" type="Sprite" parent="MainLayer/SiloetteBushes" index="284"]
+position = Vector2( 2264, 147 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite255" type="Sprite" parent="MainLayer/SiloetteBushes" index="285"]
+position = Vector2( 2312, 168 )
+rotation = 8.90117
+texture = SubResource( 4 )
+
+[node name="Sprite158" type="Sprite" parent="MainLayer/SiloetteBushes" index="286"]
+position = Vector2( 2016, 216 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite159" type="Sprite" parent="MainLayer/SiloetteBushes" index="287"]
+position = Vector2( 2208, 243.5 )
+rotation = 9.16296
+texture = SubResource( 4 )
+
+[node name="Sprite160" type="Sprite" parent="MainLayer/SiloetteBushes" index="288"]
+position = Vector2( 2200, 227 )
+rotation = 9.16296
+texture = SubResource( 4 )
+
+[node name="Sprite161" type="Sprite" parent="MainLayer/SiloetteBushes" index="289"]
+position = Vector2( 2280, 220 )
+rotation = 9.16296
+texture = SubResource( 4 )
+
+[node name="Sprite162" type="Sprite" parent="MainLayer/SiloetteBushes" index="290"]
+position = Vector2( 2272, 200 )
+rotation = 9.16296
+texture = SubResource( 4 )
+
+[node name="Sprite163" type="Sprite" parent="MainLayer/SiloetteBushes" index="291"]
+position = Vector2( 2320, 272 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite164" type="Sprite" parent="MainLayer/SiloetteBushes" index="292"]
+position = Vector2( 2248, 300.5 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite165" type="Sprite" parent="MainLayer/SiloetteBushes" index="293"]
+position = Vector2( 2192, 304 )
+rotation = 12.3046
+texture = SubResource( 4 )
+
+[node name="Sprite166" type="Sprite" parent="MainLayer/SiloetteBushes" index="294"]
+position = Vector2( 2128, 328 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite167" type="Sprite" parent="MainLayer/SiloetteBushes" index="295"]
+position = Vector2( 2080, 344 )
+rotation = 12.0428
+texture = SubResource( 4 )
+
+[node name="Sprite168" type="Sprite" parent="MainLayer/SiloetteBushes" index="296"]
+position = Vector2( 2032, 384 )
+rotation = 12.3046
+texture = SubResource( 4 )
+
+[node name="Sprite176" type="Sprite" parent="MainLayer/SiloetteBushes" index="297"]
+position = Vector2( 2080, 528 )
+rotation = 9.42476
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite177" type="Sprite" parent="MainLayer/SiloetteBushes" index="298"]
+position = Vector2( 2192, 451.5 )
+rotation = 8.90117
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite178" type="Sprite" parent="MainLayer/SiloetteBushes" index="299"]
+position = Vector2( 2416, 368 )
+rotation = 8.90117
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite179" type="Sprite" parent="MainLayer/SiloetteBushes" index="300"]
+position = Vector2( 2520, 296 )
+rotation = 8.90117
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite180" type="Sprite" parent="MainLayer/SiloetteBushes" index="301"]
+position = Vector2( 2392, 448 )
+rotation = 8.90117
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite181" type="Sprite" parent="MainLayer/SiloetteBushes" index="302"]
+position = Vector2( 2736, 240 )
+rotation = 9.42476
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite182" type="Sprite" parent="MainLayer/SiloetteBushes" index="303"]
+position = Vector2( 2952, 240 )
+rotation = 9.42476
+scale = Vector2( 2.47597, 4.19455 )
+texture = SubResource( 4 )
+
+[node name="Sprite169" type="Sprite" parent="MainLayer/SiloetteBushes" index="304"]
+position = Vector2( 1957, 408 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite170" type="Sprite" parent="MainLayer/SiloetteBushes" index="305"]
+position = Vector2( 1784, 468.5 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite171" type="Sprite" parent="MainLayer/SiloetteBushes" index="306"]
+position = Vector2( 1640, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite299" type="Sprite" parent="MainLayer/SiloetteBushes" index="307"]
+position = Vector2( 1720, 480 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite172" type="Sprite" parent="MainLayer/SiloetteBushes" index="308"]
+position = Vector2( 1832, 472 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite173" type="Sprite" parent="MainLayer/SiloetteBushes" index="309"]
+position = Vector2( 1920, 435.5 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite174" type="Sprite" parent="MainLayer/SiloetteBushes" index="310"]
+position = Vector2( 1888, 468.5 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite175" type="Sprite" parent="MainLayer/SiloetteBushes" index="311"]
+position = Vector2( 1728, 432 )
+rotation = 12.5664
+texture = SubResource( 4 )
+
+[node name="Sprite132" type="Sprite" parent="MainLayer/SiloetteBushes" index="312"]
+position = Vector2( 1560, 251.5 )
+rotation = -1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite133" type="Sprite" parent="MainLayer/SiloetteBushes" index="313"]
+position = Vector2( 1560, 208 )
+rotation = -1.57079
+texture = SubResource( 4 )
+
+[node name="Sprite134" type="Sprite" parent="MainLayer/SiloetteBushes" index="314"]
+position = Vector2( 1528, 168 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite135" type="Sprite" parent="MainLayer/SiloetteBushes" index="315"]
+position = Vector2( 1456, 168 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite136" type="Sprite" parent="MainLayer/SiloetteBushes" index="316"]
+position = Vector2( 1424, 201.5 )
+rotation = -3.14159
+texture = SubResource( 4 )
+
+[node name="Sprite49" type="Sprite" parent="MainLayer/SiloetteBushes" index="317"]
+position = Vector2( 1168, 360 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Sprite50" type="Sprite" parent="MainLayer/SiloetteBushes" index="318"]
+position = Vector2( 1168, 400 )
+rotation = 9.41881
+texture = SubResource( 4 )
+
+[node name="Sprite51" type="Sprite" parent="MainLayer/SiloetteBushes" index="319"]
+position = Vector2( 1216, 400 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite52" type="Sprite" parent="MainLayer/SiloetteBushes" index="320"]
+position = Vector2( 1313.91, 312 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite53" type="Sprite" parent="MainLayer/SiloetteBushes" index="321"]
+position = Vector2( 1376, 312 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite54" type="Sprite" parent="MainLayer/SiloetteBushes" index="322"]
+position = Vector2( 1472, 336 )
+rotation = 9.42476
+texture = SubResource( 4 )
+
+[node name="Sprite55" type="Sprite" parent="MainLayer/SiloetteBushes" index="323"]
+position = Vector2( 1256, 360 )
+rotation = 8.11577
+texture = SubResource( 4 )
+
+[node name="Sprite56" type="Sprite" parent="MainLayer/SiloetteBushes" index="324"]
+position = Vector2( 1000, 272 )
+rotation = 6.28318
+texture = SubResource( 4 )
+
+[node name="Layer_1" parent="PositiveLayers" index="0"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 145.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_1" index="0"]
+motion_offset = Vector2( -145.2, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_1" index="2"]
+motion_offset = Vector2( 145.2, 0 )
+
+[node name="Layer_2" parent="PositiveLayers" index="1"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 290.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_2" index="0"]
+motion_offset = Vector2( -290.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_2" index="2"]
+motion_offset = Vector2( 290.4, 0 )
+
+[node name="Layer_3" parent="PositiveLayers" index="2"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 435.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_3" index="0"]
+motion_offset = Vector2( -435.6, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_3" index="2"]
+motion_offset = Vector2( 435.6, 0 )
+
+[node name="Layer_4" parent="PositiveLayers" index="3"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 580.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_4" index="0"]
+motion_offset = Vector2( -580.8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_4" index="2"]
+motion_offset = Vector2( 580.8, 0 )
+
+[node name="Layer_5" parent="PositiveLayers" index="4"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 726, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_5" index="0"]
+motion_offset = Vector2( -726, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_5" index="2"]
+motion_offset = Vector2( 726, 0 )
+
+[node name="Layer_6" parent="PositiveLayers" index="5"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 871.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_6" index="0"]
+motion_offset = Vector2( -871.2, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_6" index="2"]
+motion_offset = Vector2( 871.2, 0 )
+
+[node name="Layer_7" parent="PositiveLayers" index="6"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 1016.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_7" index="0"]
+motion_offset = Vector2( -1016.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_7" index="2"]
+motion_offset = Vector2( 1016.4, 0 )
+
+[node name="Layer_8" parent="PositiveLayers" index="7"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 1161.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_8" index="0"]
+motion_offset = Vector2( -1161.6, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_8" index="2"]
+motion_offset = Vector2( 1161.6, 0 )
+
+[node name="Layer_9" parent="PositiveLayers" index="8"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 1306.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_9" index="0"]
+motion_offset = Vector2( -1306.8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_9" index="2"]
+motion_offset = Vector2( 1306.8, 0 )
+
+[node name="Layer_10" parent="PositiveLayers" index="9"]
+offset = Vector2( 1652, 0 )
+transform = Transform2D( 1, 0, 0, 1, 1652, 0 )
+scroll_base_offset = Vector2( 1452, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_10" index="0"]
+motion_offset = Vector2( -1452, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_10" index="2"]
+motion_offset = Vector2( 1452, 0 )
+
+[editable path="PauseMenu"]

@@ -1,0 +1,138 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <ProjectGuid>{4981B256-8108-4040-BD05-0BA4A3D2FED1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bonez</RootNamespace>
+    <AssemblyName>Bonez</AssemblyName>
+    <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
+    <TargetFramework>net472</TargetFramework>
+    <!--The following properties were overridden during migration to prevent errors.
+    Enabling them may require other manual changes to the project and its files.-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\CameraController.cs" />
+    <Compile Include="src\MapBoundsHelper.cs" />
+    <Compile Include="src\MovingArea.cs" />
+    <Compile Include="src\MovingBody.cs" />
+    <Compile Include="src\PackedScenes\BasePlantDamagedEffect.cs" />
+    <Compile Include="src\PackedScenes\HUDs\BaseHUD.cs" />
+    <Compile Include="src\PackedScenes\HUDs\BaseLevelHUD.cs" />
+    <Compile Include="src\PackedScenes\HUDs\HUD.cs" />
+    <Compile Include="src\PackedScenes\HUDs\LevelHUD_KingSlimeArena.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\ActorState_Null.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Alive.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\BaseShakingPlatform.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\DepressPlatform.cs" />
+    <Compile Include="src\PackedScenes\Fader.cs" />
+    <Compile Include="src\PackedScenes\HUDs\LevelHUD_NecroArena.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Necro\States\NecroState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Items\Heart.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\BasePlant.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Platform.cs" />
+    <Compile Include="src\PackedScenes\OneShotParticles.cs" />
+    <Compile Include="src\PackedScenes\NegativeParallaxHelper.cs" />
+    <Compile Include="src\PackedScenes\PositiveParallaxHelper.cs" />
+    <Compile Include="src\PackedScenes\Levels\KingSlimeArena\Data\LevelData_KingSlimeArena.cs" />
+    <Compile Include="src\PackedScenes\Levels\KingSlimeArena\States\LevelState_KingSlimeArena.cs" />
+    <Compile Include="src\PackedScenes\Levels\LevelState_Null.cs" />
+    <Compile Include="src\PackedScenes\Levels\NecroArena\Data\LevelData_NecroArena.cs" />
+    <Compile Include="src\PackedScenes\Levels\NecroArena\States\LevelState_NecroArena.cs" />
+    <Compile Include="src\Resources\SaveData.cs" />
+    <Compile Include="src\Scenes\Scene_Credits.cs" />
+    <Compile Include="src\Scenes\Scene_Intro.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\LevelExit.cs" />
+    <Compile Include="src\PackedScenes\HUDs\LevelHUD_CollectBones.cs" />
+    <Compile Include="src\PackedScenes\OneShotAudio.cs" />
+    <Compile Include="src\PackedScenes\Menus\OverworldPauseMenu.cs" />
+    <Compile Include="src\PackedScenes\OneShotAnimation.cs" />
+    <Compile Include="src\PackedScenes\HUDs\OverworldHUD.cs" />
+    <Compile Include="src\PackedScenes\OverworldObjects\OverworldLevelNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\ActorState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bat\Bat.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bat\States\BatState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bat\States\BatState_Move.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bat\States\BatState_Idle.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bat\States\BatState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Alive.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Hit.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Idle.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Fall.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_OffGround.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_OnGround.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Jump.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\States\BonezState_Walk.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Timed.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Hopping.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Hop_Mini.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Hop.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Hop_Small.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Walk_Fast.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Random.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Walk_Slow.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Hop_Big.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState_Fall.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\States\HoppingSlimeState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\States\KurtState_Alive.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\States\KurtState_Walk.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\States\KurtState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\States\KurtState_Idle.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\States\KurtState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Necro\States\NecroState_Idle.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Necro\States\NecroState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Kurt\Kurt.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\Shtomp.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Landed.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Returned.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Returning.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_WaitingToScan.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_WaitingToDrop.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_TargetLost.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_WaitingToReturn.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_TargetFound.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Scanning.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Dropping.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState_Init.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Shtomp\States\ShtompState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\States\SlimeState_Die.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\States\SlimeState_Fall.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\States\SlimeState_Walk.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\States\SlimeState_Idle.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\States\SlimeState.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Actor.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Necro\Necro.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\HoppingSlime\HoppingSlime.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Slime\Slime.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Actors\Bonez\Bonez.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Items\Bone.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\BreakableBlock.cs" />
+    <Compile Include="src\PackedScenes\Menus\LevelPauseMenu.cs" />
+    <Compile Include="src\SaveFile.cs" />
+    <Compile Include="src\LevelSaver.cs" />
+    <Compile Include="src\PackedScenes\Levels\CollectBones\Data\LevelData_CollectBones.cs" />
+    <Compile Include="src\PackedScenes\Levels\CollectBones\States\LevelState_CollectBones.cs" />
+    <Compile Include="src\PackedScenes\Levels\LevelData.cs" />
+    <Compile Include="src\PackedScenes\Levels\LevelHelper.cs" />
+    <Compile Include="src\PackedScenes\Levels\LevelState.cs" />
+    <Compile Include="src\PackedScenes\Levels\CollectBones\Level_CollectBones.cs" />
+    <Compile Include="src\PackedScenes\Levels\NecroArena\Level_NecroArena.cs" />
+    <Compile Include="src\PackedScenes\Levels\KingSlimeArena\Level_KingSlimeArena.cs" />
+    <Compile Include="src\Scenes\Scene_Overworld.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Projectile.cs" />
+    <Compile Include="src\PackedScenes\Levels\Level.cs" />
+    <Compile Include="src\Scenes\Scene_MainMenu.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Spike.cs" />
+    <Compile Include="src\PackedScenes\LevelObjects\Water.cs" />
+    <Compile Include="src\TestScene.cs" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

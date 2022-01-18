@@ -1,0 +1,220 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/sounds/bonez_die.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/packed_scenes/level_objects/projectiles/DarkFire.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sounds/collect_item.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/bonez_jump.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/bonez_hit.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/atlases/atlas_16x16.png" type="Texture" id=7]
+[ext_resource path="res://src/PackedScenes/LevelObjects/Actors/Bonez/Bonez.cs" type="Script" id=8]
+[ext_resource path="res://assets/sounds/dark_fire_shot.ogg" type="AudioStream" id=31]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 7 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 7 )
+region = Rect2( 112, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 112, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": false,
+"name": "idle",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": false,
+"name": "die",
+"speed": 16.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": false,
+"name": "fall",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": false,
+"name": "hit",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 27 ) ],
+"loop": false,
+"name": "jump",
+"speed": 1.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 4, 7 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 4, 7 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 4, 7 )
+
+[node name="Bonez" groups=[
+"bonez",
+] instance=ExtResource( 1 )]
+script = ExtResource( 8 )
+MaxVelocity = Vector2( 100, 500 )
+InvincibleTime = 3.0
+ProjectilePackedScene = ExtResource( 3 )
+
+[node name="AudioPlayer_CollectItem" type="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource( 4 )
+volume_db = -5.0
+bus = "Sounds"
+
+[node name="AudioPlayer_Die" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource( 2 )
+bus = "Sounds"
+
+[node name="AudioPlayer_Hit" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource( 6 )
+volume_db = 2.0
+bus = "Sounds"
+
+[node name="AudioPlayer_Shoot" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 31 )
+bus = "Sounds"
+
+[node name="AudioPlayer_Jump" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource( 5 )
+volume_db = -5.0
+bus = "Sounds"
+
+[node name="AnimatedSprite" parent="." index="5"]
+frames = SubResource( 28 )
+frame = 0
+playing = false
+
+[node name="ProjectileSpawnPoint" type="Node2D" parent="." index="7"]
+position = Vector2( 24, -8 )
+
+[node name="CollisionShape2D" parent="." index="8"]
+shape = SubResource( 29 )
+
+[node name="HitArea" parent="." index="10"]
+collision_mask = 196
+
+[node name="CollisionShape2D" parent="HitArea" index="0"]
+shape = SubResource( 30 )
+
+[node name="HurtArea" parent="." index="11"]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="HurtArea" index="0"]
+shape = SubResource( 31 )

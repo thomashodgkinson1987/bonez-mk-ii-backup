@@ -1,0 +1,753 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/packed_scenes/levels/templates/level_king_slime_arena.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/atlases/atlas_128x128.png" type="Texture" id=2]
+[ext_resource path="res://assets/packed_scenes/level_objects/platforms/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/packed_scenes/level_objects/platforms/MovingPlatform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/resources/tilesets/tiles_256x256.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/music/king_slime_0002.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/HoppingSlime.tscn" type="PackedScene" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 768, 256, 128, 128 )
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 448 ), Vector2( 32, 512 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "New Anim"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 384, 448 ), Vector2( 384, 512 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "New Anim"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 416, 448 ), Vector2( 416, 512 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 768, 448 ), Vector2( 768, 512 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 220, 512 ), Vector2( 64, 512 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 228, 480 ), Vector2( 384, 480 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 604, 512 ), Vector2( 448, 512 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 612, 480 ), Vector2( 768, 480 ) ]
+}
+
+[node name="Level_KingSlimeArena" instance=ExtResource( 1 )]
+LevelID = "level_0007"
+LevelName = "Level 7"
+
+[node name="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer" index="0"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 256, 256 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 256, 0, 0, 256, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 524290, 1, 0, 524290, 2, 0, 524290, 3, 0, 524290, 65536, 0, 524290, 65537, 0, 524290, 65538, 0, 524290, 65539, 0, 524290 )
+
+[node name="Layer_-10" parent="NegativeLayers" index="0"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -216, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-10" index="0"]
+motion_offset = Vector2( 216, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-10" index="2"]
+motion_offset = Vector2( -216, 0 )
+
+[node name="Layer_-9" parent="NegativeLayers" index="1"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -194.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-9" index="0"]
+motion_offset = Vector2( 194.4, 0 )
+
+[node name="Node2D2" type="Node2D" parent="NegativeLayers/Layer_-9/Left" index="0"]
+position = Vector2( -416, 384 )
+scale = Vector2( 3, 3 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Left/Node2D2" index="0"]
+modulate = Color( 0.388235, 0.388235, 0.388235, 1 )
+position = Vector2( 64, 8 )
+rotation = 1.57079
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Left/Node2D2" index="1"]
+modulate = Color( 0.388235, 0.388235, 0.388235, 1 )
+position = Vector2( 56, 0 )
+texture = SubResource( 1 )
+
+[node name="Node2D4" type="Node2D" parent="NegativeLayers/Layer_-9/Center" index="0"]
+position = Vector2( 0, 512 )
+scale = Vector2( 3.5, 3.5 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Center/Node2D4" index="0"]
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+position = Vector2( -64, -128 )
+texture = SubResource( 1 )
+centered = false
+
+[node name="Right" parent="NegativeLayers/Layer_-9" index="2"]
+motion_offset = Vector2( -194.4, 0 )
+
+[node name="Node2D3" type="Node2D" parent="NegativeLayers/Layer_-9/Right" index="0"]
+position = Vector2( 416, 384 )
+scale = Vector2( -3, 3 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-9/Right/Node2D3" index="0"]
+modulate = Color( 0.356863, 0.356863, 0.356863, 1 )
+position = Vector2( 64, 8 )
+rotation = 1.57079
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-9/Right/Node2D3" index="1"]
+modulate = Color( 0.356863, 0.356863, 0.356863, 1 )
+position = Vector2( 56, 0 )
+texture = SubResource( 1 )
+
+[node name="Layer_-8" parent="NegativeLayers" index="2"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -172.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-8" index="0"]
+motion_offset = Vector2( 172.8, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-8" index="2"]
+motion_offset = Vector2( -172.8, 0 )
+
+[node name="Layer_-7" parent="NegativeLayers" index="3"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -151.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-7" index="0"]
+motion_offset = Vector2( 151.2, 0 )
+
+[node name="Node2D3" type="Node2D" parent="NegativeLayers/Layer_-7/Center" index="0"]
+position = Vector2( 0, 512 )
+scale = Vector2( 3, 3 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-7/Center/Node2D3" index="0"]
+position = Vector2( -64, -128 )
+texture = SubResource( 1 )
+centered = false
+
+[node name="Right" parent="NegativeLayers/Layer_-7" index="2"]
+motion_offset = Vector2( -151.2, 0 )
+
+[node name="Layer_-6" parent="NegativeLayers" index="4"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -129.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-6" index="0"]
+motion_offset = Vector2( 129.6, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-6" index="2"]
+motion_offset = Vector2( -129.6, 0 )
+
+[node name="Layer_-5" parent="NegativeLayers" index="5"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -108, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-5" index="0"]
+motion_offset = Vector2( 108, 0 )
+
+[node name="Node2D" type="Node2D" parent="NegativeLayers/Layer_-5/Left" index="0"]
+position = Vector2( -416, 384 )
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Left/Node2D" index="0"]
+position = Vector2( 64, 8 )
+rotation = 1.57079
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Left/Node2D" index="1"]
+position = Vector2( 56, 0 )
+texture = SubResource( 1 )
+
+[node name="Right" parent="NegativeLayers/Layer_-5" index="2"]
+motion_offset = Vector2( -108, 0 )
+
+[node name="Node2D2" type="Node2D" parent="NegativeLayers/Layer_-5/Right" index="0"]
+position = Vector2( 416, 384 )
+scale = Vector2( -2, 2 )
+
+[node name="Sprite" type="Sprite" parent="NegativeLayers/Layer_-5/Right/Node2D2" index="0"]
+position = Vector2( 64, 8 )
+rotation = 1.57079
+texture = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="NegativeLayers/Layer_-5/Right/Node2D2" index="1"]
+position = Vector2( 56, 0 )
+texture = SubResource( 1 )
+
+[node name="Layer_-4" parent="NegativeLayers" index="6"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -86.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-4" index="0"]
+motion_offset = Vector2( 86.4, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-4" index="2"]
+motion_offset = Vector2( -86.4, 0 )
+
+[node name="Layer_-3" parent="NegativeLayers" index="7"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -64.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-3" index="0"]
+motion_offset = Vector2( 64.8, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-3" index="2"]
+motion_offset = Vector2( -64.8, 0 )
+
+[node name="Layer_-2" parent="NegativeLayers" index="8"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -43.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-2" index="0"]
+motion_offset = Vector2( 43.2, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-2" index="2"]
+motion_offset = Vector2( -43.2, 0 )
+
+[node name="Layer_-1" parent="NegativeLayers" index="9"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( -21.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-1" index="0"]
+motion_offset = Vector2( 21.6, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-1" index="2"]
+motion_offset = Vector2( -21.6, 0 )
+
+[node name="TileMap_Main" parent="MainLayer/Main_TileMaps" index="0"]
+tile_data = PoolIntArray( -3014572, 3, 458753, -3014560, 3, 458753, -3014549, 3, 458753, -2949036, 3, 458752, -2949024, 3, 458752, -2949013, 3, 458752, -2883500, 3, 458752, -2883488, 3, 458752, -2883477, 3, 458752, -2817964, 3, 458752, -2817952, 3, 458752, -2817941, 3, 458752, -2752428, 3, 393219, -2752416, 3, 393219, -2752405, 3, 393219, -2686894, 3, 262144, -2686893, 3, 262146, -2686882, 3, 262144, -2686881, 3, 262146, -2686871, 3, 262144, -2686870, 3, 262146, -2621360, 3, 262144, -2621359, 3, 262146, -2621348, 3, 262144, -2621347, 3, 262146, -2621337, 3, 262144, -2621336, 3, 262146, -2555826, 3, 262144, -2555825, 3, 262146, -2555814, 3, 262144, -2555813, 3, 262146, -2555803, 3, 262144, -2555802, 3, 262146, -2490292, 3, 262144, -2490291, 3, 262146, -2490280, 3, 262144, -2490279, 3, 262146, -2490269, 3, 262144, -2490268, 3, 262146, -2424758, 3, 262144, -2424757, 3, 262146, -2424746, 3, 262144, -2424745, 3, 262146, -2424735, 3, 262144, -2424734, 3, 262146, -2359224, 3, 262144, -2359223, 3, 262146, -2359212, 3, 262144, -2359211, 3, 262146, -2359201, 3, 262144, -2359200, 3, 262146, -2293690, 3, 262144, -2293689, 3, 262146, -2293678, 3, 262144, -2293677, 3, 262146, -2293667, 3, 262144, -2293666, 3, 262146, -2228156, 3, 262144, -2228155, 3, 262146, -2228144, 3, 262144, -2228143, 3, 262146, -2228133, 3, 262144, -2228132, 3, 262146, -2162622, 3, 262144, -2162621, 3, 262146, -2162610, 3, 262144, -2162609, 3, 262146, -2162599, 3, 262144, -2162598, 3, 262146, -2097088, 3, 262144, -2097087, 3, 262146, -2097076, 3, 262144, -2097075, 3, 262146, -2097065, 3, 262144, -2097064, 3, 262146, -2031554, 3, 262144, -2031553, 3, 262146, -2031542, 3, 262144, -2031541, 3, 262146, -2031531, 3, 262144, -2031530, 3, 262146, -1966020, 3, 262144, -1966019, 3, 262146, -1966008, 3, 262144, -1966007, 3, 262146, -1965997, 3, 262144, -1965996, 3, 262146, -1900486, 3, 262144, -1900485, 3, 262146, -1900474, 3, 262144, -1900473, 3, 262146, -1900463, 3, 262144, -1900462, 3, 262146, -1834952, 3, 262144, -1834951, 3, 262146, -1834940, 3, 262144, -1834939, 3, 262146, -1834929, 3, 262144, -1834928, 3, 262146, -1769418, 3, 262144, -1769417, 3, 262146, -1769406, 3, 262144, -1769405, 3, 262146, -1769395, 3, 262144, -1769394, 3, 262146, -1703884, 3, 262144, -1703883, 3, 262146, -1703872, 3, 262144, -1703871, 3, 262146, -1703861, 3, 262144, -1703860, 3, 262146, -1638350, 3, 262144, -1638349, 3, 262146, -1638338, 3, 262144, -1638337, 3, 262146, -1638327, 3, 262144, -1638326, 3, 262146, -1572816, 3, 262144, -1572815, 3, 262146, -1572804, 3, 262144, -1572803, 3, 262146, -1572793, 3, 262144, -1572792, 3, 262146, -1507282, 3, 262144, -1507281, 3, 262146, -1507270, 3, 262144, -1507269, 3, 262146, -1507259, 3, 262144, -1507258, 3, 262146, -1441748, 3, 262144, -1441747, 3, 262146, -1441736, 3, 262144, -1441735, 3, 262146, -1441725, 3, 262144, -1441724, 3, 262146, -1376214, 3, 262144, -1376213, 3, 262146, -1376202, 3, 262144, -1376201, 3, 262146, -1376191, 3, 262144, -1376190, 3, 262146, -1310680, 3, 262144, -1310679, 3, 262146, -1310668, 3, 262144, -1310667, 3, 262146, -1310657, 3, 262144, -1310656, 3, 262146, -1245146, 3, 262144, -1245145, 3, 262146, -1245134, 3, 262144, -1245133, 3, 262146, -1245123, 3, 262144, -1245122, 3, 262146, -1179612, 3, 262144, -1179611, 3, 262146, -1179600, 3, 262144, -1179599, 3, 262146, -1179589, 3, 262144, -1179588, 3, 262146, -1114078, 3, 262144, -1114077, 3, 262146, -1114066, 3, 262144, -1114065, 3, 262146, -1114055, 3, 262144, -1114054, 3, 262146, -1048544, 3, 262144, -1048543, 3, 262146, -1048532, 3, 262144, -1048531, 3, 262146, -1048521, 3, 262144, -1048520, 3, 262146, -983010, 3, 262144, -983009, 3, 262146, -982998, 3, 262144, -982997, 3, 262146, -982987, 3, 262144, -982986, 3, 262146, -917476, 3, 262144, -917475, 3, 262146, -917464, 3, 262144, -917463, 3, 262146, -917453, 3, 262144, -917452, 3, 262146, -851942, 3, 262144, -851941, 3, 262146, -851930, 3, 262144, -851929, 3, 262146, -851919, 3, 262144, -851918, 3, 262146, -786408, 3, 262144, -786407, 3, 262146, -786396, 3, 262144, -786395, 3, 262146, -786385, 3, 262144, -786384, 3, 262146, -720874, 3, 262144, -720873, 3, 262146, -720862, 3, 262144, -720861, 3, 262146, -720851, 3, 262144, -720850, 3, 262146, -655340, 3, 262144, -655339, 3, 262146, -655328, 3, 262144, -655327, 3, 262146, -655317, 3, 262144, -655316, 3, 262146, -589806, 3, 262144, -589805, 3, 262146, -589794, 3, 262144, -589793, 3, 262146, -589783, 3, 262144, -589782, 3, 262146, -458753, 3, 393216, -524288, 3, 393218, -524272, 3, 262144, -524271, 3, 262146, -524260, 3, 262144, -524259, 3, 262146, -524249, 3, 262144, -524248, 3, 262146, -393217, 3, 65538, -458752, 3, 65539, -458738, 3, 262144, -458737, 3, 262146, -458726, 3, 262144, -458725, 3, 262146, -458715, 3, 262144, -458714, 3, 262146, -327681, 3, 65538, -393216, 3, 65539, -393204, 3, 262144, -393203, 3, 262146, -393192, 3, 262144, -393191, 3, 262146, -393181, 3, 262144, -393180, 3, 262146, -262145, 3, 65538, -327680, 3, 65539, -327670, 3, 262144, -327669, 3, 196608, -327658, 3, 262144, -327657, 3, 196608, -327647, 3, 262144, -327646, 3, 262146, -196609, 3, 65538, -262144, 3, 65539, -262136, 3, 262144, -262135, 3, 262146, -262133, 3, 458752, -262124, 3, 262144, -262123, 3, 262146, -262121, 3, 458752, -262113, 3, 262144, -262112, 3, 262146, -131073, 3, 65538, -196608, 3, 65539, -196602, 3, 262144, -196601, 3, 262146, -196597, 3, 458752, -196590, 3, 262144, -196589, 3, 262146, -196585, 3, 458752, -196579, 3, 262144, -196578, 3, 262146, -65537, 3, 65538, -131072, 3, 65539, -131068, 3, 393216, -131067, 3, 393218, -131061, 3, 458752, -131056, 3, 262144, -131055, 3, 262146, -131049, 3, 458752, -131045, 3, 262144, -131044, 3, 262146, -1, 3, 65538, -65536, 3, 65539, -65533, 3, 393216, -65532, 3, 327682, -65531, 3, 327683, -65530, 3, 393217, -65529, 3, 393217, -65528, 3, 393217, -65527, 3, 393217, -65526, 3, 393217, -65525, 3, 196608, -65521, 3, 393216, -65520, 3, 393217, -65519, 3, 393217, -65518, 3, 393217, -65517, 3, 393217, -65516, 3, 393217, -65515, 3, 393217, -65514, 3, 393217, -65513, 3, 196608, -65510, 3, 458753, 65535, 3, 65538, 0, 3, 65539, 2, 3, 262144, 3, 3, 196608, 4, 3, 65537, 5, 3, 65537, 6, 3, 65537, 7, 3, 65537, 8, 3, 65537, 9, 3, 65537, 10, 3, 65537, 11, 3, 131073, 14, 3, 262144, 15, 3, 196608, 16, 3, 65537, 17, 3, 65537, 18, 3, 65537, 19, 3, 65537, 20, 3, 65537, 21, 3, 65537, 22, 3, 65537, 23, 3, 131073, 25, 3, 393216, 26, 3, 196608, 131071, 3, 65538, 65536, 3, 65539, 65561, 3, 65538, 65562, 3, 65539, 196607, 3, 65538, 131072, 3, 65539, 131097, 3, 65538, 131098, 3, 65539, 262143, 3, 65538, 196608, 3, 65539, 196633, 3, 65538, 196634, 3, 65539, 327679, 3, 65538, 262144, 3, 65539, 262169, 3, 65538, 262170, 3, 65539, 393215, 3, 65538, 327680, 3, 65539, 327705, 3, 65538, 327706, 3, 65539, 458751, 3, 65538, 393216, 3, 65539, 393241, 3, 65538, 393242, 3, 65539, 524287, 3, 65538, 458752, 3, 65539, 458777, 3, 65538, 458778, 3, 65539, 589823, 3, 65538, 524288, 3, 65539, 524313, 3, 65538, 524314, 3, 65539, 655359, 3, 65538, 589824, 3, 65539, 589849, 3, 65538, 589850, 3, 65539, 720895, 3, 65538, 655360, 3, 65539, 655385, 3, 65538, 655386, 3, 65539, 786431, 3, 65538, 720896, 3, 65539, 720921, 3, 65538, 720922, 3, 65539, 851967, 3, 65538, 786432, 3, 65539, 786457, 3, 65538, 786458, 3, 65539, 917503, 3, 65538, 851968, 3, 65539, 851993, 3, 65538, 851994, 3, 65539, 983039, 3, 65538, 917504, 3, 65539, 917506, 3, 262144, 917507, 3, 262145, 917508, 3, 262145, 917509, 3, 262146, 917512, 3, 262144, 917513, 3, 262145, 917514, 3, 262145, 917515, 3, 262146, 917518, 3, 262144, 917519, 3, 262145, 917520, 3, 262145, 917521, 3, 262146, 917524, 3, 262144, 917525, 3, 262145, 917526, 3, 262145, 917527, 3, 262146, 917529, 3, 65538, 917530, 3, 65539, 1048575, 3, 65538, 983040, 3, 65539, 983065, 3, 65538, 983066, 3, 65539, 1114111, 3, 65538, 1048576, 3, 327683, 1048577, 3, 393217, 1048578, 3, 393217, 1048579, 3, 393217, 1048580, 3, 393217, 1048581, 3, 393217, 1048582, 3, 393217, 1048583, 3, 393217, 1048584, 3, 393217, 1048585, 3, 393217, 1048586, 3, 393217, 1048587, 3, 393217, 1048588, 3, 393217, 1048589, 3, 393217, 1048590, 3, 393217, 1048591, 3, 393217, 1048592, 3, 393217, 1048593, 3, 393217, 1048594, 3, 393217, 1048595, 3, 393217, 1048596, 3, 393217, 1048597, 3, 393217, 1048598, 3, 393217, 1048599, 3, 393217, 1048600, 3, 393217, 1048601, 3, 327682, 1048602, 3, 65539, 1179647, 3, 131074, 1114112, 3, 65537, 1114113, 3, 65537, 1114114, 3, 65537, 1114115, 3, 65537, 1114116, 3, 65537, 1114117, 3, 65537, 1114118, 3, 65537, 1114119, 3, 65537, 1114120, 3, 65537, 1114121, 3, 65537, 1114122, 3, 65537, 1114123, 3, 65537, 1114124, 3, 65537, 1114125, 3, 65537, 1114126, 3, 65537, 1114127, 3, 65537, 1114128, 3, 65537, 1114129, 3, 65537, 1114130, 3, 65537, 1114131, 3, 65537, 1114132, 3, 65537, 1114133, 3, 65537, 1114134, 3, 65537, 1114135, 3, 65537, 1114136, 3, 65537, 1114137, 3, 65537, 1114138, 3, 131073 )
+
+[node name="MapBounds" parent="MainLayer" index="1"]
+anchor_right = 2.08
+anchor_bottom = 2.26667
+
+[node name="Left_Up-Down" parent="MainLayer/Platforms" index="0" instance=ExtResource( 4 )]
+position = Vector2( 32, 448 )
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/Left_Up-Down" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 2 )
+
+[node name="MovingPlatform2" parent="MainLayer/Platforms" index="1" instance=ExtResource( 4 )]
+position = Vector2( 384, 448 )
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform2" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 3 )
+
+[node name="MovingPlatform3" parent="MainLayer/Platforms" index="2" instance=ExtResource( 4 )]
+position = Vector2( 416, 448 )
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform3" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 4 )
+
+[node name="MovingPlatform4" parent="MainLayer/Platforms" index="3" instance=ExtResource( 4 )]
+position = Vector2( 768, 448 )
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform4" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 5 )
+
+[node name="MovingPlatform5" parent="MainLayer/Platforms" index="4" instance=ExtResource( 4 )]
+position = Vector2( 220, 512 )
+rotation = -1.57079
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform5" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 6 )
+
+[node name="MovingPlatform6" parent="MainLayer/Platforms" index="5" instance=ExtResource( 4 )]
+position = Vector2( 228, 480 )
+rotation = -4.71238
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform6" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 7 )
+
+[node name="MovingPlatform7" parent="MainLayer/Platforms" index="6" instance=ExtResource( 4 )]
+position = Vector2( 604, 512 )
+rotation = -7.85397
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform7" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 8 )
+
+[node name="MovingPlatform8" parent="MainLayer/Platforms" index="7" instance=ExtResource( 4 )]
+position = Vector2( 612, 480 )
+rotation = -10.9956
+
+[node name="AnimationPlayer" parent="MainLayer/Platforms/MovingPlatform8" index="2"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 9 )
+
+[node name="Platform5" parent="MainLayer/Platforms" index="8" instance=ExtResource( 3 )]
+position = Vector2( 400, 448 )
+rotation = -6.28318
+
+[node name="Platform11" parent="MainLayer/Platforms" index="9" instance=ExtResource( 3 )]
+position = Vector2( 48, 448 )
+rotation = -6.28318
+
+[node name="Platform12" parent="MainLayer/Platforms" index="10" instance=ExtResource( 3 )]
+position = Vector2( 784, 448 )
+rotation = -6.28318
+
+[node name="Platform13" parent="MainLayer/Platforms" index="11" instance=ExtResource( 3 )]
+position = Vector2( 384, 496 )
+rotation = -4.71238
+
+[node name="Platform19" parent="MainLayer/Platforms" index="12" instance=ExtResource( 3 )]
+position = Vector2( 768, 496 )
+rotation = -4.71238
+
+[node name="Platform20" parent="MainLayer/Platforms" index="13" instance=ExtResource( 3 )]
+position = Vector2( 64, 496 )
+rotation = -1.57079
+
+[node name="Platform14" parent="MainLayer/Platforms" index="14" instance=ExtResource( 3 )]
+position = Vector2( 448, 496 )
+rotation = -1.57079
+
+[node name="Platform6" parent="MainLayer/Platforms" index="15" instance=ExtResource( 3 )]
+position = Vector2( 432, 448 )
+rotation = -6.28318
+
+[node name="Platform7" parent="MainLayer/Platforms" index="16" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 592, 456 )
+rotation = -9.42476
+
+[node name="Platform8" parent="MainLayer/Platforms" index="17" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 624, 456 )
+rotation = -9.42476
+
+[node name="Platform9" parent="MainLayer/Platforms" index="18" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 208, 456 )
+rotation = -9.42476
+
+[node name="Platform29" parent="MainLayer/Platforms" index="19" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 208, 480 )
+rotation = -9.42476
+
+[node name="Platform30" parent="MainLayer/Platforms" index="20" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 240, 480 )
+rotation = -9.42476
+
+[node name="Platform31" parent="MainLayer/Platforms" index="21" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 592, 480 )
+rotation = -9.42476
+
+[node name="Platform32" parent="MainLayer/Platforms" index="22" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 624, 480 )
+rotation = -9.42476
+
+[node name="Platform10" parent="MainLayer/Platforms" index="23" instance=ExtResource( 3 )]
+modulate = Color( 0.384314, 0.384314, 0.384314, 1 )
+position = Vector2( 240, 456 )
+rotation = -9.42476
+
+[node name="KingSlime" parent="MainLayer/Actors/KingSlimes" index="0"]
+position = Vector2( 416, 152 )
+SmallHopDistance = 64.0
+BigHopDistance = 128.0
+FastWalkSpeed = 64.0
+
+[node name="HoppingSlime7" parent="MainLayer/Actors/HoppingSlimes" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1728, -480 )
+
+[node name="HoppingSlime8" parent="MainLayer/Actors/HoppingSlimes" index="1" instance=ExtResource( 7 )]
+position = Vector2( 1216, -224 )
+
+[node name="HoppingSlime13" parent="MainLayer/Actors/HoppingSlimes" index="2" instance=ExtResource( 7 )]
+position = Vector2( 832, -32 )
+
+[node name="HoppingSlime14" parent="MainLayer/Actors/HoppingSlimes" index="3" instance=ExtResource( 7 )]
+position = Vector2( 960, -96 )
+
+[node name="HoppingSlime15" parent="MainLayer/Actors/HoppingSlimes" index="4" instance=ExtResource( 7 )]
+position = Vector2( 1344, -288 )
+
+[node name="HoppingSlime16" parent="MainLayer/Actors/HoppingSlimes" index="5" instance=ExtResource( 7 )]
+position = Vector2( 1600, -416 )
+
+[node name="HoppingSlime9" parent="MainLayer/Actors/HoppingSlimes" index="6" instance=ExtResource( 7 )]
+position = Vector2( 1376, -480 )
+
+[node name="HoppingSlime10" parent="MainLayer/Actors/HoppingSlimes" index="7" instance=ExtResource( 7 )]
+position = Vector2( 864, -224 )
+
+[node name="HoppingSlime17" parent="MainLayer/Actors/HoppingSlimes" index="8" instance=ExtResource( 7 )]
+position = Vector2( 480, -32 )
+
+[node name="HoppingSlime18" parent="MainLayer/Actors/HoppingSlimes" index="9" instance=ExtResource( 7 )]
+position = Vector2( 608, -96 )
+
+[node name="HoppingSlime19" parent="MainLayer/Actors/HoppingSlimes" index="10" instance=ExtResource( 7 )]
+position = Vector2( 992, -288 )
+
+[node name="HoppingSlime20" parent="MainLayer/Actors/HoppingSlimes" index="11" instance=ExtResource( 7 )]
+position = Vector2( 1248, -416 )
+
+[node name="HoppingSlime11" parent="MainLayer/Actors/HoppingSlimes" index="12" instance=ExtResource( 7 )]
+position = Vector2( 992, -480 )
+
+[node name="HoppingSlime12" parent="MainLayer/Actors/HoppingSlimes" index="13" instance=ExtResource( 7 )]
+position = Vector2( 480, -224 )
+
+[node name="HoppingSlime21" parent="MainLayer/Actors/HoppingSlimes" index="14" instance=ExtResource( 7 )]
+position = Vector2( 96, -32 )
+
+[node name="HoppingSlime22" parent="MainLayer/Actors/HoppingSlimes" index="15" instance=ExtResource( 7 )]
+position = Vector2( 224, -96 )
+
+[node name="HoppingSlime23" parent="MainLayer/Actors/HoppingSlimes" index="16" instance=ExtResource( 7 )]
+position = Vector2( 608, -288 )
+
+[node name="HoppingSlime24" parent="MainLayer/Actors/HoppingSlimes" index="17" instance=ExtResource( 7 )]
+position = Vector2( 864, -416 )
+
+[node name="HoppingSlime25" parent="MainLayer/Actors/HoppingSlimes" index="18" instance=ExtResource( 7 )]
+position = Vector2( 2112, -672 )
+
+[node name="HoppingSlime26" parent="MainLayer/Actors/HoppingSlimes" index="19" instance=ExtResource( 7 )]
+position = Vector2( 1984, -608 )
+
+[node name="HoppingSlime27" parent="MainLayer/Actors/HoppingSlimes" index="20" instance=ExtResource( 7 )]
+position = Vector2( 1760, -672 )
+
+[node name="HoppingSlime28" parent="MainLayer/Actors/HoppingSlimes" index="21" instance=ExtResource( 7 )]
+position = Vector2( 1632, -608 )
+
+[node name="HoppingSlime29" parent="MainLayer/Actors/HoppingSlimes" index="22" instance=ExtResource( 7 )]
+position = Vector2( 1376, -672 )
+
+[node name="HoppingSlime31" parent="MainLayer/Actors/HoppingSlimes" index="23" instance=ExtResource( 7 )]
+position = Vector2( 2368, -800 )
+
+[node name="HoppingSlime32" parent="MainLayer/Actors/HoppingSlimes" index="24" instance=ExtResource( 7 )]
+position = Vector2( 2016, -800 )
+
+[node name="HoppingSlime33" parent="MainLayer/Actors/HoppingSlimes" index="25" instance=ExtResource( 7 )]
+position = Vector2( 1632, -800 )
+
+[node name="HoppingSlime34" parent="MainLayer/Actors/HoppingSlimes" index="26" instance=ExtResource( 7 )]
+position = Vector2( 2496, -864 )
+
+[node name="HoppingSlime35" parent="MainLayer/Actors/HoppingSlimes" index="27" instance=ExtResource( 7 )]
+position = Vector2( 2144, -864 )
+
+[node name="HoppingSlime36" parent="MainLayer/Actors/HoppingSlimes" index="28" instance=ExtResource( 7 )]
+position = Vector2( 1760, -864 )
+
+[node name="HoppingSlime37" parent="MainLayer/Actors/HoppingSlimes" index="29" instance=ExtResource( 7 )]
+position = Vector2( 2752, -992 )
+
+[node name="HoppingSlime38" parent="MainLayer/Actors/HoppingSlimes" index="30" instance=ExtResource( 7 )]
+position = Vector2( 2400, -992 )
+
+[node name="HoppingSlime39" parent="MainLayer/Actors/HoppingSlimes" index="31" instance=ExtResource( 7 )]
+position = Vector2( 2016, -992 )
+
+[node name="HoppingSlime40" parent="MainLayer/Actors/HoppingSlimes" index="32" instance=ExtResource( 7 )]
+position = Vector2( 2880, -1056 )
+
+[node name="HoppingSlime41" parent="MainLayer/Actors/HoppingSlimes" index="33" instance=ExtResource( 7 )]
+position = Vector2( 2528, -1056 )
+
+[node name="HoppingSlime42" parent="MainLayer/Actors/HoppingSlimes" index="34" instance=ExtResource( 7 )]
+position = Vector2( 2144, -1056 )
+
+[node name="HoppingSlime43" parent="MainLayer/Actors/HoppingSlimes" index="35" instance=ExtResource( 7 )]
+position = Vector2( 3136, -1184 )
+
+[node name="HoppingSlime44" parent="MainLayer/Actors/HoppingSlimes" index="36" instance=ExtResource( 7 )]
+position = Vector2( 2784, -1184 )
+
+[node name="HoppingSlime45" parent="MainLayer/Actors/HoppingSlimes" index="37" instance=ExtResource( 7 )]
+position = Vector2( 2400, -1184 )
+
+[node name="HoppingSlime46" parent="MainLayer/Actors/HoppingSlimes" index="38" instance=ExtResource( 7 )]
+position = Vector2( 3264, -1248 )
+
+[node name="HoppingSlime47" parent="MainLayer/Actors/HoppingSlimes" index="39" instance=ExtResource( 7 )]
+position = Vector2( 2912, -1248 )
+
+[node name="HoppingSlime48" parent="MainLayer/Actors/HoppingSlimes" index="40" instance=ExtResource( 7 )]
+position = Vector2( 2528, -1248 )
+
+[node name="HoppingSlime30" parent="MainLayer/Actors/HoppingSlimes" index="41" instance=ExtResource( 7 )]
+position = Vector2( 1248, -608 )
+
+[node name="Bonez" parent="MainLayer" index="12"]
+position = Vector2( 320, 448 )
+
+[node name="Camera2D" parent="MainLayer/Bonez" index="12"]
+limit_right = 832
+limit_bottom = 544
+
+[node name="Layer_1" parent="PositiveLayers" index="0"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 21.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_1" index="0"]
+motion_offset = Vector2( -21.6, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_1" index="2"]
+motion_offset = Vector2( 21.6, 0 )
+
+[node name="Layer_2" parent="PositiveLayers" index="1"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 43.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_2" index="0"]
+motion_offset = Vector2( -43.2, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_2" index="2"]
+motion_offset = Vector2( 43.2, 0 )
+
+[node name="Layer_3" parent="PositiveLayers" index="2"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 64.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_3" index="0"]
+motion_offset = Vector2( -64.8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_3" index="2"]
+motion_offset = Vector2( 64.8, 0 )
+
+[node name="Layer_4" parent="PositiveLayers" index="3"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 86.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_4" index="0"]
+motion_offset = Vector2( -86.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_4" index="2"]
+motion_offset = Vector2( 86.4, 0 )
+
+[node name="Layer_5" parent="PositiveLayers" index="4"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 108, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_5" index="0"]
+motion_offset = Vector2( -108, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_5" index="2"]
+motion_offset = Vector2( 108, 0 )
+
+[node name="Layer_6" parent="PositiveLayers" index="5"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 129.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_6" index="0"]
+motion_offset = Vector2( -129.6, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_6" index="2"]
+motion_offset = Vector2( 129.6, 0 )
+
+[node name="Layer_7" parent="PositiveLayers" index="6"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 151.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_7" index="0"]
+motion_offset = Vector2( -151.2, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_7" index="2"]
+motion_offset = Vector2( 151.2, 0 )
+
+[node name="Layer_8" parent="PositiveLayers" index="7"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 172.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_8" index="0"]
+motion_offset = Vector2( -172.8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_8" index="2"]
+motion_offset = Vector2( 172.8, 0 )
+
+[node name="Layer_9" parent="PositiveLayers" index="8"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 194.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_9" index="0"]
+motion_offset = Vector2( -194.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_9" index="2"]
+motion_offset = Vector2( 194.4, 0 )
+
+[node name="Layer_10" parent="PositiveLayers" index="9"]
+offset = Vector2( 416, 0 )
+transform = Transform2D( 1, 0, 0, 1, 416, 0 )
+scroll_base_offset = Vector2( 216, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_10" index="0"]
+motion_offset = Vector2( -216, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_10" index="2"]
+motion_offset = Vector2( 216, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="9"]
+position = Vector2( 696, -40 )
+zoom = Vector2( 4, 4 )
+
+[editable path="MainLayer/Platforms/Left_Up-Down"]
+
+[editable path="MainLayer/Platforms/MovingPlatform2"]
+
+[editable path="MainLayer/Platforms/MovingPlatform3"]
+
+[editable path="MainLayer/Platforms/MovingPlatform4"]
+
+[editable path="MainLayer/Platforms/MovingPlatform5"]
+
+[editable path="MainLayer/Platforms/MovingPlatform6"]
+
+[editable path="MainLayer/Platforms/MovingPlatform7"]
+
+[editable path="MainLayer/Platforms/MovingPlatform8"]
+
+[editable path="PauseMenu"]

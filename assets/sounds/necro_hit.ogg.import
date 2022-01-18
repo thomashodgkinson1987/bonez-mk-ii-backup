@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/necro_hit.ogg-7aad6f86180ab2ce379f68745faf11ff.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/necro_hit.ogg"
+dest_files=[ "res://.import/necro_hit.ogg-7aad6f86180ab2ce379f68745faf11ff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

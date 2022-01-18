@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/atlases/atlas_32x32.png" type="Texture" id=1]
+[ext_resource path="res://assets/resources/fonts/level_hud_font_0001.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/packed_scenes/huds/BaseLevelHUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/PackedScenes/HUDs/LevelHUD_CollectBones.cs" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 288, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 288, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 288, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 320, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 320, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 320, 32, 32 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 0.0784314 )
+draw_center = false
+corner_detail = 1
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 359, 17, 17 )
+
+[node name="LevelHUD_CollectBones" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+PlayerHeartTexture_Empty = SubResource( 1 )
+PlayerHeartTexture_One = SubResource( 2 )
+PlayerHeartTexture_Two = SubResource( 3 )
+PlayerHeartTexture_Three = SubResource( 4 )
+PlayerHeartTexture_Four = SubResource( 5 )
+PlayerHeartTexture_Five = SubResource( 6 )
+
+[node name="BonePanel" type="Panel" parent="." index="1"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = -32.0
+margin_right = 128.0
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BonePanel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoneTexture" type="TextureRect" parent="BonePanel/HBoxContainer" index="0"]
+margin_left = 7.0
+margin_right = 24.0
+margin_bottom = 32.0
+texture = SubResource( 8 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BonesCollectedLabel" type="Label" parent="BonePanel/HBoxContainer" index="1"]
+margin_left = 28.0
+margin_top = 12.0
+margin_right = 35.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DividerLabel" type="Label" parent="BonePanel/HBoxContainer" index="2"]
+margin_left = 39.0
+margin_top = 12.0
+margin_right = 45.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "/"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BonesTotalLabel" type="Label" parent="BonePanel/HBoxContainer" index="3"]
+margin_left = 49.0
+margin_top = 12.0
+margin_right = 56.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

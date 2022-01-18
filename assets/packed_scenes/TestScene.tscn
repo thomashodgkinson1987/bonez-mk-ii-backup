@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/atlases/atlas_32x32.png" type="Texture" id=1]
+[ext_resource path="res://src/MovingBody.cs" type="Script" id=2]
+[ext_resource path="res://src/MovingArea.cs" type="Script" id=3]
+[ext_resource path="res://src/TestScene.cs" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 416, 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24, 24 )
+
+[node name="Node2D" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="InteractableArea" type="Area2D" parent="."]
+pause_mode = 1
+position = Vector2( 256, 152 )
+input_pickable = false
+collision_layer = 2048
+collision_mask = 2147485698
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="InteractableArea"]
+self_modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.25, 0.25 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+visible = false
+shape = SubResource( 2 )
+
+[node name="MovingBody" type="KinematicBody2D" parent="."]
+pause_mode = 1
+position = Vector2( 128, 48 )
+collision_layer = 2
+collision/safe_margin = 0.1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+Velocity = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="MovingBody"]
+modulate = Color( 0, 1, 0.952941, 1 )
+scale = Vector2( 1.5, 1.5 )
+texture = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBody"]
+visible = false
+shape = SubResource( 3 )
+
+[node name="InteractArea" type="Area2D" parent="MovingBody"]
+input_pickable = false
+collision_layer = 32
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBody/InteractArea"]
+visible = false
+shape = SubResource( 4 )
+[connection signal="area_entered" from="InteractableArea" to="InteractableArea" method="OnAreaEntered"]
+[connection signal="area_exited" from="InteractableArea" to="InteractableArea" method="OnAreaExited"]
+[connection signal="body_entered" from="InteractableArea" to="InteractableArea" method="OnBodyEntered"]
+[connection signal="body_exited" from="InteractableArea" to="InteractableArea" method="OnBodyExited"]
+[connection signal="area_entered" from="MovingBody/InteractArea" to="MovingBody" method="OnAreaEnteredInteractArea"]
+[connection signal="area_exited" from="MovingBody/InteractArea" to="MovingBody" method="OnAreaExitedInteractArea"]
+[connection signal="body_entered" from="MovingBody/InteractArea" to="MovingBody" method="OnBodyEnteredInteractArea"]
+[connection signal="body_exited" from="MovingBody/InteractArea" to="MovingBody" method="OnBodyExitedInteractArea"]

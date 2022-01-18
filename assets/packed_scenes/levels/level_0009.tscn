@@ -1,0 +1,844 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/packed_scenes/levels/templates/level_necro_arena.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/packed_scenes/Clouds.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/resources/tilesets/tiles_128x128.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/resources/animations/necro_anim_0001.tres" type="Animation" id=4]
+[ext_resource path="res://assets/packed_scenes/level_objects/Spike.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "ANIM_0002"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainLayer/Actors/Necros/Necro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 5, 9, 13, 14, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 0.5, 2, 1 ),
+"update": 0,
+"values": [ Vector2( 32, 136 ), Vector2( 32, 136 ), Vector2( 352, 136 ), Vector2( 32, 136 ), Vector2( 352, 136 ), Vector2( 352, 136 ), Vector2( 448, 136 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainLayer/Actors/Necros/Necro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 14, 15 ),
+"transitions": PoolRealArray( 1, 1, 2, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainLayer/Actors/Necros/Necro:IsShooting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "ANIM_0003"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainLayer/Actors/Necros/Necro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainLayer/Actors/Necros/Necro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 3, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -32, 240 ), Vector2( 448, 240 ), Vector2( 448, 240 ), Vector2( -32, 240 ), Vector2( -32, 240 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ANIM_0004"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainLayer/Actors/Necros/Necro:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 4.4, 4.6, 5, 5.9, 6.1, 9.9, 10.1, 10.5, 11.4, 11.6, 15.5, 15.7, 16 ),
+"transitions": PoolRealArray( 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.6 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainLayer/Actors/Necros/Necro:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 4.5, 5, 5.5, 6, 10, 10.5, 11, 11.5, 15.5, 16 ),
+"transitions": PoolRealArray( 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 96, -64 ), Vector2( 96, 160 ), Vector2( 96, 160 ), Vector2( 96, -64 ), Vector2( 288, -64 ), Vector2( 288, 160 ), Vector2( 288, 160 ), Vector2( 288, -64 ), Vector2( 208, -64 ), Vector2( 208, 160 ), Vector2( 208, 160 ), Vector2( 208, 136 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainLayer/Actors/Necros/Necro:IsShooting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 4.5, 6, 10, 11.5, 15.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainLayer/Actors/Necros/Necro:FireRate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 11.5, 15.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.5, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MainLayer/Actors/Necros/Necro:NecroBlastSpeed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 11.5, 15.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 64.0, 96.0, 64.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 16.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -128, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TileMap3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -64, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TileMap3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.0823529 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TileMap2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.188235 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Layer_9/Left/Node2D4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 112 ), Vector2( -504, 112 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Layer_9/Left/Node2D4:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.239216, 0.239216, 0.239216, 1 ), Color( 0.239216, 0.239216, 0.239216, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Layer_9/Left/Node2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -16, 112 ), Vector2( 376, 112 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../Layer_9/Left/Node2D3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.239216, 0.239216, 0.239216, 1 ), Color( 0.239216, 0.239216, 0.239216, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../Layer_9/Left/Node2D5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.105882 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Level_NecroArena" instance=ExtResource( 1 )]
+LevelID = "level_0009"
+LevelName = "Level 9"
+
+[node name="NecroAnimationPlayer" parent="." index="1"]
+anims/ANIM_0001 = ExtResource( 4 )
+anims/ANIM_0002 = SubResource( 1 )
+anims/ANIM_0003 = SubResource( 2 )
+anims/ANIM_0004 = SubResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="ParallaxBackground/ParallaxLayer" index="0"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -393216, 0, 196612, -393215, 0, 196612, -393214, 0, 196612, -393213, 0, 196612, -327680, 0, 196612, -327679, 0, 196612, -327678, 0, 196612, -327677, 0, 196612, -262144, 0, 196612, -262143, 0, 196612, -262142, 0, 196612, -262141, 0, 196612, -196608, 0, 196612, -196607, 0, 196612, -196606, 0, 196612, -196605, 0, 196612, -131072, 0, 196612, -131071, 0, 196612, -131070, 0, 196612, -131069, 0, 196612, -65536, 0, 196612, -65535, 0, 196612, -65534, 0, 196612, -65533, 0, 196612, 0, 0, 196612, 1, 0, 196612, 2, 0, 196612, 3, 0, 196612, 65536, 0, 196612, 65537, 0, 196612, 65538, 0, 196612, 65539, 0, 196612 )
+
+[node name="TileMap3" type="TileMap" parent="ParallaxBackground/ParallaxLayer" index="1"]
+modulate = Color( 1, 1, 1, 0.47563 )
+position = Vector2( -32, 0 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393216, 0, 196614, -393215, 0, 196614, -393214, 0, 196614, -393213, 0, 196614, -393212, 0, 196614, -393211, 0, 196614, -393210, 0, 196614, -393209, 0, 196614, -393208, 0, 196614, -393207, 0, 196614, -393206, 0, 196614, -393205, 0, 196614, -393204, 0, 196614, -393203, 0, 196614, -393202, 0, 196614, -393201, 0, 196614, -393200, 0, 196614, -393199, 0, 196614, -393198, 0, 196614, -393197, 0, 196614, -393196, 0, 196614, -393195, 0, 196614, -393194, 0, 196614, -393193, 0, 196614, -327680, 0, 196614, -327679, 0, 196614, -327678, 0, 196614, -327677, 0, 196614, -327676, 0, 196614, -327675, 0, 196614, -327674, 0, 196614, -327673, 0, 196614, -327672, 0, 196614, -327671, 0, 196614, -327670, 0, 196614, -327669, 0, 196614, -327668, 0, 196614, -327667, 0, 196614, -327666, 0, 196614, -327665, 0, 196614, -327664, 0, 196614, -327663, 0, 196614, -327662, 0, 196614, -327661, 0, 196614, -327660, 0, 196614, -327659, 0, 196614, -327658, 0, 196614, -327657, 0, 196614, -262144, 0, 196614, -262143, 0, 196614, -262142, 0, 196614, -262141, 0, 196614, -262140, 0, 196614, -262139, 0, 196614, -262138, 0, 196614, -262137, 0, 196614, -262136, 0, 196614, -262135, 0, 196614, -262134, 0, 196614, -262133, 0, 196614, -262132, 0, 196614, -262131, 0, 196614, -262130, 0, 196614, -262129, 0, 196614, -262128, 0, 196614, -262127, 0, 196614, -262126, 0, 196614, -262125, 0, 196614, -262124, 0, 196614, -262123, 0, 196614, -262122, 0, 196614, -262121, 0, 196614, -196608, 0, 196614, -196607, 0, 196614, -196606, 0, 196614, -196605, 0, 196614, -196604, 0, 196614, -196603, 0, 196614, -196602, 0, 196614, -196601, 0, 196614, -196600, 0, 196614, -196599, 0, 196614, -196598, 0, 196614, -196597, 0, 196614, -196596, 0, 196614, -196595, 0, 196614, -196594, 0, 196614, -196593, 0, 196614, -196592, 0, 196614, -196591, 0, 196614, -196590, 0, 196614, -196589, 0, 196614, -196588, 0, 196614, -196587, 0, 196614, -196586, 0, 196614, -196585, 0, 196614, -131072, 0, 196614, -131071, 0, 196614, -131070, 0, 196614, -131069, 0, 196614, -131068, 0, 196614, -131067, 0, 196614, -131066, 0, 196614, -131065, 0, 196614, -131064, 0, 196614, -131063, 0, 196614, -131062, 0, 196614, -131061, 0, 196614, -131060, 0, 196614, -131059, 0, 196614, -131058, 0, 196614, -131057, 0, 196614, -131056, 0, 196614, -131055, 0, 196614, -131054, 0, 196614, -131053, 0, 196614, -131052, 0, 196614, -131051, 0, 196614, -131050, 0, 196614, -131049, 0, 196614, -65536, 0, 196614, -65535, 0, 196614, -65534, 0, 196614, -65533, 0, 196614, -65532, 0, 196614, -65531, 0, 196614, -65530, 0, 196614, -65529, 0, 196614, -65528, 0, 196614, -65527, 0, 196614, -65526, 0, 196614, -65525, 0, 196614, -65524, 0, 196614, -65523, 0, 196614, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 196614, -65518, 0, 196614, -65517, 0, 196614, -65516, 0, 196614, -65515, 0, 196614, -65514, 0, 196614, -65513, 0, 196614, 0, 0, 196614, 1, 0, 196614, 2, 0, 196614, 3, 0, 196614, 4, 0, 196614, 5, 0, 196614, 6, 0, 196614, 7, 0, 196614, 8, 0, 196614, 9, 0, 196614, 10, 0, 196614, 11, 0, 196614, 12, 0, 196614, 13, 0, 196614, 14, 0, 196614, 15, 0, 196614, 16, 0, 196614, 17, 0, 196614, 18, 0, 196614, 19, 0, 196614, 20, 0, 196614, 21, 0, 196614, 22, 0, 196614, 23, 0, 196614, 65536, 0, 196614, 65537, 0, 196614, 65538, 0, 196614, 65539, 0, 196614, 65540, 0, 196614, 65541, 0, 196614, 65542, 0, 196614, 65543, 0, 196614, 65544, 0, 196614, 65545, 0, 196614, 65546, 0, 196614, 65547, 0, 196614, 65548, 0, 196614, 65549, 0, 196614, 65550, 0, 196614, 65551, 0, 196614, 65552, 0, 196614, 65553, 0, 196614, 65554, 0, 196614, 65555, 0, 196614, 65556, 0, 196614, 65557, 0, 196614, 65558, 0, 196614, 65559, 0, 196614, 131072, 0, 196614, 131073, 0, 196614, 131074, 0, 196614, 131075, 0, 196614, 131076, 0, 196614, 131077, 0, 196614, 131078, 0, 196614, 131079, 0, 196614, 131080, 0, 196614, 131081, 0, 196614, 131082, 0, 196614, 131083, 0, 196614, 131084, 0, 196614, 131085, 0, 196614, 131086, 0, 196614, 131087, 0, 196614, 131088, 0, 196614, 131089, 0, 196614, 131090, 0, 196614, 131091, 0, 196614, 131092, 0, 196614, 131093, 0, 196614, 131094, 0, 196614, 131095, 0, 196614, 196608, 0, 196614, 196609, 0, 196614, 196610, 0, 196614, 196611, 0, 196614, 196612, 0, 196614, 196613, 0, 196614, 196614, 0, 196614, 196615, 0, 196614, 196616, 0, 196614, 196617, 0, 196614, 196618, 0, 196614, 196619, 0, 196614, 196620, 0, 196614, 196621, 0, 196614, 196622, 0, 196614, 196623, 0, 196614, 196624, 0, 196614, 196625, 0, 196614, 196626, 0, 196614, 196627, 0, 196614, 196628, 0, 196614, 196629, 0, 196614, 196630, 0, 196614, 196631, 0, 196614, 262144, 0, 196614, 262145, 0, 196614, 262146, 0, 196614, 262147, 0, 196614, 262148, 0, 196614, 262149, 0, 196614, 262150, 0, 196614, 262151, 0, 196614, 262152, 0, 196614, 262153, 0, 196614, 262154, 0, 196614, 262155, 0, 196614, 262156, 0, 196614, 262157, 0, 196614, 262158, 0, 196614, 262159, 0, 196614, 262160, 0, 196614, 262161, 0, 196614, 262162, 0, 196614, 262163, 0, 196614, 262164, 0, 196614, 262165, 0, 196614, 262166, 0, 196614, 262167, 0, 196614, 327680, 0, 196614, 327681, 0, 196614, 327682, 0, 196614, 327683, 0, 196614, 327684, 0, 196614, 327685, 0, 196614, 327686, 0, 196614, 327687, 0, 196614, 327688, 0, 196614, 327689, 0, 196614, 327690, 0, 196614, 327691, 0, 196614, 327692, 0, 196614, 327693, 0, 196614, 327694, 0, 196614, 327695, 0, 196614, 327696, 0, 196614, 327697, 0, 196614, 327698, 0, 196614, 327699, 0, 196614, 327700, 0, 196614, 327701, 0, 196614, 327702, 0, 196614, 327703, 0, 196614, 393216, 0, 196614, 393217, 0, 196614, 393218, 0, 196614, 393219, 0, 196614, 393220, 0, 196614, 393221, 0, 196614, 393222, 0, 196614, 393223, 0, 196614, 393224, 0, 196614, 393225, 0, 196614, 393226, 0, 196614, 393227, 0, 196614, 393228, 0, 196614, 393229, 0, 196614, 393230, 0, 196614, 393231, 0, 196614, 393232, 0, 196614, 393233, 0, 196614, 393234, 0, 196614, 393235, 0, 196614, 393236, 0, 196614, 393237, 0, 196614, 393238, 0, 196614, 393239, 0, 196614, 458752, 0, 196614, 458753, 0, 196614, 458754, 0, 196614, 458755, 0, 196614, 458756, 0, 196614, 458757, 0, 196614, 458758, 0, 196614, 458759, 0, 196614, 458760, 0, 196614, 458761, 0, 196614, 458762, 0, 196614, 458763, 0, 196614, 458764, 0, 196614, 458765, 0, 196614, 458766, 0, 196614, 458767, 0, 196614, 458768, 0, 196614, 458769, 0, 196614, 458770, 0, 196614, 458771, 0, 196614, 458772, 0, 196614, 458773, 0, 196614, 458774, 0, 196614, 458775, 0, 196614, 524288, 0, 196614, 524289, 0, 196614, 524290, 0, 196614, 524291, 0, 196614, 524292, 0, 196614, 524293, 0, 196614, 524294, 0, 196614, 524295, 0, 196614, 524296, 0, 196614, 524297, 0, 196614, 524298, 0, 196614, 524299, 0, 196614, 524300, 0, 196614, 524301, 0, 196614, 524302, 0, 196614, 524303, 0, 196614, 524304, 0, 196614, 524305, 0, 196614, 524306, 0, 196614, 524307, 0, 196614, 524308, 0, 196614, 524309, 0, 196614, 524310, 0, 196614, 524311, 0, 196614, 589824, 0, 196614, 589825, 0, 196614, 589826, 0, 196614, 589827, 0, 196614, 589828, 0, 196614, 589829, 0, 196614, 589830, 0, 196614, 589831, 0, 196614, 589832, 0, 196614, 589833, 0, 196614, 589834, 0, 196614, 589835, 0, 196614, 589836, 0, 196614, 589837, 0, 196614, 589838, 0, 196614, 589839, 0, 196614, 589840, 0, 196614, 589841, 0, 196614, 589842, 0, 196614, 589843, 0, 196614, 589844, 0, 196614, 589845, 0, 196614, 589846, 0, 196614, 589847, 0, 196614, 655360, 0, 196614, 655361, 0, 196614, 655362, 0, 196614, 655363, 0, 196614, 655364, 0, 196614, 655365, 0, 196614, 655366, 0, 196614, 655367, 0, 196614, 655368, 0, 196614, 655369, 0, 196614, 655370, 0, 196614, 655371, 0, 196614, 655372, 0, 196614, 655373, 0, 196614, 655374, 0, 196614, 655375, 0, 196614, 655376, 0, 196614, 655377, 0, 196614, 655378, 0, 196614, 655379, 0, 196614, 655380, 0, 196614, 655381, 0, 196614, 655382, 0, 196614, 655383, 0, 196614, 720896, 0, 196614, 720897, 0, 196614, 720898, 0, 196614, 720899, 0, 196614, 720900, 0, 196614, 720901, 0, 196614, 720902, 0, 196614, 720903, 0, 196614, 720904, 0, 196614, 720905, 0, 196614, 720906, 0, 196614, 720907, 0, 196614, 720908, 0, 196614, 720909, 0, 196614, 720910, 0, 196614, 720911, 0, 196614, 720912, 0, 196614, 720913, 0, 196614, 720914, 0, 196614, 720915, 0, 196614, 720916, 0, 196614, 720917, 0, 196614, 720918, 0, 196614, 720919, 0, 196614, 786432, 0, 196614, 786433, 0, 196614, 786434, 0, 196614, 786435, 0, 196614, 786436, 0, 196614, 786437, 0, 196614, 786438, 0, 196614, 786439, 0, 196614, 786440, 0, 196614, 786441, 0, 196614, 786442, 0, 196614, 786443, 0, 196614, 786444, 0, 196614, 786445, 0, 196614, 786446, 0, 196614, 786447, 0, 196614, 786448, 0, 196614, 786449, 0, 196614, 786450, 0, 196614, 786451, 0, 196614, 786452, 0, 196614, 786453, 0, 196614, 786454, 0, 196614, 786455, 0, 196614, 851968, 0, 196614, 851969, 0, 196614, 851970, 0, 196614, 851971, 0, 196614, 851972, 0, 196614, 851973, 0, 196614, 851974, 0, 196614, 851975, 0, 196614, 851976, 0, 196614, 851977, 0, 196614, 851978, 0, 196614, 851979, 0, 196614, 851980, 0, 196614, 851981, 0, 196614, 851982, 0, 196614, 851983, 0, 196614, 851984, 0, 196614, 851985, 0, 196614, 851986, 0, 196614, 851987, 0, 196614, 851988, 0, 196614, 851989, 0, 196614, 851990, 0, 196614, 851991, 0, 196614, 917504, 0, 196614, 917505, 0, 196614, 917506, 0, 196614, 917507, 0, 196614, 917508, 0, 196614, 917509, 0, 196614, 917510, 0, 196614, 917511, 0, 196614, 917512, 0, 196614, 917513, 0, 196614, 917514, 0, 196614, 917515, 0, 196614, 917516, 0, 196614, 917517, 0, 196614, 917518, 0, 196614, 917519, 0, 196614, 917520, 0, 196614, 917521, 0, 196614, 917522, 0, 196614, 917523, 0, 196614, 917524, 0, 196614, 917525, 0, 196614, 917526, 0, 196614, 917527, 0, 196614, 983040, 0, 196614, 983041, 0, 196614, 983042, 0, 196614, 983043, 0, 196614, 983044, 0, 196614, 983045, 0, 196614, 983046, 0, 196614, 983047, 0, 196614, 983048, 0, 196614, 983049, 0, 196614, 983050, 0, 196614, 983051, 0, 196614, 983052, 0, 196614, 983053, 0, 196614, 983054, 0, 196614, 983055, 0, 196614, 983056, 0, 196614, 983057, 0, 196614, 983058, 0, 196614, 983059, 0, 196614, 983060, 0, 196614, 983061, 0, 196614, 983062, 0, 196614, 983063, 0, 196614, 1048576, 0, 196614, 1048577, 0, 196614, 1048578, 0, 196614, 1048579, 0, 196614, 1048580, 0, 196614, 1048581, 0, 196614, 1048582, 0, 196614, 1048583, 0, 196614, 1048584, 0, 196614, 1048585, 0, 196614, 1048586, 0, 196614, 1048587, 0, 196614, 1048588, 0, 196614, 1048589, 0, 196614, 1048590, 0, 196614, 1048591, 0, 196614, 1048592, 0, 196614, 1048593, 0, 196614, 1048594, 0, 196614, 1048595, 0, 196614, 1048596, 0, 196614, 1048597, 0, 196614, 1048598, 0, 196614, 1048599, 0, 196614, 1114112, 0, 196614, 1114113, 0, 196614, 1114114, 0, 196614, 1114115, 0, 196614, 1114116, 0, 196614, 1114117, 0, 196614, 1114118, 0, 196614, 1114119, 0, 196614, 1114120, 0, 196614, 1114121, 0, 196614, 1114122, 0, 196614, 1114123, 0, 196614, 1114124, 0, 196614, 1114125, 0, 196614, 1114126, 0, 196614, 1114127, 0, 196614, 1114128, 0, 196614, 1114129, 0, 196614, 1114130, 0, 196614, 1114131, 0, 196614, 1114132, 0, 196614, 1114133, 0, 196614, 1114134, 0, 196614, 1114135, 0, 196614 )
+
+[node name="TileMap2" type="TileMap" parent="ParallaxBackground/ParallaxLayer" index="2"]
+modulate = Color( 1, 1, 1, 0.652101 )
+position = Vector2( -64, 0 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 128
+cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -393216, 0, 196614, -393215, 0, 196614, -393214, 0, 196614, -393213, 0, 196614, -393212, 0, 196614, -393211, 0, 196614, -327680, 0, 196614, -327679, 0, 196614, -327678, 0, 196614, -327677, 0, 196614, -327676, 0, 196614, -327675, 0, 196614, -262144, 0, 196614, -262143, 0, 196614, -262142, 0, 196614, -262141, 0, 196614, -262140, 0, 196614, -262139, 0, 196614, -196608, 0, 196614, -196607, 0, 196614, -196606, 0, 196614, -196605, 0, 196614, -196604, 0, 196614, -196603, 0, 196614, -131072, 0, 196614, -131071, 0, 196614, -131070, 0, 196614, -131069, 0, 196614, -131068, 0, 196614, -131067, 0, 196614, -65536, 0, 196614, -65535, 0, 196614, -65534, 0, 196614, -65533, 0, 196614, -65532, 0, 196614, -65531, 0, 196614, 0, 0, 196614, 1, 0, 196614, 2, 0, 196614, 3, 0, 196614, 4, 0, 196614, 5, 0, 196614, 65536, 0, 196614, 65537, 0, 196614, 65538, 0, 196614, 65539, 0, 196614, 65540, 0, 196614, 65541, 0, 196614 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ParallaxBackground/ParallaxLayer" index="3"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 4 )
+
+[node name="Layer_-10" parent="NegativeLayers" index="0"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-10" index="0"]
+motion_offset = Vector2( 8, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-10" index="2"]
+motion_offset = Vector2( -8, 0 )
+
+[node name="Layer_-9" parent="NegativeLayers" index="1"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -7.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-9" index="0"]
+motion_offset = Vector2( 7.2, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-9" index="2"]
+motion_offset = Vector2( -7.2, 0 )
+
+[node name="Layer_-8" parent="NegativeLayers" index="2"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -6.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-8" index="0"]
+motion_offset = Vector2( 6.4, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-8" index="2"]
+motion_offset = Vector2( -6.4, 0 )
+
+[node name="Layer_-7" parent="NegativeLayers" index="3"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -5.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-7" index="0"]
+motion_offset = Vector2( 5.6, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-7" index="2"]
+motion_offset = Vector2( -5.6, 0 )
+
+[node name="Layer_-6" parent="NegativeLayers" index="4"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -4.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-6" index="0"]
+motion_offset = Vector2( 4.8, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-6" index="2"]
+motion_offset = Vector2( -4.8, 0 )
+
+[node name="Layer_-5" parent="NegativeLayers" index="5"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-5" index="0"]
+motion_offset = Vector2( 4, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-5" index="2"]
+motion_offset = Vector2( -4, 0 )
+
+[node name="Layer_-4" parent="NegativeLayers" index="6"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -3.2, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-4" index="0"]
+motion_offset = Vector2( 3.2, 0 )
+
+[node name="Right" parent="NegativeLayers/Layer_-4" index="2"]
+motion_offset = Vector2( -3.2, 0 )
+
+[node name="Layer_-3" parent="NegativeLayers" index="7"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -2.4, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-3" index="0"]
+motion_offset = Vector2( 2.4, 0 )
+
+[node name="Node2D7" parent="NegativeLayers/Layer_-3/Left" index="0" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( -208, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D8" parent="NegativeLayers/Layer_-3/Left" index="1" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( -144, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D9" parent="NegativeLayers/Layer_-3/Left" index="2" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( -80, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D10" parent="NegativeLayers/Layer_-3/Left" index="3" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( -16, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D11" parent="NegativeLayers/Layer_-3/Left" index="4" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( 48, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D12" parent="NegativeLayers/Layer_-3/Left" index="5" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( 112, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D13" parent="NegativeLayers/Layer_-3/Left" index="6" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( 176, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Node2D14" parent="NegativeLayers/Layer_-3/Left" index="7" instance=ExtResource( 2 )]
+modulate = Color( 0.113725, 0.113725, 0.113725, 1 )
+position = Vector2( 240, 128 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Right" parent="NegativeLayers/Layer_-3" index="2"]
+motion_offset = Vector2( -2.4, 0 )
+
+[node name="Layer_-2" parent="NegativeLayers" index="8"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -1.6, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-2" index="0"]
+motion_offset = Vector2( 1.6, 0 )
+
+[node name="Node2D4" parent="NegativeLayers/Layer_-2/Left" index="0" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -208, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D6" parent="NegativeLayers/Layer_-2/Left" index="1" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -176, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D5" parent="NegativeLayers/Layer_-2/Left" index="2" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -144, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D7" parent="NegativeLayers/Layer_-2/Left" index="3" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -112, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D8" parent="NegativeLayers/Layer_-2/Left" index="4" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -80, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D9" parent="NegativeLayers/Layer_-2/Left" index="5" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -48, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D10" parent="NegativeLayers/Layer_-2/Left" index="6" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( -16, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D11" parent="NegativeLayers/Layer_-2/Left" index="7" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 16, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D12" parent="NegativeLayers/Layer_-2/Left" index="8" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 48, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D13" parent="NegativeLayers/Layer_-2/Left" index="9" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 80, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D14" parent="NegativeLayers/Layer_-2/Left" index="10" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 112, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D15" parent="NegativeLayers/Layer_-2/Left" index="11" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 144, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D16" parent="NegativeLayers/Layer_-2/Left" index="12" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 176, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D17" parent="NegativeLayers/Layer_-2/Left" index="13" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 208, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D18" parent="NegativeLayers/Layer_-2/Left" index="14" instance=ExtResource( 2 )]
+modulate = Color( 0.294118, 0.294118, 0.294118, 1 )
+position = Vector2( 240, 152 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Right" parent="NegativeLayers/Layer_-2" index="2"]
+motion_offset = Vector2( -1.6, 0 )
+
+[node name="Layer_-1" parent="NegativeLayers" index="9"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( -0.8, 0 )
+
+[node name="Left" parent="NegativeLayers/Layer_-1" index="0"]
+motion_offset = Vector2( 0.8, 0 )
+
+[node name="Node2D" parent="NegativeLayers/Layer_-1/Left" index="0" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( -208, 200 )
+
+[node name="Node2D2" parent="NegativeLayers/Layer_-1/Left" index="1" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( -144, 200 )
+
+[node name="Node2D3" parent="NegativeLayers/Layer_-1/Left" index="2" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( -80, 200 )
+
+[node name="Node2D4" parent="NegativeLayers/Layer_-1/Left" index="3" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( -16, 200 )
+
+[node name="Node2D5" parent="NegativeLayers/Layer_-1/Left" index="4" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( 48, 200 )
+
+[node name="Node2D6" parent="NegativeLayers/Layer_-1/Left" index="5" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( 112, 200 )
+
+[node name="Node2D7" parent="NegativeLayers/Layer_-1/Left" index="6" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( 176, 200 )
+
+[node name="Node2D8" parent="NegativeLayers/Layer_-1/Left" index="7" instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.815686, 0.815686, 1 )
+position = Vector2( 240, 200 )
+
+[node name="Right" parent="NegativeLayers/Layer_-1" index="2"]
+motion_offset = Vector2( -0.8, 0 )
+
+[node name="TileMap_Main" parent="MainLayer/Main_TileMaps" index="1"]
+tile_data = PoolIntArray( 327681, 4, 1441795, 327682, 4, 1441795, 327683, 4, 1441795, 327684, 4, 1441795, 327685, 4, 1441795, 327686, 4, 1441795, 327687, 4, 1441795, 327688, 4, 1441795, 327689, 4, 1441795, 327690, 4, 1441795, 393219, 4, 1441795, 393221, 4, 1441795, 393222, 4, 1441795, 393225, 4, 1441795, 458756, 4, 1441795, 458758, 4, 1441795, 458759, 4, 1441795, 458760, 4, 1441795 )
+
+[node name="MapBounds" parent="MainLayer" index="1"]
+anchor_top = -3.2
+
+[node name="Spike" parent="MainLayer/Spikes" index="0" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 16, 208 )
+
+[node name="Spike2" parent="MainLayer/Spikes" index="1" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 368, 208 )
+
+[node name="Spike3" parent="MainLayer/Spikes" index="2" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 400, 208 )
+
+[node name="Spike4" parent="MainLayer/Spikes" index="3" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 336, 208 )
+
+[node name="Spike5" parent="MainLayer/Spikes" index="4" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 48, 208 )
+
+[node name="Spike6" parent="MainLayer/Spikes" index="5" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 80, 208 )
+
+[node name="Spike7" parent="MainLayer/Spikes" index="6" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 112, 208 )
+
+[node name="Spike8" parent="MainLayer/Spikes" index="7" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 144, 208 )
+
+[node name="Spike9" parent="MainLayer/Spikes" index="8" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 176, 208 )
+
+[node name="Spike10" parent="MainLayer/Spikes" index="9" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 208, 208 )
+
+[node name="Spike11" parent="MainLayer/Spikes" index="10" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 240, 208 )
+
+[node name="Spike12" parent="MainLayer/Spikes" index="11" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 272, 208 )
+
+[node name="Spike13" parent="MainLayer/Spikes" index="12" instance=ExtResource( 5 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 304, 208 )
+
+[node name="Necro" parent="MainLayer/Actors/Necros" index="0"]
+modulate = Color( 0, 0, 0, 0 )
+position = Vector2( 96, -64 )
+
+[node name="Projectiles" parent="MainLayer" index="11"]
+z_index = 1
+
+[node name="Bonez" parent="MainLayer" index="12"]
+position = Vector2( 128, 160 )
+
+[node name="Camera2D" parent="MainLayer/Bonez" index="12"]
+limit_top = -768
+limit_right = 416
+limit_bottom = 256
+
+[node name="Layer_1" parent="PositiveLayers" index="0"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 0.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_1" index="0"]
+motion_offset = Vector2( -0.8, 0 )
+
+[node name="Node2D6" parent="PositiveLayers/Layer_1/Left" index="0" instance=ExtResource( 2 )]
+position = Vector2( -208, 296 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D7" parent="PositiveLayers/Layer_1/Left" index="1" instance=ExtResource( 2 )]
+position = Vector2( 0, 296 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D8" parent="PositiveLayers/Layer_1/Left" index="2" instance=ExtResource( 2 )]
+position = Vector2( 208, 296 )
+scale = Vector2( 2, 2 )
+
+[node name="Right" parent="PositiveLayers/Layer_1" index="2"]
+motion_offset = Vector2( 0.8, 0 )
+
+[node name="Layer_2" parent="PositiveLayers" index="1"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 1.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_2" index="0"]
+motion_offset = Vector2( -1.6, 0 )
+
+[node name="Node2D11" parent="PositiveLayers/Layer_2/Left" index="0" instance=ExtResource( 2 )]
+position = Vector2( -136, -304 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D25" parent="PositiveLayers/Layer_2/Left" index="1" instance=ExtResource( 2 )]
+position = Vector2( -16, -320 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D26" parent="PositiveLayers/Layer_2/Left" index="2" instance=ExtResource( 2 )]
+position = Vector2( 120, -304 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D12" parent="PositiveLayers/Layer_2/Left" index="3" instance=ExtResource( 2 )]
+position = Vector2( -136, -304 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D29" parent="PositiveLayers/Layer_2/Left" index="4" instance=ExtResource( 2 )]
+position = Vector2( 120, -304 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D13" parent="PositiveLayers/Layer_2/Left" index="5" instance=ExtResource( 2 )]
+position = Vector2( -168, -256 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D32" parent="PositiveLayers/Layer_2/Left" index="6" instance=ExtResource( 2 )]
+position = Vector2( 88, -256 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D14" parent="PositiveLayers/Layer_2/Left" index="7" instance=ExtResource( 2 )]
+position = Vector2( -168, -256 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D35" parent="PositiveLayers/Layer_2/Left" index="8" instance=ExtResource( 2 )]
+position = Vector2( 88, -256 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D15" parent="PositiveLayers/Layer_2/Left" index="9" instance=ExtResource( 2 )]
+position = Vector2( -160, -200 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D38" parent="PositiveLayers/Layer_2/Left" index="10" instance=ExtResource( 2 )]
+position = Vector2( 96, -200 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D16" parent="PositiveLayers/Layer_2/Left" index="11" instance=ExtResource( 2 )]
+position = Vector2( -160, -200 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D41" parent="PositiveLayers/Layer_2/Left" index="12" instance=ExtResource( 2 )]
+position = Vector2( 96, -200 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D17" parent="PositiveLayers/Layer_2/Left" index="13" instance=ExtResource( 2 )]
+position = Vector2( -176, -128 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D44" parent="PositiveLayers/Layer_2/Left" index="14" instance=ExtResource( 2 )]
+position = Vector2( 80, -128 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D18" parent="PositiveLayers/Layer_2/Left" index="15" instance=ExtResource( 2 )]
+position = Vector2( -176, -128 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D47" parent="PositiveLayers/Layer_2/Left" index="16" instance=ExtResource( 2 )]
+position = Vector2( 80, -128 )
+scale = Vector2( 2, 2 )
+
+[node name="Right" parent="PositiveLayers/Layer_2" index="2"]
+motion_offset = Vector2( 1.6, 0 )
+
+[node name="Layer_3" parent="PositiveLayers" index="2"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 2.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_3" index="0"]
+motion_offset = Vector2( -2.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_3" index="2"]
+motion_offset = Vector2( 2.4, 0 )
+
+[node name="Layer_4" parent="PositiveLayers" index="3"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 3.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_4" index="0"]
+motion_offset = Vector2( -3.2, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_4" index="2"]
+motion_offset = Vector2( 3.2, 0 )
+
+[node name="Layer_5" parent="PositiveLayers" index="4"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_5" index="0"]
+motion_offset = Vector2( -4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_5" index="2"]
+motion_offset = Vector2( 4, 0 )
+
+[node name="Layer_6" parent="PositiveLayers" index="5"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 4.8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_6" index="0"]
+motion_offset = Vector2( -4.8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_6" index="2"]
+motion_offset = Vector2( 4.8, 0 )
+
+[node name="Layer_7" parent="PositiveLayers" index="6"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 5.6, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_7" index="0"]
+motion_offset = Vector2( -5.6, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_7" index="2"]
+motion_offset = Vector2( 5.6, 0 )
+
+[node name="Layer_8" parent="PositiveLayers" index="7"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 6.4, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_8" index="0"]
+motion_offset = Vector2( -6.4, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_8" index="2"]
+motion_offset = Vector2( 6.4, 0 )
+
+[node name="Layer_9" parent="PositiveLayers" index="8"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 7.2, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_9" index="0"]
+motion_offset = Vector2( -7.2, 0 )
+
+[node name="Node2D4" parent="PositiveLayers/Layer_9/Left" index="0" instance=ExtResource( 2 )]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
+position = Vector2( -80, 112 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D3" parent="PositiveLayers/Layer_9/Left" index="1" instance=ExtResource( 2 )]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
+position = Vector2( -16, 112 )
+scale = Vector2( 2, 2 )
+
+[node name="Node2D5" parent="PositiveLayers/Layer_9/Left" index="2" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.105882 )
+position = Vector2( -16, 112 )
+scale = Vector2( 3, 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PositiveLayers/Layer_9/Left" index="3"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 5 )
+
+[node name="Right" parent="PositiveLayers/Layer_9" index="2"]
+motion_offset = Vector2( 7.2, 0 )
+
+[node name="Layer_10" parent="PositiveLayers" index="9"]
+offset = Vector2( 208, 0 )
+transform = Transform2D( 1, 0, 0, 1, 208, 0 )
+scroll_base_offset = Vector2( 8, 0 )
+
+[node name="Left" parent="PositiveLayers/Layer_10" index="0"]
+motion_offset = Vector2( -8, 0 )
+
+[node name="Right" parent="PositiveLayers/Layer_10" index="2"]
+motion_offset = Vector2( 8, 0 )
+
+[connection signal="animation_finished" from="NecroAnimationPlayer" to="." method="PlayRandomAnimation"]
+
+[editable path="PauseMenu"]

@@ -1,0 +1,153 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/title_0001.png" type="Texture" id=1]
+[ext_resource path="res://assets/music/title_0001.ogg" type="AudioStream" id=2]
+[ext_resource path="res://src/Scenes/Scene_MainMenu.cs" type="Script" id=3]
+[ext_resource path="res://assets/resources/fonts/save_scene_buttons.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/packed_scenes/Fader.tscn" type="PackedScene" id=5]
+
+[node name="MainMenuScene" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Music"
+
+[node name="title_0001" type="Sprite" parent="."]
+scale = Vector2( 1.3245, 1.06667 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Save1Button" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 136.0
+margin_right = 120.0
+margin_bottom = 160.0
+focus_neighbour_left = NodePath("../CreditsButton")
+focus_neighbour_top = NodePath("../Save3Button")
+focus_neighbour_right = NodePath("../Save1DeleteButton")
+focus_neighbour_bottom = NodePath("../Save2Button")
+custom_fonts/font = ExtResource( 4 )
+text = "New Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save1DeleteButton" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 136.0
+margin_right = 208.0
+margin_bottom = 160.0
+focus_neighbour_left = NodePath("../Save1Button")
+focus_neighbour_top = NodePath("../Save3DeleteButton")
+focus_neighbour_right = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../Save2DeleteButton")
+custom_fonts/font = ExtResource( 4 )
+text = "Delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save2Button" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 168.0
+margin_right = 120.0
+margin_bottom = 192.0
+focus_neighbour_left = NodePath("../CreditsButton")
+focus_neighbour_top = NodePath("../Save1Button")
+focus_neighbour_right = NodePath("../Save2DeleteButton")
+focus_neighbour_bottom = NodePath("../Save3Button")
+custom_fonts/font = ExtResource( 4 )
+text = "New Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save2DeleteButton" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 168.0
+margin_right = 208.0
+margin_bottom = 192.0
+focus_neighbour_left = NodePath("../Save2Button")
+focus_neighbour_top = NodePath("../Save1DeleteButton")
+focus_neighbour_right = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../Save3DeleteButton")
+custom_fonts/font = ExtResource( 4 )
+text = "Delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save3Button" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 200.0
+margin_right = 120.0
+margin_bottom = 224.0
+focus_neighbour_left = NodePath("../CreditsButton")
+focus_neighbour_top = NodePath("../Save2Button")
+focus_neighbour_right = NodePath("../Save3DeleteButton")
+focus_neighbour_bottom = NodePath("../Save1Button")
+custom_fonts/font = ExtResource( 4 )
+text = "New Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save3DeleteButton" type="Button" parent="."]
+margin_left = 128.0
+margin_top = 200.0
+margin_right = 208.0
+margin_bottom = 224.0
+focus_neighbour_left = NodePath("../Save3Button")
+focus_neighbour_top = NodePath("../Save2DeleteButton")
+focus_neighbour_right = NodePath("../CreditsButton")
+focus_neighbour_bottom = NodePath("../Save1DeleteButton")
+custom_fonts/font = ExtResource( 4 )
+text = "Delete"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 152.0
+margin_right = 392.0
+margin_bottom = 176.0
+focus_neighbour_left = NodePath("../Save1DeleteButton")
+focus_neighbour_top = NodePath("../ExitButton")
+focus_neighbour_right = NodePath("../Save1Button")
+focus_neighbour_bottom = NodePath("../ExitButton")
+custom_fonts/font = ExtResource( 4 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitButton" type="Button" parent="."]
+margin_left = 304.0
+margin_top = 184.0
+margin_right = 392.0
+margin_bottom = 210.0
+focus_neighbour_left = NodePath("../Save1DeleteButton")
+focus_neighbour_top = NodePath("../CreditsButton")
+focus_neighbour_right = NodePath("../Save1Button")
+focus_neighbour_bottom = NodePath("../CreditsButton")
+custom_fonts/font = ExtResource( 4 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fader" parent="." instance=ExtResource( 5 )]
+FadeTime = 1.0
+[connection signal="pressed" from="Save1Button" to="." method="OnSave1ButtonPressed"]
+[connection signal="pressed" from="Save1DeleteButton" to="." method="OnSave1DeleteButtonPressed"]
+[connection signal="pressed" from="Save2Button" to="." method="OnSave2ButtonPressed"]
+[connection signal="pressed" from="Save2DeleteButton" to="." method="OnSave2DeleteButtonPressed"]
+[connection signal="pressed" from="Save3Button" to="." method="OnSave3ButtonPressed"]
+[connection signal="pressed" from="Save3DeleteButton" to="." method="OnSave3DeleteButtonPressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="OnCreditsButtonPressed"]
+[connection signal="pressed" from="ExitButton" to="." method="OnExitButtonPressed"]

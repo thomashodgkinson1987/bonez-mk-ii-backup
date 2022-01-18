@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/MapBoundsHelper.cs" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 120, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 120, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+resource_local_to_scene = true
+extents = Vector2( 200, 16 )
+
+[sub_resource type="RectangleShape2D" id=4]
+resource_local_to_scene = true
+extents = Vector2( 200, 16 )
+
+[node name="MapBounds" type="ReferenceRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="LeftStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( -16, 120 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftStaticBody2D"]
+rotation = -4.71239
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="RightStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 416, 120 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightStaticBody2D"]
+rotation = 4.71239
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="TopStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 200, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopStaticBody2D"]
+rotation = 3.14159
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="BottomStaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 200, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomStaticBody2D"]
+rotation = 6.28319
+shape = SubResource( 4 )
+one_way_collision = true
+[connection signal="item_rect_changed" from="." to="." method="OnMapBoundsResized"]

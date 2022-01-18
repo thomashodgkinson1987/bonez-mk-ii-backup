@@ -1,0 +1,242 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/fonts/WayfarersToyBoxRegular-gxxER.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/music/credits_0001.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/atlases/atlas_256x256.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/credits/2a.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/credits/1a.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/credits/7a.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/credits/8a.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/credits/5a.jpg" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/credits/3a.jpg" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/credits/6a.jpg" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/credits/4a.jpg" type="Texture" id=11]
+[ext_resource path="res://src/Scenes/Scene_Credits.cs" type="Script" id=12]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 52.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 42 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 280 ), Vector2( 0, -1992 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 46, 50 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.849999 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 52 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "LoadMainMenu"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 768, 512, 256, 256 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 12 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.992665 )
+anchor_top = -6.0
+anchor_right = 1.0
+anchor_bottom = -5.0
+margin_top = -552.0
+margin_bottom = -552.003
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 48.0
+margin_top = 24.0
+margin_right = 345.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 2 )
+text = "Bonez was made by...
+
+
+
+Thomas Hodgkinson
+
+and
+
+Steven Craddock"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 48.0
+margin_top = 296.0
+margin_right = 288.0
+margin_bottom = 476.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+margin_left = 112.0
+margin_top = 504.0
+margin_right = 352.0
+margin_bottom = 684.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+margin_left = 48.0
+margin_top = 712.0
+margin_right = 288.0
+margin_bottom = 892.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+margin_left = 112.0
+margin_top = 920.0
+margin_right = 352.0
+margin_bottom = 1100.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect5" type="TextureRect" parent="Control"]
+margin_left = 48.0
+margin_top = 1128.0
+margin_right = 288.0
+margin_bottom = 1308.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect6" type="TextureRect" parent="Control"]
+margin_left = 112.0
+margin_top = 1336.0
+margin_right = 352.0
+margin_bottom = 1516.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect7" type="TextureRect" parent="Control"]
+margin_left = 48.0
+margin_top = 1544.0
+margin_right = 288.0
+margin_bottom = 1724.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect8" type="TextureRect" parent="Control"]
+margin_left = 112.0
+margin_top = 1752.0
+margin_right = 352.0
+margin_bottom = 1932.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect9" type="TextureRect" parent="Control"]
+margin_left = 80.0
+margin_top = 1992.0
+margin_right = 320.0
+margin_bottom = 2172.0
+texture = SubResource( 3 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="RichTextLabel" parent="Control"]
+margin_left = 8.0
+margin_top = 2184.0
+margin_right = 408.0
+margin_bottom = 2424.0
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[center]Thanks for playing,
+[wave]bone head![/wave][/center]"
+text = "Thanks for playing,
+bone head!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

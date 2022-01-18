@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/resources/fonts/pause_menu_button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/PackedScenes/Menus/OverworldPauseMenu.cs" type="Script" id=2]
+[ext_resource path="res://assets/resources/fonts/pause_menu_label.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/sounds/menu_select.ogg" type="AudioStream" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0.247059 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 0.121569 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="InputEventAction" id=5]
+action = "ui_cancel"
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[node name="OverworldPauseMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sounds"
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+pause_mode = 2
+self_modulate = Color( 1, 1, 1, 0.878431 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPanel" type="Panel" parent="BackgroundPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PausedLabel" type="Label" parent="BackgroundPanel/MenuPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_right = 64.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 3 )
+text = "- paused -"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="BackgroundPanel/MenuPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -64.0
+margin_right = 56.0
+custom_constants/separation = 10
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeButton" type="Button" parent="BackgroundPanel/MenuPanel/ButtonsVBoxContainer"]
+margin_top = 13.0
+margin_right = 112.0
+margin_bottom = 19.0
+focus_neighbour_top = NodePath("../QuitToDesktopButton")
+focus_neighbour_bottom = NodePath("../ReturnToTitleButton")
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+shortcut = SubResource( 6 )
+text = "Resume"
+flat = true
+
+[node name="ReturnToTitleButton" type="Button" parent="BackgroundPanel/MenuPanel/ButtonsVBoxContainer"]
+margin_top = 29.0
+margin_right = 112.0
+margin_bottom = 35.0
+focus_neighbour_top = NodePath("../ResumeButton")
+focus_neighbour_bottom = NodePath("../QuitToDesktopButton")
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quit To Title"
+flat = true
+
+[node name="QuitToDesktopButton" type="Button" parent="BackgroundPanel/MenuPanel/ButtonsVBoxContainer"]
+margin_top = 45.0
+margin_right = 112.0
+margin_bottom = 51.0
+focus_neighbour_top = NodePath("../ReturnToTitleButton")
+focus_neighbour_bottom = NodePath("../ResumeButton")
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quit To Desktop"
+flat = true
+[connection signal="focus_entered" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/ResumeButton" to="." method="OnButtonFocusEntered"]
+[connection signal="pressed" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/ResumeButton" to="." method="OnResumeButtonPressed"]
+[connection signal="focus_entered" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/ReturnToTitleButton" to="." method="OnButtonFocusEntered"]
+[connection signal="pressed" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/ReturnToTitleButton" to="." method="OnReturnToTitleButtonPressed"]
+[connection signal="focus_entered" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/QuitToDesktopButton" to="." method="OnButtonFocusEntered"]
+[connection signal="pressed" from="BackgroundPanel/MenuPanel/ButtonsVBoxContainer/QuitToDesktopButton" to="." method="OnQuitToDesktopButtonPressed"]

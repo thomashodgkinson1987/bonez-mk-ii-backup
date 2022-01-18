@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bonez_die.ogg-5864786b93be3a0814a093b723e1cf0a.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/bonez_die.ogg"
+dest_files=[ "res://.import/bonez_die.ogg-5864786b93be3a0814a093b723e1cf0a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

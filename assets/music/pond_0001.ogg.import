@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pond_0001.ogg-4f8b9eb46eb80323c16defacbadb4b40.oggstr"
+
+[deps]
+
+source_file="res://assets/music/pond_0001.ogg"
+dest_files=[ "res://.import/pond_0001.ogg-4f8b9eb46eb80323c16defacbadb4b40.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

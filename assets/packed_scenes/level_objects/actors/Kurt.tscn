@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/packed_scenes/level_objects/projectiles/GreenBubble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Actor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/PackedScenes/LevelObjects/Actors/Kurt/Kurt.cs" type="Script" id=3]
+[ext_resource path="res://assets/resources/sprite_frames/actors/kurt.tres" type="SpriteFrames" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 16 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64, 24 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 12 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 12.0
+height = 105.0
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 40, 1 )
+
+[node name="Kurt" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+SpriteOffsetOverride = Vector2( 0, 96 )
+DieKnockback = Vector2( -50, 64 )
+ProjectilePackedScene = ExtResource( 1 )
+
+[node name="ProjectileSpawnPoint" type="Node2D" parent="." index="0"]
+position = Vector2( 59, -34 )
+
+[node name="AnimatedSprite" parent="." index="1"]
+position = Vector2( 0, -64 )
+frames = ExtResource( 4 )
+frame = 0
+
+[node name="Center" parent="." index="2"]
+position = Vector2( 0, -32 )
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2( -8, -16 )
+shape = SubResource( 1 )
+
+[node name="InteractArea" parent="." index="4"]
+collision_mask = 2048
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2( 0, -24 )
+shape = SubResource( 2 )
+
+[node name="HitArea" parent="." index="5"]
+collision_mask = 32
+
+[node name="CollisionShape2D" parent="HitArea" index="0"]
+position = Vector2( 48, -36 )
+shape = SubResource( 3 )
+
+[node name="HurtArea" parent="." index="6"]
+collision_layer = 132
+
+[node name="CollisionShape2D" parent="HurtArea" index="0"]
+position = Vector2( 0, -22 )
+rotation = 1.39626
+shape = SubResource( 4 )
+
+[node name="BackBody" type="KinematicBody2D" parent="." index="7"]
+position = Vector2( -66, -26 )
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackBody" index="0"]
+visible = false
+position = Vector2( 50, -14 )
+shape = SubResource( 5 )
+one_way_collision = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/treetops_0001.ogg-79322b56aac9631af513ff0d407b9663.oggstr"
+
+[deps]
+
+source_file="res://assets/music/treetops_0001.ogg"
+dest_files=[ "res://.import/treetops_0001.ogg-79322b56aac9631af513ff0d407b9663.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

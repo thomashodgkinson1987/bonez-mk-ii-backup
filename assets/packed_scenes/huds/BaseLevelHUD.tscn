@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/atlases/atlas_32x32.png" type="Texture" id=1]
+[ext_resource path="res://assets/packed_scenes/huds/BaseHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/PackedScenes/HUDs/BaseLevelHUD.cs" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 35, 294, 26, 22 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 67, 326, 26, 22 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 298, 32, 11 )
+
+[node name="BaseLevelHUD" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="HeartPanel" type="Panel" parent="." index="0"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -32.0
+margin_right = 32.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="HeartPanel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeartTextureProgress" type="TextureProgress" parent="HeartPanel/CenterContainer" index="0"]
+margin_left = 3.0
+margin_top = 5.0
+margin_right = 29.0
+margin_bottom = 27.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+texture_under = SubResource( 1 )
+texture_over = SubResource( 1 )
+texture_progress = SubResource( 2 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireTimerPanel" type="Panel" parent="." index="1"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = -32.0
+margin_right = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="FireTimerPanel" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BoneTextureProgress" type="TextureProgress" parent="FireTimerPanel/CenterContainer" index="0"]
+margin_top = 10.0
+margin_right = 32.0
+margin_bottom = 21.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+texture_under = SubResource( 3 )
+texture_progress = SubResource( 3 )
+tint_under = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

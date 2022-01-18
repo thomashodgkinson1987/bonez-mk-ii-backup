@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/resources/fonts/necro_arena_hud_necro_health.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/packed_scenes/huds/BaseLevelHUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/PackedScenes/HUDs/LevelHUD_NecroArena.cs" type="Script" id=3]
+
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.0784314 )
+draw_center = false
+corner_detail = 1
+
+[node name="NecroArenaHUD" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="NecroPanel" type="Panel" parent="." index="1"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -152.0
+margin_bottom = 32.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NecroHealthTextLabel" type="Label" parent="NecroPanel" index="0"]
+margin_right = 120.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "Necro Health"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NecroHealthLabel" type="Label" parent="NecroPanel" index="1"]
+margin_left = 120.0
+margin_right = 152.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dark_fire_hit.ogg-784779d0cdd570b9ad45b1f41f2dca17.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/dark_fire_hit.ogg"
+dest_files=[ "res://.import/dark_fire_hit.ogg-784779d0cdd570b9ad45b1f41f2dca17.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

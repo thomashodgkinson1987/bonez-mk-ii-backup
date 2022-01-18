@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/king_slime_0001.ogg-3599168588b72b9cdcc77a8869485cae.oggstr"
+
+[deps]
+
+source_file="res://assets/music/king_slime_0001.ogg"
+dest_files=[ "res://.import/king_slime_0001.ogg-3599168588b72b9cdcc77a8869485cae.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

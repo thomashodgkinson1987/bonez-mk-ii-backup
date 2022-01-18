@@ -1,0 +1,410 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/packed_scenes/menus/level_pause_menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/packed_scenes/Fader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/packed_scenes/level_objects/actors/Bonez.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/PackedScenes/PositiveParallaxHelper.cs" type="Script" id=4]
+[ext_resource path="res://src/PackedScenes/Levels/Level.cs" type="Script" id=5]
+[ext_resource path="res://src/PackedScenes/NegativeParallaxHelper.cs" type="Script" id=6]
+[ext_resource path="res://assets/resources/tilesets/tileset_0001.tres" type="TileSet" id=7]
+[ext_resource path="res://assets/packed_scenes/MapBounds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/CameraController.cs" type="Script" id=9]
+
+[node name="BaseLevel" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = "Music"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="NegativeLayers" type="Node2D" parent="."]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_-10" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -10
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-10"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-10"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-10"]
+
+[node name="Layer_-9" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -9
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.1, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-9"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-9"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-9"]
+
+[node name="Layer_-8" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -8
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.2, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-8"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-8"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-8"]
+
+[node name="Layer_-7" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -7
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.3, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-7"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-7"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-7"]
+
+[node name="Layer_-6" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -6
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.4, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-6"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-6"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-6"]
+
+[node name="Layer_-5" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -5
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.5, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-5"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-5"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-5"]
+
+[node name="Layer_-4" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -4
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.6, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-4"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-4"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-4"]
+
+[node name="Layer_-3" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -3
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.7, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-3"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-3"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-3"]
+
+[node name="Layer_-2" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -2
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.8, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-2"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-2"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-2"]
+
+[node name="Layer_-1" type="ParallaxBackground" parent="NegativeLayers"]
+layer = -1
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 0.9, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="NegativeLayers/Layer_-1"]
+
+[node name="Center" type="ParallaxLayer" parent="NegativeLayers/Layer_-1"]
+
+[node name="Right" type="ParallaxLayer" parent="NegativeLayers/Layer_-1"]
+
+[node name="MainLayer" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enable = true
+
+[node name="Main_TileMaps" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap_Main" type="TileMap" parent="MainLayer/Main_TileMaps"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+format = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MapBounds" parent="MainLayer" instance=ExtResource( 8 )]
+
+[node name="Spikes" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Water" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Exits" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Plants" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platforms" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Actors" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": ""
+}
+
+[node name="KingSlimes" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kurts" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shtomps" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Slimes" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HoppingSlimes" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bats" type="Node2D" parent="MainLayer/Actors"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Necros" type="Node2D" parent="MainLayer/Actors"]
+
+[node name="Hearts" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bones" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BreakableBlocks" type="Node2D" parent="MainLayer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Projectiles" type="Node2D" parent="MainLayer" groups=[
+"projectiles_holder",
+]]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bonez" parent="MainLayer" instance=ExtResource( 3 )]
+position = Vector2( 200, 120 )
+
+[node name="Camera2D" type="Camera2D" parent="MainLayer/Bonez"]
+current = true
+process_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 400
+limit_bottom = 240
+smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource( 9 )
+
+[node name="PositiveLayers" type="Node2D" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Layer_1" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 1
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.1, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_1"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_1"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_1"]
+
+[node name="Layer_2" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 2
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.2, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_2"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_2"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_2"]
+
+[node name="Layer_3" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 3
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.3, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_3"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_3"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_3"]
+
+[node name="Layer_4" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 4
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.4, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_4"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_4"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_4"]
+
+[node name="Layer_5" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 5
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.5, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_5"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_5"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_5"]
+
+[node name="Layer_6" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 6
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.6, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_6"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_6"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_6"]
+
+[node name="Layer_7" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 7
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.7, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_7"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_7"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_7"]
+
+[node name="Layer_8" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 8
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.8, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_8"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_8"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_8"]
+
+[node name="Layer_9" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 9
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 1.9, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_9"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_9"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_9"]
+
+[node name="Layer_10" type="ParallaxBackground" parent="PositiveLayers"]
+layer = 10
+offset = Vector2( 200, 0 )
+transform = Transform2D( 1, 0, 0, 1, 200, 0 )
+scroll_base_scale = Vector2( 2, 1 )
+
+[node name="Left" type="ParallaxLayer" parent="PositiveLayers/Layer_10"]
+
+[node name="Center" type="ParallaxLayer" parent="PositiveLayers/Layer_10"]
+
+[node name="Right" type="ParallaxLayer" parent="PositiveLayers/Layer_10"]
+
+[node name="PauseMenu" parent="." instance=ExtResource( 1 )]
+layer = 75
+
+[node name="BackgroundPanel" parent="PauseMenu" index="1"]
+visible = false
+
+[node name="Fader" parent="." instance=ExtResource( 2 )]
+[connection signal="visibility_changed" from="NegativeLayers" to="NegativeLayers" method="_on_NegativeLayers_visibility_changed"]
+[connection signal="OnMapBoundsResizedSignal" from="MainLayer/MapBounds" to="NegativeLayers" method="UpdateWithRect"]
+[connection signal="OnMapBoundsResizedSignal" from="MainLayer/MapBounds" to="PositiveLayers" method="UpdateWithRect"]
+[connection signal="OnMapBoundsResizedSignal" from="MainLayer/MapBounds" to="MainLayer/Bonez/Camera2D" method="UpdateLimitsFromRect"]
+[connection signal="visibility_changed" from="PositiveLayers" to="PositiveLayers" method="_on_PositiveLayers_visibility_changed"]
+
+[editable path="PauseMenu"]
